@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  build:
+    runs-on: macos-12
+    steps:
+     - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+
+      - name: build xcode project.
+      - run: xcodebuild
+      # https://github.com/marketplace/actions/action-slack
+      - name: Send status of a job to slack.
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }} # TODO : please fix me.
+          author_name: ${{ env.AS_AUTHOR }}
+          fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
+          # mention: "gandis0713"
+          # if_mention: "failure"
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        if: ${{ failure() }} # always(), failure() # Pick up events even if the job fails or is canceled.
