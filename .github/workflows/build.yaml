@@ -14,7 +14,10 @@ jobs:
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: build xcode project.
-        run: xcodebuild
+        run: |
+          xcodebuild build \
+            -project metal-tutorial.xcodeproj \
+            -schema c03-rendering-pipeline
       # https://github.com/marketplace/actions/action-slack
       - name: Send status of a job to slack.
         uses: 8398a7/action-slack@v3
@@ -26,5 +29,5 @@ jobs:
           # if_mention: "failure"
         env:
           GITHUB_TOKEN: ${{ github.token }}
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # sceret : https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository
         if: ${{ failure() }} # always(), failure() # Pick up events even if the job fails or is canceled.
