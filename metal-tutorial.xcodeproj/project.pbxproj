@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CEEFD154297C3385008CFE45 /* _1_hello_metalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEFD153297C3385008CFE45 /* _1_hello_metalApp.swift */; };
+		CEEFD154297C3385008CFE45 /* PipelineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEFD153297C3385008CFE45 /* PipelineApp.swift */; };
 		CEEFD156297C3385008CFE45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEFD155297C3385008CFE45 /* ContentView.swift */; };
 		CEEFD158297C3386008CFE45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEFD157297C3386008CFE45 /* Assets.xcassets */; };
 		CEEFD15C297C3386008CFE45 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEFD15B297C3386008CFE45 /* Preview Assets.xcassets */; };
@@ -17,11 +17,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CEEFD151297C3385008CFE45 /* 01-hello-metal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "01-hello-metal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEEFD153297C3385008CFE45 /* _1_hello_metalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _1_hello_metalApp.swift; sourceTree = "<group>"; };
+		CEEFD151297C3385008CFE45 /* c03-rendering-pipeline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "c03-rendering-pipeline.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEEFD153297C3385008CFE45 /* PipelineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipelineApp.swift; sourceTree = "<group>"; };
 		CEEFD155297C3385008CFE45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CEEFD157297C3386008CFE45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CEEFD159297C3386008CFE45 /* _1_hello_metal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = _1_hello_metal.entitlements; sourceTree = "<group>"; };
+		CEEFD159297C3386008CFE45 /* c03_rendering_pipeline.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = c03_rendering_pipeline.entitlements; sourceTree = "<group>"; };
 		CEEFD15B297C3386008CFE45 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CEEFD160297C35DF008CFE45 /* MetalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
 		CEEFD162297C35DF008CFE45 /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
@@ -42,7 +42,7 @@
 		CEEFD132297C332A008CFE45 = {
 			isa = PBXGroup;
 			children = (
-				CEEFD152297C3385008CFE45 /* 01-hello-metal */,
+				CEEFD152297C3385008CFE45 /* c03-rendering-pipeline */,
 				CEEFD13C297C332A008CFE45 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,24 +50,24 @@
 		CEEFD13C297C332A008CFE45 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CEEFD151297C3385008CFE45 /* 01-hello-metal.app */,
+				CEEFD151297C3385008CFE45 /* c03-rendering-pipeline.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CEEFD152297C3385008CFE45 /* 01-hello-metal */ = {
+		CEEFD152297C3385008CFE45 /* c03-rendering-pipeline */ = {
 			isa = PBXGroup;
 			children = (
 				CEEFD166297C3674008CFE45 /* Shaders.metal */,
 				CEEFD160297C35DF008CFE45 /* MetalView.swift */,
 				CEEFD162297C35DF008CFE45 /* Renderer.swift */,
-				CEEFD153297C3385008CFE45 /* _1_hello_metalApp.swift */,
+				CEEFD153297C3385008CFE45 /* PipelineApp.swift */,
 				CEEFD155297C3385008CFE45 /* ContentView.swift */,
 				CEEFD157297C3386008CFE45 /* Assets.xcassets */,
-				CEEFD159297C3386008CFE45 /* _1_hello_metal.entitlements */,
+				CEEFD159297C3386008CFE45 /* c03_rendering_pipeline.entitlements */,
 				CEEFD15A297C3386008CFE45 /* Preview Content */,
 			);
-			path = "01-hello-metal";
+			path = "c03-rendering-pipeline";
 			sourceTree = "<group>";
 		};
 		CEEFD15A297C3386008CFE45 /* Preview Content */ = {
@@ -81,9 +81,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CEEFD150297C3385008CFE45 /* 01-hello-metal */ = {
+		CEEFD150297C3385008CFE45 /* c03-rendering-pipeline */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CEEFD15F297C3386008CFE45 /* Build configuration list for PBXNativeTarget "01-hello-metal" */;
+			buildConfigurationList = CEEFD15F297C3386008CFE45 /* Build configuration list for PBXNativeTarget "c03-rendering-pipeline" */;
 			buildPhases = (
 				CEEFD14D297C3385008CFE45 /* Sources */,
 				CEEFD14E297C3385008CFE45 /* Frameworks */,
@@ -93,9 +93,9 @@
 			);
 			dependencies = (
 			);
-			name = "01-hello-metal";
+			name = "c03-rendering-pipeline";
 			productName = "01-hello-world";
-			productReference = CEEFD151297C3385008CFE45 /* 01-hello-metal.app */;
+			productReference = CEEFD151297C3385008CFE45 /* c03-rendering-pipeline.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -126,7 +126,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CEEFD150297C3385008CFE45 /* 01-hello-metal */,
+				CEEFD150297C3385008CFE45 /* c03-rendering-pipeline */,
 			);
 		};
 /* End PBXProject section */
@@ -150,7 +150,7 @@
 			files = (
 				CEEFD163297C35DF008CFE45 /* MetalView.swift in Sources */,
 				CEEFD156297C3385008CFE45 /* ContentView.swift in Sources */,
-				CEEFD154297C3385008CFE45 /* _1_hello_metalApp.swift in Sources */,
+				CEEFD154297C3385008CFE45 /* PipelineApp.swift in Sources */,
 				CEEFD165297C35DF008CFE45 /* Renderer.swift in Sources */,
 				CEEFD167297C3674008CFE45 /* Shaders.metal in Sources */,
 			);
@@ -273,11 +273,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "01-hello-metal/_1_hello_metal.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "c03-rendering-pipeline/c03_rendering_pipeline.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"01-hello-metal/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"c03-rendering-pipeline/Preview Content\"";
 				DEVELOPMENT_TEAM = Z27J28NH32;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -312,11 +312,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "01-hello-metal/_1_hello_metal.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "c03-rendering-pipeline/c03_rendering_pipeline.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"01-hello-metal/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"c03-rendering-pipeline/Preview Content\"";
 				DEVELOPMENT_TEAM = Z27J28NH32;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -358,7 +358,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CEEFD15F297C3386008CFE45 /* Build configuration list for PBXNativeTarget "01-hello-metal" */ = {
+		CEEFD15F297C3386008CFE45 /* Build configuration list for PBXNativeTarget "c03-rendering-pipeline" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CEEFD15D297C3386008CFE45 /* Debug */,

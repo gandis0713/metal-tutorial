@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct _1_hello_metalApp: App {
+struct PipelineApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
