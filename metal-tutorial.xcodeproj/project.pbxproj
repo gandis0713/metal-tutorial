@@ -7,19 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CEEFD154297C3385008CFE45 /* _1_hello_worldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEFD153297C3385008CFE45 /* _1_hello_worldApp.swift */; };
+		CEEFD154297C3385008CFE45 /* _1_hello_metalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEFD153297C3385008CFE45 /* _1_hello_metalApp.swift */; };
 		CEEFD156297C3385008CFE45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEFD155297C3385008CFE45 /* ContentView.swift */; };
 		CEEFD158297C3386008CFE45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEFD157297C3386008CFE45 /* Assets.xcassets */; };
 		CEEFD15C297C3386008CFE45 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEFD15B297C3386008CFE45 /* Preview Assets.xcassets */; };
+		CEEFD163297C35DF008CFE45 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEFD160297C35DF008CFE45 /* MetalView.swift */; };
+		CEEFD165297C35DF008CFE45 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEFD162297C35DF008CFE45 /* Renderer.swift */; };
+		CEEFD167297C3674008CFE45 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = CEEFD166297C3674008CFE45 /* Shaders.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CEEFD151297C3385008CFE45 /* 01-hello-world.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "01-hello-world.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEEFD153297C3385008CFE45 /* _1_hello_worldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _1_hello_worldApp.swift; sourceTree = "<group>"; };
+		CEEFD151297C3385008CFE45 /* 01-hello-metal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "01-hello-metal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEEFD153297C3385008CFE45 /* _1_hello_metalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _1_hello_metalApp.swift; sourceTree = "<group>"; };
 		CEEFD155297C3385008CFE45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CEEFD157297C3386008CFE45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CEEFD159297C3386008CFE45 /* _1_hello_world.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = _1_hello_world.entitlements; sourceTree = "<group>"; };
+		CEEFD159297C3386008CFE45 /* _1_hello_metal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = _1_hello_metal.entitlements; sourceTree = "<group>"; };
 		CEEFD15B297C3386008CFE45 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CEEFD160297C35DF008CFE45 /* MetalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
+		CEEFD162297C35DF008CFE45 /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		CEEFD166297C3674008CFE45 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,7 +42,7 @@
 		CEEFD132297C332A008CFE45 = {
 			isa = PBXGroup;
 			children = (
-				CEEFD152297C3385008CFE45 /* 01-hello-world */,
+				CEEFD152297C3385008CFE45 /* 01-hello-metal */,
 				CEEFD13C297C332A008CFE45 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,21 +50,24 @@
 		CEEFD13C297C332A008CFE45 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CEEFD151297C3385008CFE45 /* 01-hello-world.app */,
+				CEEFD151297C3385008CFE45 /* 01-hello-metal.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CEEFD152297C3385008CFE45 /* 01-hello-world */ = {
+		CEEFD152297C3385008CFE45 /* 01-hello-metal */ = {
 			isa = PBXGroup;
 			children = (
-				CEEFD153297C3385008CFE45 /* _1_hello_worldApp.swift */,
+				CEEFD166297C3674008CFE45 /* Shaders.metal */,
+				CEEFD160297C35DF008CFE45 /* MetalView.swift */,
+				CEEFD162297C35DF008CFE45 /* Renderer.swift */,
+				CEEFD153297C3385008CFE45 /* _1_hello_metalApp.swift */,
 				CEEFD155297C3385008CFE45 /* ContentView.swift */,
 				CEEFD157297C3386008CFE45 /* Assets.xcassets */,
-				CEEFD159297C3386008CFE45 /* _1_hello_world.entitlements */,
+				CEEFD159297C3386008CFE45 /* _1_hello_metal.entitlements */,
 				CEEFD15A297C3386008CFE45 /* Preview Content */,
 			);
-			path = "01-hello-world";
+			path = "01-hello-metal";
 			sourceTree = "<group>";
 		};
 		CEEFD15A297C3386008CFE45 /* Preview Content */ = {
@@ -72,9 +81,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CEEFD150297C3385008CFE45 /* 01-hello-world */ = {
+		CEEFD150297C3385008CFE45 /* 01-hello-metal */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CEEFD15F297C3386008CFE45 /* Build configuration list for PBXNativeTarget "01-hello-world" */;
+			buildConfigurationList = CEEFD15F297C3386008CFE45 /* Build configuration list for PBXNativeTarget "01-hello-metal" */;
 			buildPhases = (
 				CEEFD14D297C3385008CFE45 /* Sources */,
 				CEEFD14E297C3385008CFE45 /* Frameworks */,
@@ -84,9 +93,9 @@
 			);
 			dependencies = (
 			);
-			name = "01-hello-world";
+			name = "01-hello-metal";
 			productName = "01-hello-world";
-			productReference = CEEFD151297C3385008CFE45 /* 01-hello-world.app */;
+			productReference = CEEFD151297C3385008CFE45 /* 01-hello-metal.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -117,7 +126,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CEEFD150297C3385008CFE45 /* 01-hello-world */,
+				CEEFD150297C3385008CFE45 /* 01-hello-metal */,
 			);
 		};
 /* End PBXProject section */
@@ -139,8 +148,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEEFD163297C35DF008CFE45 /* MetalView.swift in Sources */,
 				CEEFD156297C3385008CFE45 /* ContentView.swift in Sources */,
-				CEEFD154297C3385008CFE45 /* _1_hello_worldApp.swift in Sources */,
+				CEEFD154297C3385008CFE45 /* _1_hello_metalApp.swift in Sources */,
+				CEEFD165297C35DF008CFE45 /* Renderer.swift in Sources */,
+				CEEFD167297C3674008CFE45 /* Shaders.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,10 +273,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "01-hello-world/_1_hello_world.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "01-hello-metal/_1_hello_metal.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"01-hello-world/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"01-hello-metal/Preview Content\"";
 				DEVELOPMENT_TEAM = Z27J28NH32;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -284,7 +297,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "charles.-1-hello-world";
+				PRODUCT_BUNDLE_IDENTIFIER = "charles.-1-hello-metal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -299,10 +312,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "01-hello-world/_1_hello_world.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "01-hello-metal/_1_hello_metal.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"01-hello-world/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"01-hello-metal/Preview Content\"";
 				DEVELOPMENT_TEAM = Z27J28NH32;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -322,7 +336,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "charles.-1-hello-world";
+				PRODUCT_BUNDLE_IDENTIFIER = "charles.-1-hello-metal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -344,7 +358,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CEEFD15F297C3386008CFE45 /* Build configuration list for PBXNativeTarget "01-hello-world" */ = {
+		CEEFD15F297C3386008CFE45 /* Build configuration list for PBXNativeTarget "01-hello-metal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CEEFD15D297C3386008CFE45 /* Debug */,
