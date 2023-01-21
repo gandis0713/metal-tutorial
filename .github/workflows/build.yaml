@@ -11,13 +11,11 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: build xcode project.
+      - name: Build xcode project.
         run: |
           xcodebuild build \
             -project metal-tutorial.xcodeproj \
-            -schema c03-rendering-pipeline
+            -scheme c03-rendering-pipeline
       # https://github.com/marketplace/actions/action-slack
       - name: Send status of a job to slack.
         uses: 8398a7/action-slack@v3
