@@ -12,7 +12,7 @@ struct ContentView: View {
         VStack {
             Text("Hello, Metal!")
             MetalView()
-                .border(Color.black, width: 10)
+                .border(Color.black, width: 0)
         }
         .padding()
     }

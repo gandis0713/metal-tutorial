@@ -40,14 +40,31 @@ class Renderer: NSObject {
     static var library: MTLLibrary!
     var mesh: MTKMesh!
     var vertexBuffer: MTLBuffer!
+    var vertexIndex: MTLBuffer!
     var renderPipelineState: MTLRenderPipelineState!
+    let vertexPositionData: [Float] = [
+        1.0, -1.0, 0.0,
+        -1.0, -1.0, 0.0,
+        0.0,  1.0, 0.0,
+        0.5, -0.5, 0.0,
+        -0.5, -0.5, 0.0,
+        0.0,  0.5, 0.0,
+    ]
+    
+//    let vertexIndexData: [UInt32] = [ // clockwise
+//        0, 1, 2
+//    ]
+    let vertexIndexData: [UInt32] = [ // counter-clockwise
+        0, 2, 1,
+        3, 5, 4,
+    ]
 
     init(metalView: MTKView) {
         guard
-        let device = MTLCreateSystemDefaultDevice(),
-        let commandQueue = device.makeCommandQueue()
+            let device = MTLCreateSystemDefaultDevice(),
+            let commandQueue = device.makeCommandQueue()
         else {
-          fatalError("GPU not available")
+            fatalError("GPU not available")
         }
 
         Renderer.device = device
@@ -66,19 +83,37 @@ class Renderer: NSObject {
         )
 
         do {
-          mesh = try MTKMesh(mesh: mdlMesh, device: device)
+            mesh = try MTKMesh(mesh: mdlMesh, device: device)
         } catch let error {
             fatalError(error.localizedDescription)
         }
-
+        
+        let vertexPositionDataByteSize = MemoryLayout<Float>.size * vertexPositionData.count
+        
         // set vertex buffer
-        vertexBuffer = mesh.vertexBuffers[0].buffer
+        guard
+            let vbo: MTLBuffer = device.makeBuffer(bytes: vertexPositionData, length: vertexPositionDataByteSize, options: .storageModeShared)
+        else {
+            fatalError("Failed to create vertex position buffer")
+        }
+        
+        vertexBuffer = vbo
+//        vertexBuffer = mesh.vertexBuffers[0].buffer
+        
+        // set vertex index
+        let vertexIndexDataByteSize = MemoryLayout<UInt32>.size * vertexIndexData.count
+        guard
+            let ibo: MTLBuffer = device.makeBuffer(bytes: vertexIndexData, length: vertexIndexDataByteSize, options: .storageModeShared)
+        else {
+            fatalError("Failed to create vertex index buffer")
+        }
+        vertexIndex = ibo
 
         // create the shader function library
         guard
-        let library = device.makeDefaultLibrary()
+            let library = device.makeDefaultLibrary()
         else {
-          fatalError("Failed to make default library.")
+            fatalError("Failed to make default library.")
         }
         Renderer.library = library
         let vertexFunction = library.makeFunction(name: "vertex_main")
@@ -92,7 +127,15 @@ class Renderer: NSObject {
         let colorAttachment0 = colorAttachments[0]
         colorAttachment0?.pixelFormat = metalView.colorPixelFormat
 
-        pipelineDescriptor.vertexDescriptor = MTKMetalVertexDescriptorFromModelIO(mdlMesh.vertexDescriptor)
+        let vertexDescriptor = MTLVertexDescriptor()
+        vertexDescriptor.attributes[0].format = .float3
+        vertexDescriptor.attributes[0].bufferIndex = 0
+        vertexDescriptor.attributes[0].offset = 0
+        vertexDescriptor.layouts[0].stride = 12
+        vertexDescriptor.layouts[0].stepRate = 1
+        vertexDescriptor.layouts[0].stepFunction = .perVertex
+        pipelineDescriptor.vertexDescriptor = vertexDescriptor
+        os_log(.info, log: OSLog.error, "tessellation winding order: %d", pipelineDescriptor.tessellationOutputWindingOrder.rawValue)
 
         do {
           renderPipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
@@ -113,56 +156,65 @@ class Renderer: NSObject {
 }
 
 extension Renderer: MTKViewDelegate {
-  func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
+    func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
       os_log(.debug, log: OSLog.debug, "mtkView")
-  }
+    }
 
-  func draw(in view: MTKView) {
-      os_log(.debug, log: OSLog.debug, "draw")
-      
-      guard
-        let commandBuffer = Renderer.commandQueue.makeCommandBuffer()
-      else {
-          os_log(.error, log: OSLog.error, "Faile to make command buffer.")
-          return
-      }
+    func draw(in view: MTKView) {
+        os_log(.debug, log: OSLog.debug, "draw")
 
-      guard
-        let renderPassDescriptor = view.currentRenderPassDescriptor
-      else {
-          os_log(.error, log: OSLog.error, "Faile to get render pass descriptor.")
-          return
-      }
+        guard
+            let commandBuffer = Renderer.commandQueue.makeCommandBuffer()
+        else {
+            os_log(.error, log: OSLog.error, "Faile to make command buffer.")
+            return
+        }
 
-      guard
-        let renderCommandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
-      else {
-          os_log(.error, log: OSLog.error, "Failed to make render command encoder")
-          return
-      }
+        guard
+            let renderPassDescriptor = view.currentRenderPassDescriptor
+        else {
+            os_log(.error, log: OSLog.error, "Faile to get render pass descriptor.")
+            return
+        }
 
-      renderCommandEncoder.setRenderPipelineState(renderPipelineState)
-      renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
-      for submesh in mesh.submeshes {
-          renderCommandEncoder.drawIndexedPrimitives(type: .triangle,
-                                                     indexCount: submesh.indexCount,
-                                                     indexType: submesh.indexType,
-                                                     indexBuffer: submesh.indexBuffer.buffer,
-                                                     indexBufferOffset: submesh.indexBuffer.offset)
-      }
+        guard
+            let renderCommandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
+        else {
+            os_log(.error, log: OSLog.error, "Failed to make render command encoder")
+            return
+        }
 
-      // endEncoding function must be called before it is released.
-      renderCommandEncoder.endEncoding()
+        renderCommandEncoder.setRenderPipelineState(renderPipelineState)
+        renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+        renderCommandEncoder.setCullMode(.front)
+//        renderCommandEncoder.setFrontFacing(.clockwise) // default is counter-clockwise
 
-      // get drawable
-      guard
-        let drawable = view.currentDrawable
-      else {
-          os_log(.error, log: OSLog.error, "Failed to get drawable")
-          return
-      }
+//        for submesh in mesh.submeshes {
+//            os_log(.info, log: OSLog.info, "Index count: %d", submesh.indexCount)
+//            os_log(.info, log: OSLog.info, "Index Buffer offset: %d", submesh.indexBuffer.offset)
+//            renderCommandEncoder.drawIndexedPrimitives(type: .triangle,
+//                                                     indexCount: 24,
+//                                                     indexType: submesh.indexType,
+//                                                     indexBuffer: submesh.indexBuffer.buffer,
+//                                                     indexBufferOffset: submesh.indexBuffer.offset)
+//        }
 
-      commandBuffer.present(drawable)
-      commandBuffer.commit()
-  }
+        renderCommandEncoder.drawIndexedPrimitives(type: .triangle,
+                                                   indexCount: vertexIndexData.count, indexType: .uint32, indexBuffer: vertexIndex, indexBufferOffset: 0)
+        os_log(.info, log: OSLog.info, "submesh count: %d", mesh.submeshes.count)
+
+        // endEncoding function must be called before it is released.
+        renderCommandEncoder.endEncoding()
+
+        // get drawable
+        guard
+            let drawable: CAMetalDrawable = view.currentDrawable
+        else {
+            os_log(.error, log: OSLog.error, "Failed to get drawable")
+            return
+        }
+
+        commandBuffer.present(drawable)
+        commandBuffer.commit()
+    }
 }
