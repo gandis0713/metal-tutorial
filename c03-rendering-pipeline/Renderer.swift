@@ -56,7 +56,7 @@ class Renderer: NSObject {
 
         // create a mesh
         let allocator = MTKMeshBufferAllocator(device: device)
-        let size: Float = 0.8
+        let size: Float = 1.0
         let mdlMesh = MDLMesh(
             boxWithExtent: [size, size, size],
             segments: [1, 1, 1],
@@ -102,10 +102,9 @@ class Renderer: NSObject {
 
         super.init()
         
-        //TODO: clear color is not applied.
         metalView.clearColor = MTLClearColor(
           red: 1.0,
-          green: 0.0,
+          green: 1.0,
           blue: 0.0,
           alpha: 1.0)
         
