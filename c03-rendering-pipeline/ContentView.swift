@@ -10,9 +10,9 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-          MetalView()
-            .border(Color.black, width: 2)
-          Text("Hello, Metal!")
+            Text("Hello, Metal!")
+            MetalView()
+                .border(Color.black, width: 10)
         }
         .padding()
     }
