@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE028F8B297CE4A80022F471 /* log.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE028F8A297CE4600022F471 /* log.swift */; };
 		CEEFD154297C3385008CFE45 /* PipelineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEFD153297C3385008CFE45 /* PipelineApp.swift */; };
 		CEEFD156297C3385008CFE45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEFD155297C3385008CFE45 /* ContentView.swift */; };
 		CEEFD158297C3386008CFE45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEFD157297C3386008CFE45 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE028F8A297CE4600022F471 /* log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = log.swift; sourceTree = "<group>"; };
 		CEEFD151297C3385008CFE45 /* c03-rendering-pipeline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "c03-rendering-pipeline.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEFD153297C3385008CFE45 /* PipelineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipelineApp.swift; sourceTree = "<group>"; };
 		CEEFD155297C3385008CFE45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -39,9 +41,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE028F88297CE4160022F471 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				CE028F8A297CE4600022F471 /* log.swift */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
 		CEEFD132297C332A008CFE45 = {
 			isa = PBXGroup;
 			children = (
+				CE028F88297CE4160022F471 /* common */,
 				CEEFD152297C3385008CFE45 /* c03-rendering-pipeline */,
 				CEEFD13C297C332A008CFE45 /* Products */,
 			);
@@ -148,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE028F8B297CE4A80022F471 /* log.swift in Sources */,
 				CEEFD163297C35DF008CFE45 /* MetalView.swift in Sources */,
 				CEEFD156297C3385008CFE45 /* ContentView.swift in Sources */,
 				CEEFD154297C3385008CFE45 /* PipelineApp.swift in Sources */,

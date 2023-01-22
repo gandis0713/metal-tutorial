@@ -100,46 +100,48 @@ class Renderer: NSObject {
             fatalError(error.localizedDescription)
         }
 
+        super.init()
+        
+        //TODO: clear color is not applied.
         metalView.clearColor = MTLClearColor(
           red: 1.0,
           green: 0.0,
           blue: 0.0,
           alpha: 1.0)
         
-        super.init()
         metalView.delegate = self
     }
 }
 
 extension Renderer: MTKViewDelegate {
   func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
-      os_log(.debug, log:.default, "mtkView")
+      os_log(.debug, log: OSLog.debug, "mtkView")
   }
 
   func draw(in view: MTKView) {
-      os_log(.debug, log:.default, "draw")
+      os_log(.debug, log: OSLog.debug, "draw")
       
       guard
         let commandBuffer = Renderer.commandQueue.makeCommandBuffer()
       else {
-          os_log(.error, log:.default, "Faile to make command buffer.")
+          os_log(.error, log: OSLog.error, "Faile to make command buffer.")
           return
       }
-      
+
       guard
         let renderPassDescriptor = view.currentRenderPassDescriptor
       else {
-          os_log(.error, log:.default, "Faile to get render pass descriptor.")
+          os_log(.error, log: OSLog.error, "Faile to get render pass descriptor.")
           return
       }
-      
+
       guard
         let renderCommandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
       else {
-          os_log(.error, log: .default, "Failed to make render command encoder")
+          os_log(.error, log: OSLog.error, "Failed to make render command encoder")
           return
       }
-      
+
       renderCommandEncoder.setRenderPipelineState(renderPipelineState)
       renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
       for submesh in mesh.submeshes {
@@ -149,18 +151,18 @@ extension Renderer: MTKViewDelegate {
                                                      indexBuffer: submesh.indexBuffer.buffer,
                                                      indexBufferOffset: submesh.indexBuffer.offset)
       }
-      
+
       // endEncoding function must be called before it is released.
       renderCommandEncoder.endEncoding()
-      
+
       // get drawable
       guard
         let drawable = view.currentDrawable
       else {
-          os_log(.error, log: .default, "Failed to get drawable")
+          os_log(.error, log: OSLog.error, "Failed to get drawable")
           return
       }
-      
+
       commandBuffer.present(drawable)
       commandBuffer.commit()
   }
