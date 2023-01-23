@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		CE028F8B297CE4A80022F471 /* log.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE028F8A297CE4600022F471 /* log.swift */; };
-		CE028F99297E37730022F471 /* c04_vertex_functionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE028F98297E37730022F471 /* c04_vertex_functionApp.swift */; };
-		CE028F9B297E37730022F471 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE028F9A297E37730022F471 /* ContentView.swift */; };
-		CE028F9D297E37750022F471 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE028F9C297E37750022F471 /* Assets.xcassets */; };
-		CE028FA0297E37750022F471 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE028F9F297E37750022F471 /* Preview Assets.xcassets */; };
+		CEA8EC25297E3AF2005B5CA1 /* c04_vertex_functionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8EC24297E3AF2005B5CA1 /* c04_vertex_functionApp.swift */; };
+		CEA8EC27297E3AF2005B5CA1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8EC26297E3AF2005B5CA1 /* ContentView.swift */; };
+		CEA8EC29297E3AF2005B5CA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA8EC28297E3AF2005B5CA1 /* Assets.xcassets */; };
+		CEA8EC2D297E3AF2005B5CA1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA8EC2C297E3AF2005B5CA1 /* Preview Assets.xcassets */; };
 		CEEFD154297C3385008CFE45 /* c03_rendering_pipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEFD153297C3385008CFE45 /* c03_rendering_pipeline.swift */; };
 		CEEFD156297C3385008CFE45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEFD155297C3385008CFE45 /* ContentView.swift */; };
 		CEEFD158297C3386008CFE45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEFD157297C3386008CFE45 /* Assets.xcassets */; };
@@ -23,11 +23,12 @@
 
 /* Begin PBXFileReference section */
 		CE028F8A297CE4600022F471 /* log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = log.swift; sourceTree = "<group>"; };
-		CE028F96297E37730022F471 /* c04-vertex-function.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "c04-vertex-function.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE028F98297E37730022F471 /* c04_vertex_functionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = c04_vertex_functionApp.swift; sourceTree = "<group>"; };
-		CE028F9A297E37730022F471 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		CE028F9C297E37750022F471 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CE028F9F297E37750022F471 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CEA8EC22297E3AF2005B5CA1 /* c04-vertex-function.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "c04-vertex-function.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEA8EC24297E3AF2005B5CA1 /* c04_vertex_functionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = c04_vertex_functionApp.swift; sourceTree = "<group>"; };
+		CEA8EC26297E3AF2005B5CA1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CEA8EC28297E3AF2005B5CA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CEA8EC2A297E3AF2005B5CA1 /* c04_vertex_function.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = c04_vertex_function.entitlements; sourceTree = "<group>"; };
+		CEA8EC2C297E3AF2005B5CA1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CEEFD151297C3385008CFE45 /* c03-rendering-pipeline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "c03-rendering-pipeline.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEFD153297C3385008CFE45 /* c03_rendering_pipeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = c03_rendering_pipeline.swift; sourceTree = "<group>"; };
 		CEEFD155297C3385008CFE45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -40,7 +41,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		CE028F93297E37730022F471 /* Frameworks */ = {
+		CEA8EC1F297E3AF2005B5CA1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -65,21 +66,22 @@
 			path = common;
 			sourceTree = "<group>";
 		};
-		CE028F97297E37730022F471 /* c04-vertex-function */ = {
+		CEA8EC23297E3AF2005B5CA1 /* c04-vertex-function */ = {
 			isa = PBXGroup;
 			children = (
-				CE028F98297E37730022F471 /* c04_vertex_functionApp.swift */,
-				CE028F9A297E37730022F471 /* ContentView.swift */,
-				CE028F9C297E37750022F471 /* Assets.xcassets */,
-				CE028F9E297E37750022F471 /* Preview Content */,
+				CEA8EC24297E3AF2005B5CA1 /* c04_vertex_functionApp.swift */,
+				CEA8EC26297E3AF2005B5CA1 /* ContentView.swift */,
+				CEA8EC28297E3AF2005B5CA1 /* Assets.xcassets */,
+				CEA8EC2A297E3AF2005B5CA1 /* c04_vertex_function.entitlements */,
+				CEA8EC2B297E3AF2005B5CA1 /* Preview Content */,
 			);
 			path = "c04-vertex-function";
 			sourceTree = "<group>";
 		};
-		CE028F9E297E37750022F471 /* Preview Content */ = {
+		CEA8EC2B297E3AF2005B5CA1 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				CE028F9F297E37750022F471 /* Preview Assets.xcassets */,
+				CEA8EC2C297E3AF2005B5CA1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -89,7 +91,7 @@
 			children = (
 				CE028F88297CE4160022F471 /* common */,
 				CEEFD152297C3385008CFE45 /* c03-rendering-pipeline */,
-				CE028F97297E37730022F471 /* c04-vertex-function */,
+				CEA8EC23297E3AF2005B5CA1 /* c04-vertex-function */,
 				CEEFD13C297C332A008CFE45 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,7 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				CEEFD151297C3385008CFE45 /* c03-rendering-pipeline.app */,
-				CE028F96297E37730022F471 /* c04-vertex-function.app */,
+				CEA8EC22297E3AF2005B5CA1 /* c04-vertex-function.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,13 +131,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CE028F95297E37730022F471 /* c04-vertex-function */ = {
+		CEA8EC21297E3AF2005B5CA1 /* c04-vertex-function */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CE028FA1297E37750022F471 /* Build configuration list for PBXNativeTarget "c04-vertex-function" */;
+			buildConfigurationList = CEA8EC2E297E3AF2005B5CA1 /* Build configuration list for PBXNativeTarget "c04-vertex-function" */;
 			buildPhases = (
-				CE028F92297E37730022F471 /* Sources */,
-				CE028F93297E37730022F471 /* Frameworks */,
-				CE028F94297E37730022F471 /* Resources */,
+				CEA8EC1E297E3AF2005B5CA1 /* Sources */,
+				CEA8EC1F297E3AF2005B5CA1 /* Frameworks */,
+				CEA8EC20297E3AF2005B5CA1 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -143,7 +145,7 @@
 			);
 			name = "c04-vertex-function";
 			productName = "c04-vertex-function";
-			productReference = CE028F96297E37730022F471 /* c04-vertex-function.app */;
+			productReference = CEA8EC22297E3AF2005B5CA1 /* c04-vertex-function.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CEEFD150297C3385008CFE45 /* c03-rendering-pipeline */ = {
@@ -173,7 +175,7 @@
 				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
-					CE028F95297E37730022F471 = {
+					CEA8EC21297E3AF2005B5CA1 = {
 						CreatedOnToolsVersion = 14.0.1;
 					};
 					CEEFD150297C3385008CFE45 = {
@@ -195,18 +197,18 @@
 			projectRoot = "";
 			targets = (
 				CEEFD150297C3385008CFE45 /* c03-rendering-pipeline */,
-				CE028F95297E37730022F471 /* c04-vertex-function */,
+				CEA8EC21297E3AF2005B5CA1 /* c04-vertex-function */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		CE028F94297E37730022F471 /* Resources */ = {
+		CEA8EC20297E3AF2005B5CA1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE028FA0297E37750022F471 /* Preview Assets.xcassets in Resources */,
-				CE028F9D297E37750022F471 /* Assets.xcassets in Resources */,
+				CEA8EC2D297E3AF2005B5CA1 /* Preview Assets.xcassets in Resources */,
+				CEA8EC29297E3AF2005B5CA1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,12 +224,12 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		CE028F92297E37730022F471 /* Sources */ = {
+		CEA8EC1E297E3AF2005B5CA1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE028F9B297E37730022F471 /* ContentView.swift in Sources */,
-				CE028F99297E37730022F471 /* c04_vertex_functionApp.swift in Sources */,
+				CEA8EC27297E3AF2005B5CA1 /* ContentView.swift in Sources */,
+				CEA8EC25297E3AF2005B5CA1 /* c04_vertex_functionApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,66 +249,79 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		CE028FA2297E37750022F471 /* Debug */ = {
+		CEA8EC2F297E3AF2005B5CA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "c04-vertex-function/c04_vertex_function.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"c04-vertex-function/Preview Content\"";
 				DEVELOPMENT_TEAM = Z27J28NH32;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "charles.c04-vertex-function";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		CE028FA3297E37750022F471 /* Release */ = {
+		CEA8EC30297E3AF2005B5CA1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "c04-vertex-function/c04_vertex_function.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"c04-vertex-function/Preview Content\"";
 				DEVELOPMENT_TEAM = Z27J28NH32;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "charles.c04-vertex-function";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -500,11 +515,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CE028FA1297E37750022F471 /* Build configuration list for PBXNativeTarget "c04-vertex-function" */ = {
+		CEA8EC2E297E3AF2005B5CA1 /* Build configuration list for PBXNativeTarget "c04-vertex-function" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CE028FA2297E37750022F471 /* Debug */,
-				CE028FA3297E37750022F471 /* Release */,
+				CEA8EC2F297E3AF2005B5CA1 /* Debug */,
+				CEA8EC30297E3AF2005B5CA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
