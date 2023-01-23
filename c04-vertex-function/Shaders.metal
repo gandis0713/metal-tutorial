@@ -1,38 +1,24 @@
-/// Copyright (c) 2022 Razeware LLC
-///
-/// Permission is hereby granted, free of charge, to any person obtaining a copy
-/// of this software and associated documentation files (the "Software"), to deal
-/// in the Software without restriction, including without limitation the rights
-/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-/// copies of the Software, and to permit persons to whom the Software is
-/// furnished to do so, subject to the following conditions:
-///
-/// The above copyright notice and this permission notice shall be included in
-/// all copies or substantial portions of the Software.
-///
-/// Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
-/// distribute, sublicense, create a derivative work, and/or sell copies of the
-/// Software in any work that is designed, intended, or marketed for pedagogical or
-/// instructional purposes related to programming, coding, application development,
-/// or information technology.  Permission for such use, copying, modification,
-/// merger, publication, distribution, sublicensing, creation of derivative works,
-/// or sale is expressly withheld.
-///
-/// This project and source code may use libraries or frameworks that are
-/// released under various Open-Source licenses. Use of those libraries and
-/// frameworks are governed by their own individual licenses.
-///
-/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-/// THE SOFTWARE.
-
 #include <metal_stdlib>
 using namespace metal;
 
+vertex float4 vertex_main(constant packed_float3 *vertices [[buffer(0)]],
+                          // do not use float3(simd_float3). becuase it is larger than three float array. it is 16 bytes
+                          constant ushort *indices [[buffer(1)]], // why we can't use packed_uint16 ??
+                          constant float* timer [[buffer(11)]],
+                          uint vertexID [[vertex_id]])
+{
+    ushort index = indices[vertexID];
+    float4 position = float4(vertices[index], 1);
+    position.y += *timer;
+    return position;
+}
+
+fragment float4 fragment_main()
+{
+    return float4(1.0, 1.0, 0.0, 1.0);
+}
+
+// For vertex descriptor
 struct VertexIn
 {
     float4 position [[attribute(0)]];
@@ -43,18 +29,22 @@ struct VertexOut
 {
     float4 posistion [[position]];
     float4 color;
+    float point_size [[point_size]];
 };
 
-vertex VertexOut vertex_main(const VertexIn vertexIn [[stage_in]])
+vertex VertexOut vertex_descriptor_main(const VertexIn vertexIn [[stage_in]],
+                                        constant float *timer [[buffer(11)]])
 {
     VertexOut vertexOut;
     vertexOut.posistion = vertexIn.position;
+    vertexOut.posistion.y += *timer;
     vertexOut.color = vertexIn.color;
+    vertexOut.point_size = 30;
     
     return vertexOut;
 }
 
-fragment float4 fragment_main(const VertexOut vertexOut [[stage_in]] )
+fragment float4 fragment_descriptor_main(const VertexOut vertexOut [[stage_in]] )
 {
     return vertexOut.color;
 }

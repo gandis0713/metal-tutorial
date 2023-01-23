@@ -11,16 +11,10 @@ class Renderer: NSObject
     var vertexBuffer: MTLBuffer!
     var vertexIndex: MTLBuffer!
     var renderPipelineState: MTLRenderPipelineState!
-    let vertexPositionData: [Float] = [
-        0.5, -0.5, 0.0, 1.0, 0.0, 0.0,
-        -0.5, -0.5, 0.0, 0.0, 0.0, 1.0,
-        0.0,  0.5, 0.0, 0.0, 1.0, 0.0,
-    ]
-    
-    let vertexIndexData: [UInt32] = [ // clockwise
-//        0, 1, 2, // clockwise
-        0, 2, 1, // counter-clockwise
-    ]
+    lazy var quad: Quad = {
+      Quad(device: Renderer.device, scale: 0.8)
+    }()
+    var timer: Float = 0
     init(metalView: MTKView) {
         guard
             let device = MTLCreateSystemDefaultDevice(),
@@ -32,49 +26,7 @@ class Renderer: NSObject
         Renderer.device = device
         Renderer.commandQueue = commandQueue
         metalView.device = device
-
-        // create a mesh
-        let allocator = MTKMeshBufferAllocator(device: device)
-        let size: Float = 1.0
-        let mdlMesh = MDLMesh(boxWithExtent: [size, size, size],
-                              segments: [1, 1, 1],
-                              inwardNormals: false,
-                              geometryType: .triangles,
-                              allocator: allocator)
-
-        do
-        {
-            mesh = try MTKMesh(mesh: mdlMesh, device: device)
-        }
-        catch
-            let error
-        {
-            fatalError(error.localizedDescription)
-        }
         
-        let vertexPositionDataByteSize = MemoryLayout<Float>.size * vertexPositionData.count
-        
-        // set vertex buffer
-        guard
-            let vbo: MTLBuffer = device.makeBuffer(bytes: &vertexPositionData, length: vertexPositionDataByteSize, options: .storageModeShared)
-        else
-        {
-            fatalError("Failed to create vertex position buffer")
-        }
-        
-        vertexBuffer = vbo
-//        vertexBuffer = mesh.vertexBuffers[0].buffer
-        
-        // set vertex index
-        let vertexIndexDataByteSize = MemoryLayout<UInt32>.size * vertexIndexData.count
-        guard
-            let ibo: MTLBuffer = device.makeBuffer(bytes: &vertexIndexData, length: vertexIndexDataByteSize, options: .storageModeShared)
-        else
-        {
-            fatalError("Failed to create vertex index buffer")
-        }
-        vertexIndex = ibo
-
         // create the shader function library
         guard
             let library = device.makeDefaultLibrary()
@@ -83,8 +35,10 @@ class Renderer: NSObject
             fatalError("Failed to make default library.")
         }
         Renderer.library = library
-        let vertexFunction = library.makeFunction(name: "vertex_main")
-        let fragmentFunction = library.makeFunction(name: "fragment_main")
+        let vertexFunction = library.makeFunction(name: "vertex_descriptor_main")
+        let fragmentFunction = library.makeFunction(name: "fragment_descriptor_main")
+//        let vertexFunction = library.makeFunction(name: "vertex_main")
+//        let fragmentFunction = library.makeFunction(name: "fragment_main")
 
         // create the pipeline state object
         let pipelineDescriptor = MTLRenderPipelineDescriptor()
@@ -94,15 +48,7 @@ class Renderer: NSObject
         let colorAttachment0 = colorAttachments[0]
         colorAttachment0?.pixelFormat = metalView.colorPixelFormat
 
-        let vertexDescriptor = MTLVertexDescriptor()
-        vertexDescriptor.attributes[0].format = .float3
-        vertexDescriptor.attributes[0].bufferIndex = 0
-        vertexDescriptor.attributes[0].offset = 0
-        vertexDescriptor.attributes[1].format = .float3
-        vertexDescriptor.attributes[1].bufferIndex = 0
-        vertexDescriptor.attributes[1].offset = MemoryLayout<Float>.size * 3
-        vertexDescriptor.layouts[0].stride = MemoryLayout<Float>.size * 6
-        pipelineDescriptor.vertexDescriptor = vertexDescriptor
+        pipelineDescriptor.vertexDescriptor = MTLVertexDescriptor.defaultDescriptor
 
         do
         {
@@ -161,23 +107,26 @@ extension Renderer: MTKViewDelegate
         }
 
         renderCommandEncoder.setRenderPipelineState(renderPipelineState)
-        renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
-        renderCommandEncoder.setCullMode(.back)
-        renderCommandEncoder.setFrontFacing(.counterClockwise) // default is clockwise
+//        renderCommandEncoder.setCullMode(.back)
+//        renderCommandEncoder.setFrontFacing(.counterClockwise) // default is clockwise
 
-//        for submesh in mesh.submeshes {
-//            os_log(.info, log: OSLog.info, "Index count: %d", submesh.indexCount)
-//            os_log(.info, log: OSLog.info, "Index Buffer offset: %d", submesh.indexBuffer.offset)
-//            renderCommandEncoder.drawIndexedPrimitives(type: .triangle,
-//                                                     indexCount: 24,
-//                                                     indexType: submesh.indexType,
-//                                                     indexBuffer: submesh.indexBuffer.buffer,
-//                                                     indexBufferOffset: submesh.indexBuffer.offset)
-//        }
-
-        renderCommandEncoder.drawIndexedPrimitives(type: .triangle,
-                                                   indexCount: vertexIndexData.count, indexType: .uint32, indexBuffer: vertexIndex, indexBufferOffset: 0)
-        os_log(.info, log: OSLog.info, "submesh count: %d", mesh.submeshes.count)
+        renderCommandEncoder.setVertexBuffer(quad.vertexBuffer, offset: 0, index: MTLVertexDescriptor.defaultBufferIndex)
+        renderCommandEncoder.setVertexBuffer(quad.colorBuffer, offset: 0, index: MTLVertexDescriptor.defaultColorIndex)
+        
+        // for drawPrimitives function
+//        renderCommandEncoder.setVertexBuffer(quad.indexBuffer, offset: 0, index: 1)
+        timer += 0.005
+        var currentTime: Float = sin(timer)
+        renderCommandEncoder.setVertexBytes(&currentTime, length: MemoryLayout<Float>.stride, index: 11)
+//        renderCommandEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: quad.indices.count)
+        
+        // for drawIndexedPrimitives function
+        renderCommandEncoder.drawIndexedPrimitives(type: .point,
+                                                   indexCount: quad.indices.count,
+                                                   indexType: .uint16,
+                                                   indexBuffer: quad.indexBuffer,
+                                                   indexBufferOffset: 0)
+        
 
         // endEncoding function must be called before it is released.
         renderCommandEncoder.endEncoding()

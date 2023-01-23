@@ -13,6 +13,7 @@
 		CE490F5D297E3D2100E334D6 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE490F5A297E3D2100E334D6 /* Renderer.swift */; };
 		CE490F5E297E3D3700E334D6 /* log.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE028F8A297CE4600022F471 /* log.swift */; };
 		CE490F60297E3E7900E334D6 /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE490F5F297E3E7900E334D6 /* Quad.swift */; };
+		CE490F62297E583B00E334D6 /* VertexDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE490F61297E583B00E334D6 /* VertexDescriptor.swift */; };
 		CEA8EC25297E3AF2005B5CA1 /* c04_vertex_functionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8EC24297E3AF2005B5CA1 /* c04_vertex_functionApp.swift */; };
 		CEA8EC27297E3AF2005B5CA1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8EC26297E3AF2005B5CA1 /* ContentView.swift */; };
 		CEA8EC29297E3AF2005B5CA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA8EC28297E3AF2005B5CA1 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		CE490F59297E3D2100E334D6 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 		CE490F5A297E3D2100E334D6 /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		CE490F5F297E3E7900E334D6 /* Quad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quad.swift; sourceTree = "<group>"; };
+		CE490F61297E583B00E334D6 /* VertexDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VertexDescriptor.swift; sourceTree = "<group>"; };
 		CEA8EC22297E3AF2005B5CA1 /* c04-vertex-function.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "c04-vertex-function.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA8EC24297E3AF2005B5CA1 /* c04_vertex_functionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = c04_vertex_functionApp.swift; sourceTree = "<group>"; };
 		CEA8EC26297E3AF2005B5CA1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				CE490F58297E3D2100E334D6 /* MetalView.swift */,
 				CE490F5F297E3E7900E334D6 /* Quad.swift */,
 				CE490F5A297E3D2100E334D6 /* Renderer.swift */,
+				CE490F61297E583B00E334D6 /* VertexDescriptor.swift */,
 				CE490F59297E3D2100E334D6 /* Shaders.metal */,
 				CEA8EC24297E3AF2005B5CA1 /* c04_vertex_functionApp.swift */,
 				CEA8EC26297E3AF2005B5CA1 /* ContentView.swift */,
@@ -247,6 +250,7 @@
 				CE490F5B297E3D2100E334D6 /* MetalView.swift in Sources */,
 				CEA8EC27297E3AF2005B5CA1 /* ContentView.swift in Sources */,
 				CE490F5D297E3D2100E334D6 /* Renderer.swift in Sources */,
+				CE490F62297E583B00E334D6 /* VertexDescriptor.swift in Sources */,
 				CEA8EC25297E3AF2005B5CA1 /* c04_vertex_functionApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
