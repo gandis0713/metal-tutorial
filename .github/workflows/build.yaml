@@ -15,8 +15,7 @@ jobs:
         run: |
           xcodebuild build \
             -project metal-tutorial.xcodeproj \
-            -scheme c03-rendering-pipeline \
-            -scheme c04-vertex-function
+            -alltargets
       # https://github.com/marketplace/actions/action-slack
       - name: Send status of a job to slack.
         uses: 8398a7/action-slack@v3
