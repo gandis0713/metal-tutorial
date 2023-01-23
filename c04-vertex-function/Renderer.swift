@@ -110,8 +110,16 @@ extension Renderer: MTKViewDelegate
 //        renderCommandEncoder.setCullMode(.back)
 //        renderCommandEncoder.setFrontFacing(.counterClockwise) // default is clockwise
 
-        renderCommandEncoder.setVertexBuffer(quad.vertexBuffer, offset: 0, index: MTLVertexDescriptor.defaultBufferIndex)
-        renderCommandEncoder.setVertexBuffer(quad.colorBuffer, offset: 0, index: MTLVertexDescriptor.defaultColorIndex)
+        // use setVertexBytes because byte size of vertices is less than 4KB.
+        renderCommandEncoder.setVertexBytes(quad.vertices,
+                                            length: MemoryLayout<Float>.stride * quad.vertices.count,
+                                            index: MTLVertexDescriptor.defaultBufferIndex)
+        renderCommandEncoder.setVertexBytes(quad.colors,
+                                            length: MemoryLayout<SIMD3<Float>>.stride * quad.colors.count,
+                                            index: MTLVertexDescriptor.defaultColorIndex)
+        //        renderCommandEncoder.setVertexBuffer(quad.vertexBuffer, offset: 0, index: MTLVertexDescriptor.defaultBufferIndex)
+        //        renderCommandEncoder.setVertexBuffer(quad.colorBuffer, offset: 0, index: MTLVertexDescriptor.defaultColorIndex)
+        
         
         // for drawPrimitives function
 //        renderCommandEncoder.setVertexBuffer(quad.indexBuffer, offset: 0, index: 1)
