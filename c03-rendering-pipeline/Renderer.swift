@@ -1,39 +1,8 @@
-/// Copyright (c) 2022 Razeware LLC
-///
-/// Permission is hereby granted, free of charge, to any person obtaining a copy
-/// of this software and associated documentation files (the "Software"), to deal
-/// in the Software without restriction, including without limitation the rights
-/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-/// copies of the Software, and to permit persons to whom the Software is
-/// furnished to do so, subject to the following conditions:
-///
-/// The above copyright notice and this permission notice shall be included in
-/// all copies or substantial portions of the Software.
-///
-/// Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
-/// distribute, sublicense, create a derivative work, and/or sell copies of the
-/// Software in any work that is designed, intended, or marketed for pedagogical or
-/// instructional purposes related to programming, coding, application development,
-/// or information technology.  Permission for such use, copying, modification,
-/// merger, publication, distribution, sublicensing, creation of derivative works,
-/// or sale is expressly withheld.
-///
-/// This project and source code may use libraries or frameworks that are
-/// released under various Open-Source licenses. Use of those libraries and
-/// frameworks are governed by their own individual licenses.
-///
-/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-/// THE SOFTWARE.
-
 import MetalKit
 import OSLog
 
-class Renderer: NSObject {
+class Renderer: NSObject
+{
     // swiftlint:disable implicitly_unwrapped_optional
     static var device: MTLDevice!
     static var commandQueue: MTLCommandQueue!
@@ -67,17 +36,19 @@ class Renderer: NSObject {
         // create a mesh
         let allocator = MTKMeshBufferAllocator(device: device)
         let size: Float = 1.0
-        let mdlMesh = MDLMesh(
-            boxWithExtent: [size, size, size],
-            segments: [1, 1, 1],
-            inwardNormals: false,
-            geometryType: .triangles,
-            allocator: allocator
-        )
+        let mdlMesh = MDLMesh(boxWithExtent: [size, size, size],
+                              segments: [1, 1, 1],
+                              inwardNormals: false,
+                              geometryType: .triangles,
+                              allocator: allocator)
 
-        do {
+        do
+        {
             mesh = try MTKMesh(mesh: mdlMesh, device: device)
-        } catch let error {
+        }
+        catch
+            let error
+        {
             fatalError(error.localizedDescription)
         }
         
@@ -86,7 +57,8 @@ class Renderer: NSObject {
         // set vertex buffer
         guard
             let vbo: MTLBuffer = device.makeBuffer(bytes: &vertexPositionData, length: vertexPositionDataByteSize, options: .storageModeShared)
-        else {
+        else
+        {
             fatalError("Failed to create vertex position buffer")
         }
         
@@ -97,7 +69,8 @@ class Renderer: NSObject {
         let vertexIndexDataByteSize = MemoryLayout<UInt32>.size * vertexIndexData.count
         guard
             let ibo: MTLBuffer = device.makeBuffer(bytes: &vertexIndexData, length: vertexIndexDataByteSize, options: .storageModeShared)
-        else {
+        else
+        {
             fatalError("Failed to create vertex index buffer")
         }
         vertexIndex = ibo
@@ -105,7 +78,8 @@ class Renderer: NSObject {
         // create the shader function library
         guard
             let library = device.makeDefaultLibrary()
-        else {
+        else
+        {
             fatalError("Failed to make default library.")
         }
         Renderer.library = library
@@ -130,50 +104,58 @@ class Renderer: NSObject {
         vertexDescriptor.layouts[0].stride = MemoryLayout<Float>.size * 6
         pipelineDescriptor.vertexDescriptor = vertexDescriptor
 
-        do {
+        do
+        {
             renderPipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
-        } catch let error {
+        }
+        catch
+            let error
+        {
             fatalError(error.localizedDescription)
         }
 
         super.init()
         
-        metalView.clearColor = MTLClearColor(
-            red: 0.0,
-            green: 0.0,
-            blue: 0.0,
-            alpha: 1.0
-        )
+        metalView.clearColor = MTLClearColor(red: 0.0,
+                                             green: 0.0,
+                                             blue: 0.0,
+                                             alpha: 1.0)
         
         metalView.delegate = self
     }
 }
 
-extension Renderer: MTKViewDelegate {
-    func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
+extension Renderer: MTKViewDelegate
+{
+    func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize)
+    {
         os_log(.debug, log: OSLog.debug, "mtkView")
     }
 
-    func draw(in view: MTKView) {
+    func draw(in view: MTKView)
+    {
         os_log(.debug, log: OSLog.debug, "draw")
 
         guard
             let commandBuffer = Renderer.commandQueue.makeCommandBuffer()
-        else {
+        else
+        {
             os_log(.error, log: OSLog.error, "Faile to make command buffer.")
             return
         }
 
         guard
             let renderPassDescriptor = view.currentRenderPassDescriptor
-        else {
+        else
+        {
             os_log(.error, log: OSLog.error, "Faile to get render pass descriptor.")
             return
         }
 
         guard
             let renderCommandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
-        else {
+        else
+        {
             os_log(.error, log: OSLog.error, "Failed to make render command encoder")
             return
         }
@@ -203,7 +185,8 @@ extension Renderer: MTKViewDelegate {
         // get drawable
         guard
             let drawable: CAMetalDrawable = view.currentDrawable
-        else {
+        else
+        {
             os_log(.error, log: OSLog.error, "Failed to get drawable")
             return
         }

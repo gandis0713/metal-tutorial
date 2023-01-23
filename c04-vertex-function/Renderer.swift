@@ -1,7 +1,8 @@
 import MetalKit
 import OSLog
 
-class Renderer: NSObject {
+class Renderer: NSObject
+{
     // swiftlint:disable implicitly_unwrapped_optional
     static var device: MTLDevice!
     static var commandQueue: MTLCommandQueue!
@@ -35,17 +36,19 @@ class Renderer: NSObject {
         // create a mesh
         let allocator = MTKMeshBufferAllocator(device: device)
         let size: Float = 1.0
-        let mdlMesh = MDLMesh(
-            boxWithExtent: [size, size, size],
-            segments: [1, 1, 1],
-            inwardNormals: false,
-            geometryType: .triangles,
-            allocator: allocator
-        )
+        let mdlMesh = MDLMesh(boxWithExtent: [size, size, size],
+                              segments: [1, 1, 1],
+                              inwardNormals: false,
+                              geometryType: .triangles,
+                              allocator: allocator)
 
-        do {
+        do
+        {
             mesh = try MTKMesh(mesh: mdlMesh, device: device)
-        } catch let error {
+        }
+        catch
+            let error
+        {
             fatalError(error.localizedDescription)
         }
         
@@ -54,7 +57,8 @@ class Renderer: NSObject {
         // set vertex buffer
         guard
             let vbo: MTLBuffer = device.makeBuffer(bytes: &vertexPositionData, length: vertexPositionDataByteSize, options: .storageModeShared)
-        else {
+        else
+        {
             fatalError("Failed to create vertex position buffer")
         }
         
@@ -65,7 +69,8 @@ class Renderer: NSObject {
         let vertexIndexDataByteSize = MemoryLayout<UInt32>.size * vertexIndexData.count
         guard
             let ibo: MTLBuffer = device.makeBuffer(bytes: &vertexIndexData, length: vertexIndexDataByteSize, options: .storageModeShared)
-        else {
+        else
+        {
             fatalError("Failed to create vertex index buffer")
         }
         vertexIndex = ibo
@@ -73,7 +78,8 @@ class Renderer: NSObject {
         // create the shader function library
         guard
             let library = device.makeDefaultLibrary()
-        else {
+        else
+        {
             fatalError("Failed to make default library.")
         }
         Renderer.library = library
@@ -98,50 +104,58 @@ class Renderer: NSObject {
         vertexDescriptor.layouts[0].stride = MemoryLayout<Float>.size * 6
         pipelineDescriptor.vertexDescriptor = vertexDescriptor
 
-        do {
+        do
+        {
             renderPipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
-        } catch let error {
+        }
+        catch
+            let error
+        {
             fatalError(error.localizedDescription)
         }
 
         super.init()
         
-        metalView.clearColor = MTLClearColor(
-            red: 0.0,
-            green: 0.0,
-            blue: 0.0,
-            alpha: 1.0
-        )
+        metalView.clearColor = MTLClearColor(red: 0.0,
+                                             green: 0.0,
+                                             blue: 0.0,
+                                             alpha: 1.0)
         
         metalView.delegate = self
     }
 }
 
-extension Renderer: MTKViewDelegate {
-    func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
+extension Renderer: MTKViewDelegate
+{
+    func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize)
+    {
         os_log(.debug, log: OSLog.debug, "mtkView")
     }
 
-    func draw(in view: MTKView) {
+    func draw(in view: MTKView)
+    {
         os_log(.debug, log: OSLog.debug, "draw")
 
         guard
             let commandBuffer = Renderer.commandQueue.makeCommandBuffer()
-        else {
+        else
+        {
             os_log(.error, log: OSLog.error, "Faile to make command buffer.")
             return
         }
 
         guard
             let renderPassDescriptor = view.currentRenderPassDescriptor
-        else {
+        else
+        {
             os_log(.error, log: OSLog.error, "Faile to get render pass descriptor.")
             return
         }
 
         guard
             let renderCommandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
-        else {
+        else
+        {
             os_log(.error, log: OSLog.error, "Failed to make render command encoder")
             return
         }
@@ -171,7 +185,8 @@ extension Renderer: MTKViewDelegate {
         // get drawable
         guard
             let drawable: CAMetalDrawable = view.currentDrawable
-        else {
+        else
+        {
             os_log(.error, log: OSLog.error, "Failed to get drawable")
             return
         }
