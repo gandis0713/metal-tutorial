@@ -17,6 +17,16 @@
 		CE490F5E297E3D3700E334D6 /* log.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE028F8A297CE4600022F471 /* log.swift */; };
 		CE490F60297E3E7900E334D6 /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE490F5F297E3E7900E334D6 /* Quad.swift */; };
 		CE490F62297E583B00E334D6 /* VertexDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE490F61297E583B00E334D6 /* VertexDescriptor.swift */; };
+		CE6697AB297E83D3000394DA /* c05_3d_transformationsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6697AA297E83D3000394DA /* c05_3d_transformationsApp.swift */; };
+		CE6697AF297E83D4000394DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6697AE297E83D4000394DA /* Assets.xcassets */; };
+		CE6697B3297E83D4000394DA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6697B2297E83D4000394DA /* Preview Assets.xcassets */; };
+		CE6697BB297E840B000394DA /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = CE6697B7297E840B000394DA /* Shaders.metal */; };
+		CE6697BC297E840B000394DA /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6697B8297E840B000394DA /* Quad.swift */; };
+		CE6697BD297E840B000394DA /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6697B9297E840B000394DA /* Renderer.swift */; };
+		CE6697BE297E840B000394DA /* VertexDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6697BA297E840B000394DA /* VertexDescriptor.swift */; };
+		CE6697BF297E8410000394DA /* log.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE028F8A297CE4600022F471 /* log.swift */; };
+		CE6697C0297E8410000394DA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1405E7297E821A00989CDA /* ContentView.swift */; };
+		CE6697C1297E8410000394DA /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1405E6297E80CA00989CDA /* MetalView.swift */; };
 		CEA8EC25297E3AF2005B5CA1 /* c04_vertex_functionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8EC24297E3AF2005B5CA1 /* c04_vertex_functionApp.swift */; };
 		CEA8EC29297E3AF2005B5CA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA8EC28297E3AF2005B5CA1 /* Assets.xcassets */; };
 		CEA8EC2D297E3AF2005B5CA1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA8EC2C297E3AF2005B5CA1 /* Preview Assets.xcassets */; };
@@ -35,6 +45,24 @@
 		CE490F5A297E3D2100E334D6 /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		CE490F5F297E3E7900E334D6 /* Quad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quad.swift; sourceTree = "<group>"; };
 		CE490F61297E583B00E334D6 /* VertexDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VertexDescriptor.swift; sourceTree = "<group>"; };
+		CE490F69297E607A00E334D6 /* c05_3d_transformationsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = c05_3d_transformationsApp.swift; sourceTree = "<group>"; };
+		CE490F6B297E607A00E334D6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CE490F6D297E607B00E334D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE490F71297E607B00E334D6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CE490F76297E60C700E334D6 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		CE490F77297E60C700E334D6 /* VertexDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VertexDescriptor.swift; sourceTree = "<group>"; };
+		CE490F78297E60C700E334D6 /* MetalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
+		CE490F79297E60C700E334D6 /* Quad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quad.swift; sourceTree = "<group>"; };
+		CE490F7A297E60C700E334D6 /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		CE6697A8297E83D3000394DA /* c05-3d-transformations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "c05-3d-transformations.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE6697AA297E83D3000394DA /* c05_3d_transformationsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = c05_3d_transformationsApp.swift; sourceTree = "<group>"; };
+		CE6697AE297E83D4000394DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE6697B0297E83D4000394DA /* c05_3d_transformations.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = c05_3d_transformations.entitlements; sourceTree = "<group>"; };
+		CE6697B2297E83D4000394DA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CE6697B7297E840B000394DA /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		CE6697B8297E840B000394DA /* Quad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quad.swift; sourceTree = "<group>"; };
+		CE6697B9297E840B000394DA /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		CE6697BA297E840B000394DA /* VertexDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VertexDescriptor.swift; sourceTree = "<group>"; };
 		CEA8EC22297E3AF2005B5CA1 /* c04-vertex-function.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "c04-vertex-function.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA8EC24297E3AF2005B5CA1 /* c04_vertex_functionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = c04_vertex_functionApp.swift; sourceTree = "<group>"; };
 		CEA8EC28297E3AF2005B5CA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,6 +78,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CE6697A5297E83D3000394DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CEA8EC1F297E3AF2005B5CA1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -93,6 +128,45 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		CE6697A3297E83A2000394DA /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				CE490F79297E60C700E334D6 /* Quad.swift */,
+				CE490F76297E60C700E334D6 /* Shaders.metal */,
+				CE490F7A297E60C700E334D6 /* Renderer.swift */,
+				CE490F6B297E607A00E334D6 /* ContentView.swift */,
+				CE490F78297E60C700E334D6 /* MetalView.swift */,
+				CE490F77297E60C700E334D6 /* VertexDescriptor.swift */,
+				CE490F69297E607A00E334D6 /* c05_3d_transformationsApp.swift */,
+				CE490F71297E607B00E334D6 /* Preview Assets.xcassets */,
+				CE490F6D297E607B00E334D6 /* Assets.xcassets */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		CE6697A9297E83D3000394DA /* c05-3d-transformations */ = {
+			isa = PBXGroup;
+			children = (
+				CE6697B8297E840B000394DA /* Quad.swift */,
+				CE6697B9297E840B000394DA /* Renderer.swift */,
+				CE6697B7297E840B000394DA /* Shaders.metal */,
+				CE6697BA297E840B000394DA /* VertexDescriptor.swift */,
+				CE6697AA297E83D3000394DA /* c05_3d_transformationsApp.swift */,
+				CE6697AE297E83D4000394DA /* Assets.xcassets */,
+				CE6697B0297E83D4000394DA /* c05_3d_transformations.entitlements */,
+				CE6697B1297E83D4000394DA /* Preview Content */,
+			);
+			path = "c05-3d-transformations";
+			sourceTree = "<group>";
+		};
+		CE6697B1297E83D4000394DA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CE6697B2297E83D4000394DA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		CEA8EC23297E3AF2005B5CA1 /* c04-vertex-function */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,7 +196,9 @@
 				CE028F88297CE4160022F471 /* common */,
 				CEEFD152297C3385008CFE45 /* c03-rendering-pipeline */,
 				CEA8EC23297E3AF2005B5CA1 /* c04-vertex-function */,
+				CE6697A9297E83D3000394DA /* c05-3d-transformations */,
 				CEEFD13C297C332A008CFE45 /* Products */,
+				CE6697A3297E83A2000394DA /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +207,7 @@
 			children = (
 				CEEFD151297C3385008CFE45 /* c03-rendering-pipeline.app */,
 				CEA8EC22297E3AF2005B5CA1 /* c04-vertex-function.app */,
+				CE6697A8297E83D3000394DA /* c05-3d-transformations.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -159,6 +236,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CE6697A7297E83D3000394DA /* c05-3d-transformations */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE6697B4297E83D4000394DA /* Build configuration list for PBXNativeTarget "c05-3d-transformations" */;
+			buildPhases = (
+				CE6697A4297E83D3000394DA /* Sources */,
+				CE6697A5297E83D3000394DA /* Frameworks */,
+				CE6697A6297E83D3000394DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "c05-3d-transformations";
+			productName = "c05-3d-transformations";
+			productReference = CE6697A8297E83D3000394DA /* c05-3d-transformations.app */;
+			productType = "com.apple.product-type.application";
+		};
 		CEA8EC21297E3AF2005B5CA1 /* c04-vertex-function */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEA8EC2E297E3AF2005B5CA1 /* Build configuration list for PBXNativeTarget "c04-vertex-function" */;
@@ -203,6 +297,9 @@
 				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
+					CE6697A7297E83D3000394DA = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
 					CEA8EC21297E3AF2005B5CA1 = {
 						CreatedOnToolsVersion = 14.0.1;
 					};
@@ -226,11 +323,21 @@
 			targets = (
 				CEEFD150297C3385008CFE45 /* c03-rendering-pipeline */,
 				CEA8EC21297E3AF2005B5CA1 /* c04-vertex-function */,
+				CE6697A7297E83D3000394DA /* c05-3d-transformations */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CE6697A6297E83D3000394DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE6697B3297E83D4000394DA /* Preview Assets.xcassets in Resources */,
+				CE6697AF297E83D4000394DA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CEA8EC20297E3AF2005B5CA1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -252,6 +359,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CE6697A4297E83D3000394DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE6697BF297E8410000394DA /* log.swift in Sources */,
+				CE6697C0297E8410000394DA /* ContentView.swift in Sources */,
+				CE6697C1297E8410000394DA /* MetalView.swift in Sources */,
+				CE6697BE297E840B000394DA /* VertexDescriptor.swift in Sources */,
+				CE6697BD297E840B000394DA /* Renderer.swift in Sources */,
+				CE6697BC297E840B000394DA /* Quad.swift in Sources */,
+				CE6697BB297E840B000394DA /* Shaders.metal in Sources */,
+				CE6697AB297E83D3000394DA /* c05_3d_transformationsApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CEA8EC1E297E3AF2005B5CA1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -283,6 +405,82 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		CE6697B5297E83D4000394DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "c05-3d-transformations/c05_3d_transformations.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"c05-3d-transformations/Preview Content\"";
+				DEVELOPMENT_TEAM = Z27J28NH32;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "charles.c05-3d-transformations";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CE6697B6297E83D4000394DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "c05-3d-transformations/c05_3d_transformations.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"c05-3d-transformations/Preview Content\"";
+				DEVELOPMENT_TEAM = Z27J28NH32;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "charles.c05-3d-transformations";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		CEA8EC2F297E3AF2005B5CA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -551,6 +749,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CE6697B4297E83D4000394DA /* Build configuration list for PBXNativeTarget "c05-3d-transformations" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE6697B5297E83D4000394DA /* Debug */,
+				CE6697B6297E83D4000394DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CEA8EC2E297E3AF2005B5CA1 /* Build configuration list for PBXNativeTarget "c04-vertex-function" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
