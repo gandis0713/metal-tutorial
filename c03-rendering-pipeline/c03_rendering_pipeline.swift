@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct PipelineApp: App {
+struct c03_rendering_pipeline: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
