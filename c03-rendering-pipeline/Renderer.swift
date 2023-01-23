@@ -43,22 +43,15 @@ class Renderer: NSObject {
     var vertexIndex: MTLBuffer!
     var renderPipelineState: MTLRenderPipelineState!
     let vertexPositionData: [Float] = [
-        1.0, -1.0, 0.0,
-        -1.0, -1.0, 0.0,
-        0.0,  1.0, 0.0,
-        0.5, -0.5, 0.0,
-        -0.5, -0.5, 0.0,
-        0.0,  0.5, 0.0,
+        0.5, -0.5, 0.0, 1.0, 0.0, 0.0,
+        -0.5, -0.5, 0.0, 0.0, 0.0, 1.0,
+        0.0,  0.5, 0.0, 0.0, 1.0, 0.0,
     ]
     
-//    let vertexIndexData: [UInt32] = [ // clockwise
-//        0, 1, 2
-//    ]
-    let vertexIndexData: [UInt32] = [ // counter-clockwise
-        0, 2, 1,
-        3, 5, 4,
+    let vertexIndexData: [UInt32] = [ // clockwise
+//        0, 1, 2, // clockwise
+        0, 2, 1, // counter-clockwise
     ]
-
     init(metalView: MTKView) {
         guard
             let device = MTLCreateSystemDefaultDevice(),
@@ -92,7 +85,7 @@ class Renderer: NSObject {
         
         // set vertex buffer
         guard
-            let vbo: MTLBuffer = device.makeBuffer(bytes: vertexPositionData, length: vertexPositionDataByteSize, options: .storageModeShared)
+            let vbo: MTLBuffer = device.makeBuffer(bytes: &vertexPositionData, length: vertexPositionDataByteSize, options: .storageModeShared)
         else {
             fatalError("Failed to create vertex position buffer")
         }
@@ -103,7 +96,7 @@ class Renderer: NSObject {
         // set vertex index
         let vertexIndexDataByteSize = MemoryLayout<UInt32>.size * vertexIndexData.count
         guard
-            let ibo: MTLBuffer = device.makeBuffer(bytes: vertexIndexData, length: vertexIndexDataByteSize, options: .storageModeShared)
+            let ibo: MTLBuffer = device.makeBuffer(bytes: &vertexIndexData, length: vertexIndexDataByteSize, options: .storageModeShared)
         else {
             fatalError("Failed to create vertex index buffer")
         }
@@ -131,14 +124,14 @@ class Renderer: NSObject {
         vertexDescriptor.attributes[0].format = .float3
         vertexDescriptor.attributes[0].bufferIndex = 0
         vertexDescriptor.attributes[0].offset = 0
-        vertexDescriptor.layouts[0].stride = 12
-        vertexDescriptor.layouts[0].stepRate = 1
-        vertexDescriptor.layouts[0].stepFunction = .perVertex
+        vertexDescriptor.attributes[1].format = .float3
+        vertexDescriptor.attributes[1].bufferIndex = 0
+        vertexDescriptor.attributes[1].offset = MemoryLayout<Float>.size * 3
+        vertexDescriptor.layouts[0].stride = MemoryLayout<Float>.size * 6
         pipelineDescriptor.vertexDescriptor = vertexDescriptor
-        os_log(.info, log: OSLog.error, "tessellation winding order: %d", pipelineDescriptor.tessellationOutputWindingOrder.rawValue)
 
         do {
-          renderPipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
+            renderPipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
         } catch let error {
             fatalError(error.localizedDescription)
         }
@@ -146,10 +139,11 @@ class Renderer: NSObject {
         super.init()
         
         metalView.clearColor = MTLClearColor(
-          red: 1.0,
-          green: 1.0,
-          blue: 0.0,
-          alpha: 1.0)
+            red: 0.0,
+            green: 0.0,
+            blue: 0.0,
+            alpha: 1.0
+        )
         
         metalView.delegate = self
     }
@@ -157,7 +151,7 @@ class Renderer: NSObject {
 
 extension Renderer: MTKViewDelegate {
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
-      os_log(.debug, log: OSLog.debug, "mtkView")
+        os_log(.debug, log: OSLog.debug, "mtkView")
     }
 
     func draw(in view: MTKView) {
@@ -186,8 +180,8 @@ extension Renderer: MTKViewDelegate {
 
         renderCommandEncoder.setRenderPipelineState(renderPipelineState)
         renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
-        renderCommandEncoder.setCullMode(.front)
-//        renderCommandEncoder.setFrontFacing(.clockwise) // default is counter-clockwise
+        renderCommandEncoder.setCullMode(.back)
+        renderCommandEncoder.setFrontFacing(.counterClockwise) // default is clockwise
 
 //        for submesh in mesh.submeshes {
 //            os_log(.info, log: OSLog.info, "Index count: %d", submesh.indexCount)
