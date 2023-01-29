@@ -1,5 +1,5 @@
 //
-//  log.swift
+//  Log.swfit
 //  metal-tutorial
 //
 //  Created by user on 2023/01/22.

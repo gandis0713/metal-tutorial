@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct c08_textureApp: App {
+struct C08TextureApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
