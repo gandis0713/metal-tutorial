@@ -34,6 +34,7 @@
 // swiftlint:disable vertical_whitespace_opening_braces
 
 import MetalKit
+import OSLog
 
 class Model: Transformable {
 
@@ -52,10 +53,10 @@ class Model: Transformable {
         let asset = MDLAsset(url: assetURL,
                              vertexDescriptor: .defaultLayout,
                              bufferAllocator: allocator)
-        let (mdlMeshes, mtkMeshes) = try! MTKMesh.newMeshes(asset: asset,
-                                                            device: Renderer.device)
-        meshes = zip(mdlMeshes, mtkMeshes).map {
-            Mesh(mdlMesh: $0.0, mtkMesh: $0.1)
+        let newMeshes = try! MTKMesh.newMeshes(asset: asset,
+                                               device: Renderer.device)
+        meshes = zip(newMeshes.modelIOMeshes, newMeshes.metalKitMeshes).map { meshs in
+            Mesh(mdlMesh: meshs.0, mtkMesh: meshs.1)
         }
         self.name = name
     }
@@ -85,21 +86,26 @@ extension Model {
             length: MemoryLayout<Uniforms>.stride,
             index: ParamsBuffer.index)
 
+        //        os_log(.debug, log: OSLog.info, "meshes count: %d", meshes.count)
         for mesh in meshes {
             for (index, vertexBuffer) in mesh.vertexBuffers.enumerated() {
+                //                os_log(.debug, log: OSLog.debug, "index: %d", index)
+                //                if index == 1 {continue}
                 encoder.setVertexBuffer(
                     vertexBuffer,
                     offset: 0,
                     index: index)
             }
-
+            //            os_log(.debug, log: OSLog.info, "submesh count: %d", mesh.submeshes.count)
             for submesh in mesh.submeshes {
-
+                //                count += 1
                 // set the fragment texture here
                 encoder.setFragmentTexture(
                     submesh.textures.baseColor,
                     index: BaseColor.index)
 
+                //                os_log(.debug, log: OSLog.info, "submesh.indexBufferOffset: %d", submesh.indexBufferOffset)
+                //                os_log(.debug, log: OSLog.info, "submesh.indexCount: %d", submesh.indexCount)
                 encoder.drawIndexedPrimitives(
                     type: .triangle,
                     indexCount: submesh.indexCount,

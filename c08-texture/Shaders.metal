@@ -50,30 +50,23 @@ vertex VertexOut vertex_main(
   const VertexIn in [[stage_in]],
   constant Uniforms &uniforms [[buffer(UniformsBuffer)]])
 {
-  float4 position =
-    uniforms.projectionMatrix * uniforms.viewMatrix
-    * uniforms.modelMatrix * in.position;
-  float3 normal = in.normal;
   VertexOut out {
-    .position = position,
-    .normal = normal,
+    .position = uniforms.projectionMatrix * uniforms.viewMatrix
+      * uniforms.modelMatrix * in.position,
+    .normal = in.normal,
     .uv = in.uv
   };
   return out;
 }
 
 fragment float4 fragment_main(
-  constant Params &params [[buffer(ParamsBuffer)]],
   VertexOut in [[stage_in]],
+  constant Params &params [[buffer(ParamsBuffer)]],
   texture2d<float> baseColorTexture [[texture(BaseColor)]])
 {
-  constexpr sampler textureSampler(
-    filter::linear,
-    mip_filter::linear,
-    max_anisotropy(8),
-    address::repeat);
+  constexpr sampler textureSampler;
   float3 baseColor = baseColorTexture.sample(
     textureSampler,
-    in.uv * params.tiling).rgb;
+    in.uv).rgb;
   return float4(baseColor, 1);
 }

@@ -70,6 +70,7 @@
 		CEA8EC28297E3AF2005B5CA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEA8EC2A297E3AF2005B5CA1 /* c04_vertex_function.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = c04_vertex_function.entitlements; sourceTree = "<group>"; };
 		CEA8EC2C297E3AF2005B5CA1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CECE641A29864AB0003364B1 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		CEE82F7D298636CF00845657 /* MetalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
 		CEE82F7E298636CF00845657 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CEE82F82298636F300845657 /* MetalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
@@ -138,6 +139,7 @@
 		CE12C8F6298632C200E5B908 /* c08-texture */ = {
 			isa = PBXGroup;
 			children = (
+				CECE641A29864AB0003364B1 /* Common.h */,
 				CEE82FAA298638BC00845657 /* Models */,
 				CEE82FA8298638B000845657 /* Textures.xcassets */,
 				CEE82F8F2986377300845657 /* Mesh.swift */,
@@ -457,6 +459,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/zsh;
