@@ -1,6 +1,3 @@
-# Blender MTL File: 'lowpoly-house.blend'
-# Material Count: 1
-
 newmtl Material
 Ns 96.078431
 Ka 1.000000 1.000000 1.000000
@@ -10,6 +7,4 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd lowpoly-house-color.png
-#map_Kd color.png
-#map_Kd barn
+map_Kd color.png

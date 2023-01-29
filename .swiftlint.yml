@@ -12,11 +12,11 @@ disabled_rules: # Default Rules에서 비활성화할 규칙
 opt_in_rules:
   # .count==0 보다는 .isEmpty를 사용하는 것이 좋습니다. https://realm.github.io/SwiftLint/empty_count.html
   - empty_count
-  indentation_width: 4
-  opening_brace: true
-  multiline_arguments_brackets: true
-  multiline_literal_brackets: true
-  multiline_parameters_brackets: true
+  - indentation_width: 4
+  - opening_brace: true
+  - multiline_arguments_brackets: true
+  - multiline_literal_brackets: true
+  - multiline_parameters_brackets: true
   
   # 빈 String 문자열과 비교하는 것 보다는 .isEmpty를 사용하는 것이 좋습니다. https://realm.github.io/SwiftLint/empty_string.html
   - empty_string

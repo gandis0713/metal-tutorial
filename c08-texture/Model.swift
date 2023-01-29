@@ -85,12 +85,15 @@ extension Model {
             &params,
             length: MemoryLayout<Uniforms>.stride,
             index: ParamsBuffer.index)
+        encoder.setCullMode(.back)
+        encoder.setFrontFacing(.clockwise)
 
         //        os_log(.debug, log: OSLog.info, "meshes count: %d", meshes.count)
         for mesh in meshes {
             for (index, vertexBuffer) in mesh.vertexBuffers.enumerated() {
                 //                os_log(.debug, log: OSLog.debug, "index: %d", index)
                 //                if index == 1 {continue}
+
                 encoder.setVertexBuffer(
                     vertexBuffer,
                     offset: 0,
@@ -100,6 +103,9 @@ extension Model {
             for submesh in mesh.submeshes {
                 //                count += 1
                 // set the fragment texture here
+                encoder.setVertexTexture(
+                    submesh.textures.baseColor,
+                    index: BaseColor.index)
                 encoder.setFragmentTexture(
                     submesh.textures.baseColor,
                     index: BaseColor.index)
