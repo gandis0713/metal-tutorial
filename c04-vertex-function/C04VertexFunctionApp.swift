@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct c04_vertex_functionApp: App {
+struct C04VertexFunctionApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

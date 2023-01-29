@@ -1,8 +1,7 @@
 import MetalKit
 import OSLog
 
-class Renderer: NSObject
-{
+class Renderer: NSObject {
     // swiftlint:disable implicitly_unwrapped_optional
     static var device: MTLDevice!
     static var commandQueue: MTLCommandQueue!
@@ -14,12 +13,12 @@ class Renderer: NSObject
     let vertexPositionData: [Float] = [
         0.5, -0.5, 0.0, 1.0, 0.0, 0.0,
         -0.5, -0.5, 0.0, 0.0, 0.0, 1.0,
-        0.0,  0.5, 0.0, 0.0, 1.0, 0.0,
+        0.0, 0.5, 0.0, 0.0, 1.0, 0.0
     ]
-    
+
     let vertexIndexData: [UInt32] = [ // clockwise
-//        0, 1, 2, // clockwise
-        0, 2, 1, // counter-clockwise
+        //        0, 1, 2, // clockwise
+        0, 2, 1 // counter-clockwise
     ]
     init(metalView: MTKView) {
         guard
@@ -42,29 +41,28 @@ class Renderer: NSObject
                               geometryType: .triangles,
                               allocator: allocator)
 
-        do
-        {
+        do {
             mesh = try MTKMesh(mesh: mdlMesh, device: device)
-        }
-        catch
-            let error
-        {
+        } catch
+            let error {
             fatalError(error.localizedDescription)
         }
-        
+
         let vertexPositionDataByteSize = MemoryLayout<Float>.size * vertexPositionData.count
-        
+
         // set vertex buffer
         guard
-            let vbo: MTLBuffer = device.makeBuffer(bytes: &vertexPositionData, length: vertexPositionDataByteSize, options: .storageModeShared)
+            let vbo: MTLBuffer = device.makeBuffer(bytes: &vertexPositionData,
+                                                   length: vertexPositionDataByteSize,
+                                                   options: .storageModeShared)
         else
         {
             fatalError("Failed to create vertex position buffer")
         }
-        
+
         vertexBuffer = vbo
-//        vertexBuffer = mesh.vertexBuffers[0].buffer
-        
+        //        vertexBuffer = mesh.vertexBuffers[0].buffer
+
         // set vertex index
         let vertexIndexDataByteSize = MemoryLayout<UInt32>.size * vertexIndexData.count
         guard
@@ -104,36 +102,30 @@ class Renderer: NSObject
         vertexDescriptor.layouts[0].stride = MemoryLayout<Float>.size * 6
         pipelineDescriptor.vertexDescriptor = vertexDescriptor
 
-        do
-        {
+        do {
             renderPipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
-        }
-        catch
-            let error
-        {
+        } catch
+            let error {
             fatalError(error.localizedDescription)
         }
 
         super.init()
-        
+
         metalView.clearColor = MTLClearColor(red: 0.0,
                                              green: 0.0,
                                              blue: 0.0,
                                              alpha: 1.0)
-        
+
         metalView.delegate = self
     }
 }
 
-extension Renderer: MTKViewDelegate
-{
-    func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize)
-    {
+extension Renderer: MTKViewDelegate {
+    func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
         os_log(.debug, log: OSLog.debug, "mtkView")
     }
 
-    func draw(in view: MTKView)
-    {
+    func draw(in view: MTKView) {
         os_log(.debug, log: OSLog.debug, "draw")
 
         guard
@@ -165,15 +157,15 @@ extension Renderer: MTKViewDelegate
         renderCommandEncoder.setCullMode(.back)
         renderCommandEncoder.setFrontFacing(.counterClockwise) // default is clockwise
 
-//        for submesh in mesh.submeshes {
-//            os_log(.info, log: OSLog.info, "Index count: %d", submesh.indexCount)
-//            os_log(.info, log: OSLog.info, "Index Buffer offset: %d", submesh.indexBuffer.offset)
-//            renderCommandEncoder.drawIndexedPrimitives(type: .triangle,
-//                                                     indexCount: 24,
-//                                                     indexType: submesh.indexType,
-//                                                     indexBuffer: submesh.indexBuffer.buffer,
-//                                                     indexBufferOffset: submesh.indexBuffer.offset)
-//        }
+        //        for submesh in mesh.submeshes {
+        //            os_log(.info, log: OSLog.info, "Index count: %d", submesh.indexCount)
+        //            os_log(.info, log: OSLog.info, "Index Buffer offset: %d", submesh.indexBuffer.offset)
+        //            renderCommandEncoder.drawIndexedPrimitives(type: .triangle,
+        //                                                     indexCount: 24,
+        //                                                     indexType: submesh.indexType,
+        //                                                     indexBuffer: submesh.indexBuffer.buffer,
+        //                                                     indexBufferOffset: submesh.indexBuffer.offset)
+        //        }
 
         renderCommandEncoder.drawIndexedPrimitives(type: .triangle,
                                                    indexCount: vertexIndexData.count, indexType: .uint32, indexBuffer: vertexIndex, indexBufferOffset: 0)

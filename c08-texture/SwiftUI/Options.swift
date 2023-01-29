@@ -33,9 +33,9 @@
 import Foundation
 
 enum RenderChoice {
-  case train, quad
+    case train, quad
 }
 
 class Options: ObservableObject {
-  @Published var renderChoice = RenderChoice.quad
+    @Published var renderChoice = RenderChoice.quad
 }

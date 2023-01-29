@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE12C8F8298632C200E5B908 /* c08_textureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE12C8F7298632C200E5B908 /* c08_textureApp.swift */; };
+		CE12C8F8298632C200E5B908 /* C08TextureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE12C8F7298632C200E5B908 /* C08TextureApp.swift */; };
 		CE12C8FC298632C300E5B908 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE12C8FB298632C300E5B908 /* Assets.xcassets */; };
 		CE12C900298632C300E5B908 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE12C8FF298632C300E5B908 /* Preview Assets.xcassets */; };
 		CE12C9082986338D00E5B908 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE12C9072986338D00E5B908 /* Renderer.swift */; };
@@ -19,7 +19,7 @@
 		CE490F5D297E3D2100E334D6 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE490F5A297E3D2100E334D6 /* Renderer.swift */; };
 		CE490F60297E3E7900E334D6 /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE490F5F297E3E7900E334D6 /* Quad.swift */; };
 		CE490F62297E583B00E334D6 /* VertexDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE490F61297E583B00E334D6 /* VertexDescriptor.swift */; };
-		CEA8EC25297E3AF2005B5CA1 /* c04_vertex_functionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8EC24297E3AF2005B5CA1 /* c04_vertex_functionApp.swift */; };
+		CEA8EC25297E3AF2005B5CA1 /* C04VertexFunctionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8EC24297E3AF2005B5CA1 /* C04VertexFunctionApp.swift */; };
 		CEA8EC29297E3AF2005B5CA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA8EC28297E3AF2005B5CA1 /* Assets.xcassets */; };
 		CEA8EC2D297E3AF2005B5CA1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA8EC2C297E3AF2005B5CA1 /* Preview Assets.xcassets */; };
 		CEE82F7F298636CF00845657 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE82F7D298636CF00845657 /* MetalView.swift */; };
@@ -45,7 +45,7 @@
 		CEE82FBB298638BC00845657 /* lowpoly-house-color.png in Resources */ = {isa = PBXBuildFile; fileRef = CEE82FB3298638BC00845657 /* lowpoly-house-color.png */; };
 		CEE82FBC298638BC00845657 /* lowpoly-house.obj in Resources */ = {isa = PBXBuildFile; fileRef = CEE82FB4298638BC00845657 /* lowpoly-house.obj */; };
 		CEE82FBD298638BC00845657 /* lowpoly-house.mtl in Resources */ = {isa = PBXBuildFile; fileRef = CEE82FB5298638BC00845657 /* lowpoly-house.mtl */; };
-		CEEFD154297C3385008CFE45 /* c03_rendering_pipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEFD153297C3385008CFE45 /* c03_rendering_pipeline.swift */; };
+		CEEFD154297C3385008CFE45 /* C03RenderingPipelineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEFD153297C3385008CFE45 /* C03RenderingPipelineApp.swift */; };
 		CEEFD158297C3386008CFE45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEFD157297C3386008CFE45 /* Assets.xcassets */; };
 		CEEFD15C297C3386008CFE45 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEFD15B297C3386008CFE45 /* Preview Assets.xcassets */; };
 		CEEFD165297C35DF008CFE45 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEFD162297C35DF008CFE45 /* Renderer.swift */; };
@@ -54,7 +54,7 @@
 
 /* Begin PBXFileReference section */
 		CE12C8F5298632C200E5B908 /* c08-texture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "c08-texture.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE12C8F7298632C200E5B908 /* c08_textureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = c08_textureApp.swift; sourceTree = "<group>"; };
+		CE12C8F7298632C200E5B908 /* C08TextureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C08TextureApp.swift; sourceTree = "<group>"; };
 		CE12C8FB298632C300E5B908 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE12C8FD298632C300E5B908 /* c08_texture.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = c08_texture.entitlements; sourceTree = "<group>"; };
 		CE12C8FF298632C300E5B908 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 		CE490F5F297E3E7900E334D6 /* Quad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quad.swift; sourceTree = "<group>"; };
 		CE490F61297E583B00E334D6 /* VertexDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VertexDescriptor.swift; sourceTree = "<group>"; };
 		CEA8EC22297E3AF2005B5CA1 /* c04-vertex-function.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "c04-vertex-function.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEA8EC24297E3AF2005B5CA1 /* c04_vertex_functionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = c04_vertex_functionApp.swift; sourceTree = "<group>"; };
+		CEA8EC24297E3AF2005B5CA1 /* C04VertexFunctionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C04VertexFunctionApp.swift; sourceTree = "<group>"; };
 		CEA8EC28297E3AF2005B5CA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEA8EC2A297E3AF2005B5CA1 /* c04_vertex_function.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = c04_vertex_function.entitlements; sourceTree = "<group>"; };
 		CEA8EC2C297E3AF2005B5CA1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 		CEE82FB4298638BC00845657 /* lowpoly-house.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "lowpoly-house.obj"; sourceTree = "<group>"; };
 		CEE82FB5298638BC00845657 /* lowpoly-house.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "lowpoly-house.mtl"; sourceTree = "<group>"; };
 		CEEFD151297C3385008CFE45 /* c03-rendering-pipeline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "c03-rendering-pipeline.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEEFD153297C3385008CFE45 /* c03_rendering_pipeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = c03_rendering_pipeline.swift; sourceTree = "<group>"; };
+		CEEFD153297C3385008CFE45 /* C03RenderingPipelineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C03RenderingPipelineApp.swift; sourceTree = "<group>"; };
 		CEEFD157297C3386008CFE45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEEFD159297C3386008CFE45 /* c03_rendering_pipeline.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = c03_rendering_pipeline.entitlements; sourceTree = "<group>"; };
 		CEEFD15B297C3386008CFE45 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -149,7 +149,7 @@
 				CEE82F8E2986377300845657 /* VertexDescriptor.swift */,
 				CEE82F862986370C00845657 /* SwiftUI */,
 				CE12C9072986338D00E5B908 /* Renderer.swift */,
-				CE12C8F7298632C200E5B908 /* c08_textureApp.swift */,
+				CE12C8F7298632C200E5B908 /* C08TextureApp.swift */,
 				CE12C8FB298632C300E5B908 /* Assets.xcassets */,
 				CE12C8FD298632C300E5B908 /* c08_texture.entitlements */,
 				CE12C8FE298632C300E5B908 /* Preview Content */,
@@ -182,7 +182,7 @@
 				CE490F5A297E3D2100E334D6 /* Renderer.swift */,
 				CE490F61297E583B00E334D6 /* VertexDescriptor.swift */,
 				CE490F59297E3D2100E334D6 /* Shaders.metal */,
-				CEA8EC24297E3AF2005B5CA1 /* c04_vertex_functionApp.swift */,
+				CEA8EC24297E3AF2005B5CA1 /* C04VertexFunctionApp.swift */,
 				CEA8EC28297E3AF2005B5CA1 /* Assets.xcassets */,
 				CEA8EC2A297E3AF2005B5CA1 /* c04_vertex_function.entitlements */,
 				CEA8EC2B297E3AF2005B5CA1 /* Preview Content */,
@@ -292,7 +292,7 @@
 				CEE82F7C298636CF00845657 /* SwiftUI */,
 				CEEFD166297C3674008CFE45 /* Shaders.metal */,
 				CEEFD162297C35DF008CFE45 /* Renderer.swift */,
-				CEEFD153297C3385008CFE45 /* c03_rendering_pipeline.swift */,
+				CEEFD153297C3385008CFE45 /* C03RenderingPipelineApp.swift */,
 				CEEFD157297C3386008CFE45 /* Assets.xcassets */,
 				CEEFD159297C3386008CFE45 /* c03_rendering_pipeline.entitlements */,
 				CEEFD15A297C3386008CFE45 /* Preview Content */,
@@ -318,6 +318,7 @@
 				CE12C8F1298632C200E5B908 /* Sources */,
 				CE12C8F2298632C200E5B908 /* Frameworks */,
 				CE12C8F3298632C200E5B908 /* Resources */,
+				CEE82FBE29863BA600845657 /* SwiftLint Script */,
 			);
 			buildRules = (
 			);
@@ -442,6 +443,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CEE82FBE29863BA600845657 /* SwiftLint Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/zsh;
+			shellScript = "PATH=/opt/homebrew/bin:$PATH\nif which swiftlint >/dev/null; then\n  swiftlint --fix --format\nelse\n  echo \"warning: SwiftLint not installed, please install brew install swiftlint or download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CE12C8F1298632C200E5B908 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -456,7 +478,7 @@
 				CEE82F962986377300845657 /* Mesh.swift in Sources */,
 				CE12C9082986338D00E5B908 /* Renderer.swift in Sources */,
 				CEE82F9A2986377300845657 /* Shaders.metal in Sources */,
-				CE12C8F8298632C200E5B908 /* c08_textureApp.swift in Sources */,
+				CE12C8F8298632C200E5B908 /* C08TextureApp.swift in Sources */,
 				CEE82F8A2986370C00845657 /* Options.swift in Sources */,
 				CE12C90C298633AB00E5B908 /* MathLibrary.swift in Sources */,
 				CEE82F942986377300845657 /* Model.swift in Sources */,
@@ -475,7 +497,7 @@
 				CE490F5C297E3D2100E334D6 /* Shaders.metal in Sources */,
 				CE490F5D297E3D2100E334D6 /* Renderer.swift in Sources */,
 				CE490F62297E583B00E334D6 /* VertexDescriptor.swift in Sources */,
-				CEA8EC25297E3AF2005B5CA1 /* c04_vertex_functionApp.swift in Sources */,
+				CEA8EC25297E3AF2005B5CA1 /* C04VertexFunctionApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,7 +506,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE12C90E298633C400E5B908 /* Log.swift in Sources */,
-				CEEFD154297C3385008CFE45 /* c03_rendering_pipeline.swift in Sources */,
+				CEEFD154297C3385008CFE45 /* C03RenderingPipelineApp.swift in Sources */,
 				CEE82F80298636CF00845657 /* ContentView.swift in Sources */,
 				CEE82F7F298636CF00845657 /* MetalView.swift in Sources */,
 				CEEFD165297C35DF008CFE45 /* Renderer.swift in Sources */,

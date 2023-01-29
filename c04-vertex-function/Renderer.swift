@@ -1,8 +1,7 @@
 import MetalKit
 import OSLog
 
-class Renderer: NSObject
-{
+class Renderer: NSObject {
     // swiftlint:disable implicitly_unwrapped_optional
     static var device: MTLDevice!
     static var commandQueue: MTLCommandQueue!
@@ -12,7 +11,7 @@ class Renderer: NSObject
     var vertexIndex: MTLBuffer!
     var renderPipelineState: MTLRenderPipelineState!
     lazy var quad: Quad = {
-      Quad(device: Renderer.device, scale: 0.8)
+        Quad(device: Renderer.device, scale: 0.8)
     }()
     var timer: Float = 0
     init(metalView: MTKView) {
@@ -26,7 +25,7 @@ class Renderer: NSObject
         Renderer.device = device
         Renderer.commandQueue = commandQueue
         metalView.device = device
-        
+
         // create the shader function library
         guard
             let library = device.makeDefaultLibrary()
@@ -37,8 +36,8 @@ class Renderer: NSObject
         Renderer.library = library
         let vertexFunction = library.makeFunction(name: "vertex_descriptor_main")
         let fragmentFunction = library.makeFunction(name: "fragment_descriptor_main")
-//        let vertexFunction = library.makeFunction(name: "vertex_main")
-//        let fragmentFunction = library.makeFunction(name: "fragment_main")
+        //        let vertexFunction = library.makeFunction(name: "vertex_main")
+        //        let fragmentFunction = library.makeFunction(name: "fragment_main")
 
         // create the pipeline state object
         let pipelineDescriptor = MTLRenderPipelineDescriptor()
@@ -50,36 +49,30 @@ class Renderer: NSObject
 
         pipelineDescriptor.vertexDescriptor = MTLVertexDescriptor.defaultDescriptor
 
-        do
-        {
+        do {
             renderPipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
-        }
-        catch
-            let error
-        {
+        } catch
+            let error {
             fatalError(error.localizedDescription)
         }
 
         super.init()
-        
+
         metalView.clearColor = MTLClearColor(red: 0.0,
                                              green: 0.0,
                                              blue: 0.0,
                                              alpha: 1.0)
-        
+
         metalView.delegate = self
     }
 }
 
-extension Renderer: MTKViewDelegate
-{
-    func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize)
-    {
+extension Renderer: MTKViewDelegate {
+    func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
         os_log(.debug, log: OSLog.debug, "mtkView")
     }
 
-    func draw(in view: MTKView)
-    {
+    func draw(in view: MTKView) {
         os_log(.debug, log: OSLog.debug, "draw")
 
         guard
@@ -107,26 +100,25 @@ extension Renderer: MTKViewDelegate
         }
 
         renderCommandEncoder.setRenderPipelineState(renderPipelineState)
-//        renderCommandEncoder.setCullMode(.back)
-//        renderCommandEncoder.setFrontFacing(.counterClockwise) // default is clockwise
+        //        renderCommandEncoder.setCullMode(.back)
+        //        renderCommandEncoder.setFrontFacing(.counterClockwise) // default is clockwise
 
         renderCommandEncoder.setVertexBuffer(quad.vertexBuffer, offset: 0, index: MTLVertexDescriptor.defaultBufferIndex)
         renderCommandEncoder.setVertexBuffer(quad.colorBuffer, offset: 0, index: MTLVertexDescriptor.defaultColorIndex)
-        
+
         // for drawPrimitives function
-//        renderCommandEncoder.setVertexBuffer(quad.indexBuffer, offset: 0, index: 1)
+        //        renderCommandEncoder.setVertexBuffer(quad.indexBuffer, offset: 0, index: 1)
         timer += 0.005
         var currentTime: Float = sin(timer)
         renderCommandEncoder.setVertexBytes(&currentTime, length: MemoryLayout<Float>.stride, index: 11)
-//        renderCommandEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: quad.indices.count)
-        
+        //        renderCommandEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: quad.indices.count)
+
         // for drawIndexedPrimitives function
         renderCommandEncoder.drawIndexedPrimitives(type: .point,
                                                    indexCount: quad.indices.count,
                                                    indexType: .uint16,
                                                    indexBuffer: quad.indexBuffer,
                                                    indexBufferOffset: 0)
-        
 
         // endEncoding function must be called before it is released.
         renderCommandEncoder.endEncoding()
