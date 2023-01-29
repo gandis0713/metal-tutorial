@@ -22,6 +22,9 @@
 		CEA8EC25297E3AF2005B5CA1 /* C04VertexFunctionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8EC24297E3AF2005B5CA1 /* C04VertexFunctionApp.swift */; };
 		CEA8EC29297E3AF2005B5CA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA8EC28297E3AF2005B5CA1 /* Assets.xcassets */; };
 		CEA8EC2D297E3AF2005B5CA1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA8EC2C297E3AF2005B5CA1 /* Preview Assets.xcassets */; };
+		CECE641C2986846D003364B1 /* color.png in Resources */ = {isa = PBXBuildFile; fileRef = CECE641B2986846D003364B1 /* color.png */; };
+		CECE641F29868622003364B1 /* color.mtl in Resources */ = {isa = PBXBuildFile; fileRef = CECE641D29868622003364B1 /* color.mtl */; };
+		CECE642029868622003364B1 /* color.obj in Resources */ = {isa = PBXBuildFile; fileRef = CECE641E29868622003364B1 /* color.obj */; };
 		CEE82F7F298636CF00845657 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE82F7D298636CF00845657 /* MetalView.swift */; };
 		CEE82F80298636CF00845657 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE82F7E298636CF00845657 /* ContentView.swift */; };
 		CEE82F84298636F300845657 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE82F82298636F300845657 /* MetalView.swift */; };
@@ -71,6 +74,9 @@
 		CEA8EC2A297E3AF2005B5CA1 /* c04_vertex_function.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = c04_vertex_function.entitlements; sourceTree = "<group>"; };
 		CEA8EC2C297E3AF2005B5CA1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CECE641A29864AB0003364B1 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		CECE641B2986846D003364B1 /* color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color.png; sourceTree = "<group>"; };
+		CECE641D29868622003364B1 /* color.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = color.mtl; sourceTree = "<group>"; };
+		CECE641E29868622003364B1 /* color.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = color.obj; sourceTree = "<group>"; };
 		CEE82F7D298636CF00845657 /* MetalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
 		CEE82F7E298636CF00845657 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CEE82F82298636F300845657 /* MetalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
@@ -260,6 +266,9 @@
 		CEE82FB2298638BC00845657 /* LowPolyHouse */ = {
 			isa = PBXGroup;
 			children = (
+				CECE641D29868622003364B1 /* color.mtl */,
+				CECE641E29868622003364B1 /* color.obj */,
+				CECE641B2986846D003364B1 /* color.png */,
 				CEE82FB3298638BC00845657 /* lowpoly-house-color.png */,
 				CEE82FB4298638BC00845657 /* lowpoly-house.obj */,
 				CEE82FB5298638BC00845657 /* lowpoly-house.mtl */,
@@ -414,6 +423,7 @@
 				CEE82FBB298638BC00845657 /* lowpoly-house-color.png in Resources */,
 				CEE82FB7298638BC00845657 /* lowpoly-barn-color.png in Resources */,
 				CEE82FA9298638B000845657 /* Textures.xcassets in Resources */,
+				CECE641C2986846D003364B1 /* color.png in Resources */,
 				CEE82FB9298638BC00845657 /* plane.mtl in Resources */,
 				CEE82FB8298638BC00845657 /* plane.obj in Resources */,
 				CEE82FBA298638BC00845657 /* ground.png in Resources */,
@@ -421,7 +431,9 @@
 				CEE82FBC298638BC00845657 /* lowpoly-house.obj in Resources */,
 				CEE82FBD298638BC00845657 /* lowpoly-house.mtl in Resources */,
 				CE12C900298632C300E5B908 /* Preview Assets.xcassets in Resources */,
+				CECE642029868622003364B1 /* color.obj in Resources */,
 				CE12C8FC298632C300E5B908 /* Assets.xcassets in Resources */,
+				CECE641F29868622003364B1 /* color.mtl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -34,39 +34,53 @@
 using namespace metal;
 #import "Common.h"
 
-struct VertexIn {
-  float4 position [[attribute(Position)]];
-  float3 normal [[attribute(Normal)]];
-  float2 uv [[attribute(UV)]];
-};
-
-struct VertexOut {
-  float4 position [[position]];
-  float3 normal;
-  float2 uv;
-};
-
-vertex VertexOut vertex_main(
-  const VertexIn in [[stage_in]],
-  constant Uniforms &uniforms [[buffer(UniformsBuffer)]])
+struct VertexIn
 {
-  VertexOut out {
-    .position = uniforms.projectionMatrix * uniforms.viewMatrix
-      * uniforms.modelMatrix * in.position,
-    .normal = in.normal,
-    .uv = in.uv
-  };
-  return out;
+    float4 position [[attribute(Position)]];
+    float3 normal [[attribute(Normal)]];
+    float2 uv [[attribute(UV)]];
+};
+
+struct VertexOut
+{
+    float4 position [[position]];
+    float3 normal;
+    float2 uv;
+//    float3 color;
+};
+
+vertex VertexOut vertex_main(const VertexIn in [[stage_in]],
+                             constant Uniforms &uniforms [[buffer(UniformsBuffer)]],
+                             texture2d<float> baseColorTexture [[texture(BaseColor)]])
+{
+    
+//    constexpr sampler textureSampler;
+//    float3 color = baseColorTexture.sample(textureSampler,
+//                                               in.uv).rgb;
+    VertexOut out {
+        .position = uniforms.projectionMatrix
+                    * uniforms.viewMatrix
+                    * uniforms.modelMatrix * in.position,
+        .normal = in.normal,
+        .uv = in.uv
+//        .color = color
+    };
+    return out;
 }
 
-fragment float4 fragment_main(
-  VertexOut in [[stage_in]],
-  constant Params &params [[buffer(ParamsBuffer)]],
-  texture2d<float> baseColorTexture [[texture(BaseColor)]])
+fragment float4 fragment_main(VertexOut in [[stage_in]],
+                              constant Params &params [[buffer(ParamsBuffer)]],
+                              texture2d<float> baseColorTexture [[texture(BaseColor)]])
 {
-  constexpr sampler textureSampler;
-  float3 baseColor = baseColorTexture.sample(
-    textureSampler,
-    in.uv).rgb;
-  return float4(baseColor, 1);
+//    constexpr sampler textureSampler;
+    constexpr sampler textureSampler(
+     filter::linear,
+      mip_filter::linear,
+      max_anisotropy(8),
+      address::repeat);
+    float3 color = baseColorTexture.sample(textureSampler,
+                                        in.uv * params.tiling).rgb;
+//    color = pow(color, 1.0/2.2);
+    return float4(color, 1);
+//    return float4(in.color, 1);
 }

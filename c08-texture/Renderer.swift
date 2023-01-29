@@ -49,11 +49,11 @@ class Renderer: NSObject {
 
     // the models to render
     lazy var house: Model = { Model(name: "lowpoly-house.obj") }()
-    //    lazy var ground: Model = {
-    //        var ground = Model(name: "plane.obj")
-    //        ground.tiling = 16
-    //        return ground
-    //    }()
+    lazy var ground: Model = {
+        var ground = Model(name: "plane.obj")
+        ground.tiling = 16
+        return ground
+    }()
 
     init(metalView: MTKView, options: Options) {
         guard
@@ -87,9 +87,9 @@ class Renderer: NSObject {
         self.options = options
         depthStencilState = Renderer.buildDepthStencilState()
         super.init()
-        metalView.clearColor = MTLClearColor(red: 1.0,
-                                             green: 1.0,
-                                             blue: 1.0,
+        metalView.clearColor = MTLClearColor(red: 0.0,
+                                             green: 0.0,
+                                             blue: 0.0,
                                              alpha: 1.0)
         metalView.depthStencilPixelFormat = .depth32Float
         metalView.delegate = self
@@ -142,12 +142,12 @@ extension Renderer: MTKViewDelegate {
         house.rotation.y = sin(timer)
         house.render(encoder: renderEncoder, uniforms: uniforms, params: params)
 
-        //        ground.scale = 40
-        //        ground.rotation.y = sin(timer)
-        //        ground.render(
-        //            encoder: renderEncoder,
-        //            uniforms: uniforms,
-        //            params: params)
+        ground.scale = 40
+        ground.rotation.y = sin(timer)
+        ground.render(
+            encoder: renderEncoder,
+            uniforms: uniforms,
+            params: params)
 
         renderEncoder.endEncoding()
         guard let drawable = view.currentDrawable else {
