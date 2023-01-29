@@ -31,6 +31,7 @@
 /// THE SOFTWARE.
 
 import MetalKit
+import OSLog
 
 enum TextureController {
     static var textures: [String: MTLTexture] = [:]
@@ -48,19 +49,18 @@ enum TextureController {
 
     static func loadTexture(filename: String) throws -> MTLTexture? {
         // 1
+        os_log(.info, log: .info, "try to load texture: %s", filename)
         let textureLoader = MTKTextureLoader(device: Renderer.device)
         if let texture = try? textureLoader.newTexture(name: filename,
                                                        scaleFactor: 1.0,
                                                        bundle: Bundle.main,
                                                        options: nil) {
-            print("loaded texture: \(filename)")
             return texture
         }
         // 2
         let textureLoaderOptions: [MTKTextureLoader.Option: Any] = [.origin: MTKTextureLoader.Origin.bottomLeft,
-                                                                    .SRGB: false,
-                                                                    .generateMipmaps: NSNumber(value: true)
-        ]
+                                                                    .SRGB: false, // The texture is created as a sRGB image format. ref: https://developer.apple.com/documentation/metalkit/mtktextureloader/option/1536032-srgb
+                                                                    .generateMipmaps: NSNumber(value: true)]
         // 3
         let fileExtension =
             URL(fileURLWithPath: filename).pathExtension.isEmpty ?
@@ -72,9 +72,13 @@ enum TextureController {
             print("Failed to load \(filename)")
             return nil
         }
+
+        os_log(.info, log: .info, "try to load texture: %s", url.path)
         let texture = try textureLoader.newTexture(URL: url,
                                                    options: textureLoaderOptions)
         print("loaded texture: \(url.lastPathComponent)")
         return texture
     }
 }
+
+

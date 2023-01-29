@@ -48,14 +48,12 @@ class Renderer: NSObject {
     var params = Params()
 
     // the models to render
-    lazy var house: Model = {
-        Model(name: "lowpoly-house.obj")
-    }()
-    lazy var ground: Model = {
-        var ground = Model(name: "plane.obj")
-        ground.tiling = 16
-        return ground
-    }()
+    lazy var house: Model = { Model(name: "lowpoly-house.obj") }()
+    //    lazy var ground: Model = {
+    //        var ground = Model(name: "plane.obj")
+    //        ground.tiling = 16
+    //        return ground
+    //    }()
 
     init(metalView: MTKView, options: Options) {
         guard
@@ -78,23 +76,19 @@ class Renderer: NSObject {
         let pipelineDescriptor = MTLRenderPipelineDescriptor()
         pipelineDescriptor.vertexFunction = vertexFunction
         pipelineDescriptor.fragmentFunction = fragmentFunction
-        pipelineDescriptor.colorAttachments[0].pixelFormat =
-            metalView.colorPixelFormat
+        pipelineDescriptor.colorAttachments[0].pixelFormat = metalView.colorPixelFormat
         pipelineDescriptor.depthAttachmentPixelFormat = .depth32Float
         do {
-            pipelineDescriptor.vertexDescriptor =
-                MTLVertexDescriptor.defaultLayout
-            pipelineState =
-                try device.makeRenderPipelineState(
-                    descriptor: pipelineDescriptor)
+            pipelineDescriptor.vertexDescriptor = MTLVertexDescriptor.defaultLayout
+            pipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
         } catch let error {
             fatalError(error.localizedDescription)
         }
         self.options = options
         depthStencilState = Renderer.buildDepthStencilState()
         super.init()
-        metalView.clearColor = MTLClearColor(red: 0.93,
-                                             green: 0.97,
+        metalView.clearColor = MTLClearColor(red: 1.0,
+                                             green: 1.0,
                                              blue: 1.0,
                                              alpha: 1.0)
         metalView.depthStencilPixelFormat = .depth32Float
@@ -118,12 +112,10 @@ extension Renderer: MTKViewDelegate {
     ) {
         let aspect =
             Float(view.bounds.width) / Float(view.bounds.height)
-        let projectionMatrix =
-            float4x4(
-                projectionFov: Float(70).degreesToRadians,
-                near: 0.1,
-                far: 100,
-                aspect: aspect)
+        let projectionMatrix = float4x4(projectionFov: Float(70).degreesToRadians,
+                                        near: 0.1,
+                                        far: 100,
+                                        aspect: aspect)
         uniforms.projectionMatrix = projectionMatrix
 
         params.width = UInt32(size.width)
@@ -146,15 +138,16 @@ extension Renderer: MTKViewDelegate {
         renderEncoder.setDepthStencilState(depthStencilState)
         renderEncoder.setRenderPipelineState(pipelineState)
 
+        //        house.scale = 0.5
         house.rotation.y = sin(timer)
         house.render(encoder: renderEncoder, uniforms: uniforms, params: params)
 
-        ground.scale = 40
-        ground.rotation.y = sin(timer)
-        ground.render(
-            encoder: renderEncoder,
-            uniforms: uniforms,
-            params: params)
+        //        ground.scale = 40
+        //        ground.rotation.y = sin(timer)
+        //        ground.render(
+        //            encoder: renderEncoder,
+        //            uniforms: uniforms,
+        //            params: params)
 
         renderEncoder.endEncoding()
         guard let drawable = view.currentDrawable else {

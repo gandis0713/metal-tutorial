@@ -31,9 +31,9 @@
 /// THE SOFTWARE.
 
 import MetalKit
+import OSLog
 
 // swiftlint:disable force_unwrapping
-// swiftlint:disable force_cast
 
 struct Mesh {
     let vertexBuffers: [MTLBuffer]
