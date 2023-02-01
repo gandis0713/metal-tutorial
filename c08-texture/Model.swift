@@ -85,8 +85,8 @@ extension Model {
             &params,
             length: MemoryLayout<Uniforms>.stride,
             index: ParamsBuffer.index)
-        encoder.setCullMode(.back)
-        encoder.setFrontFacing(.clockwise)
+        //        encoder.setCullMode(.back)
+        //        encoder.setFrontFacing(.clockwise)
 
         //        os_log(.debug, log: OSLog.info, "meshes count: %d", meshes.count)
         for mesh in meshes {

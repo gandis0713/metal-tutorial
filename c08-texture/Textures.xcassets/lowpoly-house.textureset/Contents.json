@@ -1,0 +1,52 @@
+{
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "textures" : [
+    {
+      "filename" : "Apple Watch.mipmapset",
+      "idiom" : "watch"
+    },
+    {
+      "display-gamut" : "display-P3",
+      "filename" : "Universal 3 GB Display P3.mipmapset",
+      "idiom" : "universal",
+      "memory" : "3GB"
+    },
+    {
+      "display-gamut" : "sRGB",
+      "filename" : "Universal 3 GB sRGB.mipmapset",
+      "idiom" : "universal",
+      "memory" : "3GB"
+    },
+    {
+      "display-gamut" : "display-P3",
+      "filename" : "Universal 4 GB Display P3.mipmapset",
+      "idiom" : "universal",
+      "memory" : "4GB"
+    },
+    {
+      "display-gamut" : "sRGB",
+      "filename" : "Universal 4 GB sRGB.mipmapset",
+      "idiom" : "universal",
+      "memory" : "4GB"
+    },
+    {
+      "display-gamut" : "display-P3",
+      "filename" : "Universal Display P3.mipmapset",
+      "idiom" : "universal"
+    },
+    {
+      "display-gamut" : "sRGB",
+      "filename" : "Universal sRGB.mipmapset",
+      "idiom" : "universal",
+      "pixel-format" : "astc-8x8-sRGB"
+    },
+    {
+      "filename" : "Universal.mipmapset",
+      "idiom" : "universal",
+      "unassigned" : true
+    }
+  ]
+}

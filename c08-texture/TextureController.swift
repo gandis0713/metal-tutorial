@@ -59,7 +59,7 @@ enum TextureController {
         }
         // 2
         let textureLoaderOptions: [MTKTextureLoader.Option: Any] = [.origin: MTKTextureLoader.Origin.bottomLeft,
-                                                                    .SRGB: true, // The texture is created as a sRGB image format. ref: https://developer.apple.com/documentation/metalkit/mtktextureloader/option/1536032-srgb
+                                                                    .SRGB: false, // The texture is created as a sRGB image format. ref: https://developer.apple.com/documentation/metalkit/mtktextureloader/option/1536032-srgb
                                                                     .generateMipmaps: NSNumber(value: true)]
         // 3
         let fileExtension =
