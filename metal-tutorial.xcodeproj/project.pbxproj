@@ -19,6 +19,35 @@
 		CE490F5D297E3D2100E334D6 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE490F5A297E3D2100E334D6 /* Renderer.swift */; };
 		CE490F60297E3E7900E334D6 /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE490F5F297E3E7900E334D6 /* Quad.swift */; };
 		CE490F62297E583B00E334D6 /* VertexDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE490F61297E583B00E334D6 /* VertexDescriptor.swift */; };
+		CE614314298A931100BEFF24 /* C10LightFundamentals.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE614313298A931100BEFF24 /* C10LightFundamentals.swift */; };
+		CE614318298A931200BEFF24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE614317298A931200BEFF24 /* Assets.xcassets */; };
+		CE61431C298A931200BEFF24 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE61431B298A931200BEFF24 /* Preview Assets.xcassets */; };
+		CE614346298A93E100BEFF24 /* DebugLights.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE614321298A93E100BEFF24 /* DebugLights.swift */; };
+		CE614347298A93E100BEFF24 /* DebugLights.metal in Sources */ = {isa = PBXBuildFile; fileRef = CE614322298A93E100BEFF24 /* DebugLights.metal */; };
+		CE614348298A93E100BEFF24 /* MathLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE614323298A93E100BEFF24 /* MathLibrary.swift */; };
+		CE614349298A93E100BEFF24 /* gizmo.usd in Resources */ = {isa = PBXBuildFile; fileRef = CE614326298A93E100BEFF24 /* gizmo.usd */; };
+		CE61434A298A93E100BEFF24 /* sphere.obj in Resources */ = {isa = PBXBuildFile; fileRef = CE614328298A93E100BEFF24 /* sphere.obj */; };
+		CE61434B298A93E100BEFF24 /* sphere.mtl in Resources */ = {isa = PBXBuildFile; fileRef = CE614329298A93E100BEFF24 /* sphere.mtl */; };
+		CE61434C298A93E100BEFF24 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = CE61432B298A93E100BEFF24 /* Shaders.metal */; };
+		CE61434D298A93E100BEFF24 /* Lighting.metal in Sources */ = {isa = PBXBuildFile; fileRef = CE61432E298A93E100BEFF24 /* Lighting.metal */; };
+		CE61434E298A93E100BEFF24 /* Movement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE614330298A93E100BEFF24 /* Movement.swift */; };
+		CE61434F298A93E100BEFF24 /* InputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE614331298A93E100BEFF24 /* InputController.swift */; };
+		CE614350298A93E100BEFF24 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE614333298A93E100BEFF24 /* GameController.swift */; };
+		CE614351298A93E100BEFF24 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE614334298A93E100BEFF24 /* GameScene.swift */; };
+		CE614352298A93E100BEFF24 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE614335298A93E100BEFF24 /* Camera.swift */; };
+		CE614353298A93E100BEFF24 /* PlayerCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE614336298A93E100BEFF24 /* PlayerCamera.swift */; };
+		CE614354298A93E100BEFF24 /* SceneLighting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE614337298A93E100BEFF24 /* SceneLighting.swift */; };
+		CE614355298A93E100BEFF24 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE614338298A93E100BEFF24 /* Renderer.swift */; };
+		CE614356298A93E100BEFF24 /* TextureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61433A298A93E100BEFF24 /* TextureController.swift */; };
+		CE614357298A93E100BEFF24 /* Textures.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE61433B298A93E100BEFF24 /* Textures.xcassets */; };
+		CE614358298A93E100BEFF24 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61433D298A93E100BEFF24 /* Options.swift */; };
+		CE614359298A93E100BEFF24 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61433E298A93E100BEFF24 /* MetalView.swift */; };
+		CE61435A298A93E100BEFF24 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61433F298A93E100BEFF24 /* ContentView.swift */; };
+		CE61435B298A93E100BEFF24 /* Mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE614341298A93E100BEFF24 /* Mesh.swift */; };
+		CE61435C298A93E100BEFF24 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE614342298A93E100BEFF24 /* Model.swift */; };
+		CE61435D298A93E100BEFF24 /* Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE614343298A93E100BEFF24 /* Transform.swift */; };
+		CE61435E298A93E100BEFF24 /* Submesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE614344298A93E100BEFF24 /* Submesh.swift */; };
+		CE61435F298A93E100BEFF24 /* VertexDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE614345298A93E100BEFF24 /* VertexDescriptor.swift */; };
 		CE626FE829893CF500392EE4 /* bw.mtl in Resources */ = {isa = PBXBuildFile; fileRef = CE626FE529893CF500392EE4 /* bw.mtl */; };
 		CE626FE929893CF500392EE4 /* bw.obj in Resources */ = {isa = PBXBuildFile; fileRef = CE626FE629893CF500392EE4 /* bw.obj */; };
 		CE626FEA29893CF500392EE4 /* bw.png in Resources */ = {isa = PBXBuildFile; fileRef = CE626FE729893CF500392EE4 /* bw.png */; };
@@ -71,6 +100,39 @@
 		CE490F5A297E3D2100E334D6 /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		CE490F5F297E3E7900E334D6 /* Quad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quad.swift; sourceTree = "<group>"; };
 		CE490F61297E583B00E334D6 /* VertexDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VertexDescriptor.swift; sourceTree = "<group>"; };
+		CE614311298A931100BEFF24 /* c10-light-fundamentals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "c10-light-fundamentals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE614313298A931100BEFF24 /* C10LightFundamentals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C10LightFundamentals.swift; sourceTree = "<group>"; };
+		CE614317298A931200BEFF24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE614319298A931200BEFF24 /* c10_light_fundamentals.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = c10_light_fundamentals.entitlements; sourceTree = "<group>"; };
+		CE61431B298A931200BEFF24 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CE614321298A93E100BEFF24 /* DebugLights.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugLights.swift; sourceTree = "<group>"; };
+		CE614322298A93E100BEFF24 /* DebugLights.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = DebugLights.metal; sourceTree = "<group>"; };
+		CE614323298A93E100BEFF24 /* MathLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathLibrary.swift; sourceTree = "<group>"; };
+		CE614326298A93E100BEFF24 /* gizmo.usd */ = {isa = PBXFileReference; lastKnownFileType = file; path = gizmo.usd; sourceTree = "<group>"; };
+		CE614328298A93E100BEFF24 /* sphere.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sphere.obj; sourceTree = "<group>"; };
+		CE614329298A93E100BEFF24 /* sphere.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sphere.mtl; sourceTree = "<group>"; };
+		CE61432B298A93E100BEFF24 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		CE61432C298A93E100BEFF24 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		CE61432D298A93E100BEFF24 /* Lighting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lighting.h; sourceTree = "<group>"; };
+		CE61432E298A93E100BEFF24 /* Lighting.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Lighting.metal; sourceTree = "<group>"; };
+		CE614330298A93E100BEFF24 /* Movement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movement.swift; sourceTree = "<group>"; };
+		CE614331298A93E100BEFF24 /* InputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputController.swift; sourceTree = "<group>"; };
+		CE614333298A93E100BEFF24 /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		CE614334298A93E100BEFF24 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		CE614335298A93E100BEFF24 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		CE614336298A93E100BEFF24 /* PlayerCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerCamera.swift; sourceTree = "<group>"; };
+		CE614337298A93E100BEFF24 /* SceneLighting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneLighting.swift; sourceTree = "<group>"; };
+		CE614338298A93E100BEFF24 /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		CE61433A298A93E100BEFF24 /* TextureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextureController.swift; sourceTree = "<group>"; };
+		CE61433B298A93E100BEFF24 /* Textures.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Textures.xcassets; sourceTree = "<group>"; };
+		CE61433D298A93E100BEFF24 /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
+		CE61433E298A93E100BEFF24 /* MetalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
+		CE61433F298A93E100BEFF24 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CE614341298A93E100BEFF24 /* Mesh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mesh.swift; sourceTree = "<group>"; };
+		CE614342298A93E100BEFF24 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		CE614343298A93E100BEFF24 /* Transform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transform.swift; sourceTree = "<group>"; };
+		CE614344298A93E100BEFF24 /* Submesh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Submesh.swift; sourceTree = "<group>"; };
+		CE614345298A93E100BEFF24 /* VertexDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VertexDescriptor.swift; sourceTree = "<group>"; };
 		CE626FE529893CF500392EE4 /* bw.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bw.mtl; sourceTree = "<group>"; };
 		CE626FE629893CF500392EE4 /* bw.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bw.obj; sourceTree = "<group>"; };
 		CE626FE729893CF500392EE4 /* bw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bw.png; sourceTree = "<group>"; };
@@ -117,6 +179,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		CE12C8F2298632C200E5B908 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE61430E298A931100BEFF24 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -186,6 +255,133 @@
 				CE12C909298633A600E5B908 /* Log.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		CE614312298A931100BEFF24 /* c10-light-fundamentals */ = {
+			isa = PBXGroup;
+			children = (
+				CE614332298A93E100BEFF24 /* Game */,
+				CE614340298A93E100BEFF24 /* Geometry */,
+				CE61432F298A93E100BEFF24 /* Input */,
+				CE614324298A93E100BEFF24 /* Models */,
+				CE61432A298A93E100BEFF24 /* Shaders */,
+				CE61433C298A93E100BEFF24 /* SwiftUI Views */,
+				CE614339298A93E100BEFF24 /* Textures */,
+				CE614320298A93E100BEFF24 /* Utility */,
+				CE614313298A931100BEFF24 /* C10LightFundamentals.swift */,
+				CE614317298A931200BEFF24 /* Assets.xcassets */,
+				CE614319298A931200BEFF24 /* c10_light_fundamentals.entitlements */,
+				CE61431A298A931200BEFF24 /* Preview Content */,
+			);
+			path = "c10-light-fundamentals";
+			sourceTree = "<group>";
+		};
+		CE61431A298A931200BEFF24 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CE61431B298A931200BEFF24 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CE614320298A93E100BEFF24 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				CE614321298A93E100BEFF24 /* DebugLights.swift */,
+				CE614322298A93E100BEFF24 /* DebugLights.metal */,
+				CE614323298A93E100BEFF24 /* MathLibrary.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		CE614324298A93E100BEFF24 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CE614325298A93E100BEFF24 /* Gizmo */,
+				CE614327298A93E100BEFF24 /* Sphere */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CE614325298A93E100BEFF24 /* Gizmo */ = {
+			isa = PBXGroup;
+			children = (
+				CE614326298A93E100BEFF24 /* gizmo.usd */,
+			);
+			path = Gizmo;
+			sourceTree = "<group>";
+		};
+		CE614327298A93E100BEFF24 /* Sphere */ = {
+			isa = PBXGroup;
+			children = (
+				CE614328298A93E100BEFF24 /* sphere.obj */,
+				CE614329298A93E100BEFF24 /* sphere.mtl */,
+			);
+			path = Sphere;
+			sourceTree = "<group>";
+		};
+		CE61432A298A93E100BEFF24 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				CE61432B298A93E100BEFF24 /* Shaders.metal */,
+				CE61432C298A93E100BEFF24 /* Common.h */,
+				CE61432D298A93E100BEFF24 /* Lighting.h */,
+				CE61432E298A93E100BEFF24 /* Lighting.metal */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		CE61432F298A93E100BEFF24 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				CE614330298A93E100BEFF24 /* Movement.swift */,
+				CE614331298A93E100BEFF24 /* InputController.swift */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
+		CE614332298A93E100BEFF24 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				CE614333298A93E100BEFF24 /* GameController.swift */,
+				CE614334298A93E100BEFF24 /* GameScene.swift */,
+				CE614335298A93E100BEFF24 /* Camera.swift */,
+				CE614336298A93E100BEFF24 /* PlayerCamera.swift */,
+				CE614337298A93E100BEFF24 /* SceneLighting.swift */,
+				CE614338298A93E100BEFF24 /* Renderer.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		CE614339298A93E100BEFF24 /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+				CE61433A298A93E100BEFF24 /* TextureController.swift */,
+				CE61433B298A93E100BEFF24 /* Textures.xcassets */,
+			);
+			path = Textures;
+			sourceTree = "<group>";
+		};
+		CE61433C298A93E100BEFF24 /* SwiftUI Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE61433D298A93E100BEFF24 /* Options.swift */,
+				CE61433E298A93E100BEFF24 /* MetalView.swift */,
+				CE61433F298A93E100BEFF24 /* ContentView.swift */,
+			);
+			path = "SwiftUI Views";
+			sourceTree = "<group>";
+		};
+		CE614340298A93E100BEFF24 /* Geometry */ = {
+			isa = PBXGroup;
+			children = (
+				CE614341298A93E100BEFF24 /* Mesh.swift */,
+				CE614342298A93E100BEFF24 /* Model.swift */,
+				CE614343298A93E100BEFF24 /* Transform.swift */,
+				CE614344298A93E100BEFF24 /* Submesh.swift */,
+				CE614345298A93E100BEFF24 /* VertexDescriptor.swift */,
+			);
+			path = Geometry;
 			sourceTree = "<group>";
 		};
 		CE626FE429893CF500392EE4 /* bw */ = {
@@ -300,6 +496,7 @@
 				CEEFD152297C3385008CFE45 /* c03-rendering-pipeline */,
 				CEA8EC23297E3AF2005B5CA1 /* c04-vertex-function */,
 				CE12C8F6298632C200E5B908 /* c08-texture */,
+				CE614312298A931100BEFF24 /* c10-light-fundamentals */,
 				CEEFD13C297C332A008CFE45 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -310,6 +507,7 @@
 				CEEFD151297C3385008CFE45 /* c03-rendering-pipeline.app */,
 				CEA8EC22297E3AF2005B5CA1 /* c04-vertex-function.app */,
 				CE12C8F5298632C200E5B908 /* c08-texture.app */,
+				CE614311298A931100BEFF24 /* c10-light-fundamentals.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -355,6 +553,23 @@
 			name = "c08-texture";
 			productName = "c08-texture";
 			productReference = CE12C8F5298632C200E5B908 /* c08-texture.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CE614310298A931100BEFF24 /* c10-light-fundamentals */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE61431F298A931200BEFF24 /* Build configuration list for PBXNativeTarget "c10-light-fundamentals" */;
+			buildPhases = (
+				CE61430D298A931100BEFF24 /* Sources */,
+				CE61430E298A931100BEFF24 /* Frameworks */,
+				CE61430F298A931100BEFF24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "c10-light-fundamentals";
+			productName = "c10-light-fundamentals";
+			productReference = CE614311298A931100BEFF24 /* c10-light-fundamentals.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CEA8EC21297E3AF2005B5CA1 /* c04-vertex-function */ = {
@@ -404,6 +619,9 @@
 					CE12C8F4298632C200E5B908 = {
 						CreatedOnToolsVersion = 14.0.1;
 					};
+					CE614310298A931100BEFF24 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
 					CEA8EC21297E3AF2005B5CA1 = {
 						CreatedOnToolsVersion = 14.0.1;
 					};
@@ -428,6 +646,7 @@
 				CEEFD150297C3385008CFE45 /* c03-rendering-pipeline */,
 				CEA8EC21297E3AF2005B5CA1 /* c04-vertex-function */,
 				CE12C8F4298632C200E5B908 /* c08-texture */,
+				CE614310298A931100BEFF24 /* c10-light-fundamentals */,
 			);
 		};
 /* End PBXProject section */
@@ -454,6 +673,19 @@
 				CECE642029868622003364B1 /* color.obj in Resources */,
 				CE12C8FC298632C300E5B908 /* Assets.xcassets in Resources */,
 				CECE641F29868622003364B1 /* color.mtl in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE61430F298A931100BEFF24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE61431C298A931200BEFF24 /* Preview Assets.xcassets in Resources */,
+				CE614349298A93E100BEFF24 /* gizmo.usd in Resources */,
+				CE61434A298A93E100BEFF24 /* sphere.obj in Resources */,
+				CE614357298A93E100BEFF24 /* Textures.xcassets in Resources */,
+				CE614318298A931200BEFF24 /* Assets.xcassets in Resources */,
+				CE61434B298A93E100BEFF24 /* sphere.mtl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +750,36 @@
 				CE12C90C298633AB00E5B908 /* MathLibrary.swift in Sources */,
 				CEE82F942986377300845657 /* Model.swift in Sources */,
 				CEE82F992986377300845657 /* Submesh.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE61430D298A931100BEFF24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE614352298A93E100BEFF24 /* Camera.swift in Sources */,
+				CE614351298A93E100BEFF24 /* GameScene.swift in Sources */,
+				CE614355298A93E100BEFF24 /* Renderer.swift in Sources */,
+				CE614356298A93E100BEFF24 /* TextureController.swift in Sources */,
+				CE614358298A93E100BEFF24 /* Options.swift in Sources */,
+				CE614346298A93E100BEFF24 /* DebugLights.swift in Sources */,
+				CE614347298A93E100BEFF24 /* DebugLights.metal in Sources */,
+				CE614314298A931100BEFF24 /* C10LightFundamentals.swift in Sources */,
+				CE61434E298A93E100BEFF24 /* Movement.swift in Sources */,
+				CE614350298A93E100BEFF24 /* GameController.swift in Sources */,
+				CE61435D298A93E100BEFF24 /* Transform.swift in Sources */,
+				CE61435E298A93E100BEFF24 /* Submesh.swift in Sources */,
+				CE61434F298A93E100BEFF24 /* InputController.swift in Sources */,
+				CE61435B298A93E100BEFF24 /* Mesh.swift in Sources */,
+				CE614354298A93E100BEFF24 /* SceneLighting.swift in Sources */,
+				CE61434D298A93E100BEFF24 /* Lighting.metal in Sources */,
+				CE614348298A93E100BEFF24 /* MathLibrary.swift in Sources */,
+				CE61435C298A93E100BEFF24 /* Model.swift in Sources */,
+				CE61435A298A93E100BEFF24 /* ContentView.swift in Sources */,
+				CE614359298A93E100BEFF24 /* MetalView.swift in Sources */,
+				CE61434C298A93E100BEFF24 /* Shaders.metal in Sources */,
+				CE614353298A93E100BEFF24 /* PlayerCamera.swift in Sources */,
+				CE61435F298A93E100BEFF24 /* VertexDescriptor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,6 +889,86 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "c08-texture/Common.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CE61431D298A931200BEFF24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "c10-light-fundamentals/c10_light_fundamentals.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"c10-light-fundamentals/Preview Content\"";
+				DEVELOPMENT_TEAM = Z27J28NH32;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "charles.c10-light-fundamentals";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "c10-light-fundamentals/Shaders/Common.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CE61431E298A931200BEFF24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "c10-light-fundamentals/c10_light_fundamentals.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"c10-light-fundamentals/Preview Content\"";
+				DEVELOPMENT_TEAM = Z27J28NH32;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "charles.c10-light-fundamentals";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "c10-light-fundamentals/Shaders/Common.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -905,6 +1247,15 @@
 			buildConfigurations = (
 				CE12C901298632C300E5B908 /* Debug */,
 				CE12C902298632C300E5B908 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE61431F298A931200BEFF24 /* Build configuration list for PBXNativeTarget "c10-light-fundamentals" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE61431D298A931200BEFF24 /* Debug */,
+				CE61431E298A931200BEFF24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
