@@ -19,6 +19,9 @@
 		CE490F5D297E3D2100E334D6 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE490F5A297E3D2100E334D6 /* Renderer.swift */; };
 		CE490F60297E3E7900E334D6 /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE490F5F297E3E7900E334D6 /* Quad.swift */; };
 		CE490F62297E583B00E334D6 /* VertexDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE490F61297E583B00E334D6 /* VertexDescriptor.swift */; };
+		CE626FE829893CF500392EE4 /* bw.mtl in Resources */ = {isa = PBXBuildFile; fileRef = CE626FE529893CF500392EE4 /* bw.mtl */; };
+		CE626FE929893CF500392EE4 /* bw.obj in Resources */ = {isa = PBXBuildFile; fileRef = CE626FE629893CF500392EE4 /* bw.obj */; };
+		CE626FEA29893CF500392EE4 /* bw.png in Resources */ = {isa = PBXBuildFile; fileRef = CE626FE729893CF500392EE4 /* bw.png */; };
 		CEA8EC25297E3AF2005B5CA1 /* C04VertexFunctionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8EC24297E3AF2005B5CA1 /* C04VertexFunctionApp.swift */; };
 		CEA8EC29297E3AF2005B5CA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA8EC28297E3AF2005B5CA1 /* Assets.xcassets */; };
 		CEA8EC2D297E3AF2005B5CA1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA8EC2C297E3AF2005B5CA1 /* Preview Assets.xcassets */; };
@@ -68,6 +71,9 @@
 		CE490F5A297E3D2100E334D6 /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		CE490F5F297E3E7900E334D6 /* Quad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quad.swift; sourceTree = "<group>"; };
 		CE490F61297E583B00E334D6 /* VertexDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VertexDescriptor.swift; sourceTree = "<group>"; };
+		CE626FE529893CF500392EE4 /* bw.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bw.mtl; sourceTree = "<group>"; };
+		CE626FE629893CF500392EE4 /* bw.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bw.obj; sourceTree = "<group>"; };
+		CE626FE729893CF500392EE4 /* bw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bw.png; sourceTree = "<group>"; };
 		CEA8EC22297E3AF2005B5CA1 /* c04-vertex-function.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "c04-vertex-function.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA8EC24297E3AF2005B5CA1 /* C04VertexFunctionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C04VertexFunctionApp.swift; sourceTree = "<group>"; };
 		CEA8EC28297E3AF2005B5CA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -182,6 +188,16 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		CE626FE429893CF500392EE4 /* bw */ = {
+			isa = PBXGroup;
+			children = (
+				CE626FE529893CF500392EE4 /* bw.mtl */,
+				CE626FE629893CF500392EE4 /* bw.obj */,
+				CE626FE729893CF500392EE4 /* bw.png */,
+			);
+			path = bw;
+			sourceTree = "<group>";
+		};
 		CEA8EC23297E3AF2005B5CA1 /* c04-vertex-function */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +253,7 @@
 		CEE82FAA298638BC00845657 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CE626FE429893CF500392EE4 /* bw */,
 				CEE82FAB298638BC00845657 /* Textures */,
 				CEE82FAE298638BC00845657 /* Ground */,
 				CEE82FB2298638BC00845657 /* LowPolyHouse */,
@@ -421,12 +438,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEE82FBB298638BC00845657 /* lowpoly-house-color.png in Resources */,
+				CE626FEA29893CF500392EE4 /* bw.png in Resources */,
 				CEE82FB7298638BC00845657 /* lowpoly-barn-color.png in Resources */,
 				CEE82FA9298638B000845657 /* Textures.xcassets in Resources */,
 				CECE641C2986846D003364B1 /* color.png in Resources */,
 				CEE82FB9298638BC00845657 /* plane.mtl in Resources */,
+				CE626FE829893CF500392EE4 /* bw.mtl in Resources */,
 				CEE82FB8298638BC00845657 /* plane.obj in Resources */,
 				CEE82FBA298638BC00845657 /* ground.png in Resources */,
+				CE626FE929893CF500392EE4 /* bw.obj in Resources */,
 				CEE82FB6298638BC00845657 /* barn-ground.png in Resources */,
 				CEE82FBC298638BC00845657 /* lowpoly-house.obj in Resources */,
 				CEE82FBD298638BC00845657 /* lowpoly-house.mtl in Resources */,

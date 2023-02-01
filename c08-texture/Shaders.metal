@@ -46,41 +46,90 @@ struct VertexOut
     float4 position [[position]];
     float3 normal;
     float2 uv;
-//    float3 color;
 };
 
 vertex VertexOut vertex_main(const VertexIn in [[stage_in]],
                              constant Uniforms &uniforms [[buffer(UniformsBuffer)]],
                              texture2d<float> baseColorTexture [[texture(BaseColor)]])
 {
-    
-//    constexpr sampler textureSampler;
-//    float3 color = baseColorTexture.sample(textureSampler,
-//                                               in.uv).rgb;
     VertexOut out {
         .position = uniforms.projectionMatrix
                     * uniforms.viewMatrix
                     * uniforms.modelMatrix * in.position,
         .normal = in.normal,
         .uv = in.uv
-//        .color = color
     };
     return out;
 }
 
-fragment float4 fragment_main(VertexOut in [[stage_in]],
-                              constant Params &params [[buffer(ParamsBuffer)]],
-                              texture2d<float> baseColorTexture [[texture(BaseColor)]])
+
+float3 convertSRGBToLinear(float3 sRGB)
+{
+    float3 linearColor;
+    
+    for(uint16_t i = 0; i < 3; ++i)
+    {
+        if(sRGB[i] <= 0.04045)
+        {
+            linearColor[i] = sRGB[i] / 12.92;
+        }
+        else
+        {
+            linearColor[i] = pow((sRGB[i] + 0.055 / 1.055), 2.4);
+        }
+    }
+        
+    return linearColor;
+}
+
+float3 convertLinearToSRGB(float3 linearColor)
+{
+    float3 sRGB;
+    
+    for(uint16_t i = 0; i < 3; ++i)
+    {
+        if(linearColor[i] <= 0.0031308)
+        {
+            sRGB[i] = linearColor[i] * 12.92;
+        }
+        else
+        {
+            sRGB[i] = pow(linearColor[i], 1 / 2.4) - 0.055;
+        }
+    }
+        
+    return sRGB;
+}
+
+//float interpolation(float v0, float v1, float t) {
+//  return (1 - t) * v0 + t * v1;
+//}
+
+fragment float4 fragment_main(VertexOut in [[stage_in]]
+                              ,constant Params &params [[buffer(ParamsBuffer)]]
+                              ,texture2d<float> baseColorTexture [[texture(BaseColor)]]
+                              ,sampler textureSamplerDesc [[sampler(0)]]
+                              )
 {
 //    constexpr sampler textureSampler;
     constexpr sampler textureSampler(
-     filter::linear,
-      mip_filter::linear,
-      max_anisotropy(8),
-      address::repeat);
-    float3 color = baseColorTexture.sample(textureSampler,
-                                        in.uv * params.tiling).rgb;
+     filter::linear, // nearest, linear
+     mip_filter::linear, // nearest, linear
+      max_anisotropy(32),
+      address::repeat); // repeat, mirrored_repeat, clamp_to_edge, clamp_to_zero
+    
+//    float2 uv = float2(in.uv.x * 200, in.uv.y * 20000);
+    float2 uv = in.uv * 1;
+//        float2 uv = in.uv * params.tiling;
+//                                           * params.tiling)
+    float3 color = baseColorTexture.sample(
+                                        textureSampler
+//                                        textureSamplerDesc
+                                        ,uv
+                                        ).rgb;
+    
+//    color = convertSRGBToLinear(color);
+//    color = convertLinearToSRGB(color);
 //    color = pow(color, 1.0/2.2);
     return float4(color, 1);
-//    return float4(in.color, 1);
 }

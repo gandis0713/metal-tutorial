@@ -42,16 +42,18 @@ class Renderer: NSObject {
 
     var pipelineState: MTLRenderPipelineState!
     let depthStencilState: MTLDepthStencilState?
+    let samplerState: MTLSamplerState?
 
     var timer: Float = 0
     var uniforms = Uniforms()
     var params = Params()
 
     // the models to render
+    lazy var plane: Model = { Model(name: "bw.obj") }()
     lazy var house: Model = { Model(name: "lowpoly-house.obj") }()
     lazy var ground: Model = {
         var ground = Model(name: "plane.obj")
-        ground.tiling = 16
+        ground.tiling = 4
         return ground
     }()
 
@@ -86,6 +88,7 @@ class Renderer: NSObject {
         }
         self.options = options
         depthStencilState = Renderer.buildDepthStencilState()
+        samplerState = Renderer.buildSamplerState()
         super.init()
         metalView.clearColor = MTLClearColor(red: 0.0,
                                              green: 0.0,
@@ -96,12 +99,31 @@ class Renderer: NSObject {
         mtkView(metalView, drawableSizeWillChange: metalView.bounds.size)
     }
 
-    static func buildDepthStencilState() -> MTLDepthStencilState? {
+    private static func buildDepthStencilState() -> MTLDepthStencilState? {
         let descriptor = MTLDepthStencilDescriptor()
         descriptor.depthCompareFunction = .less
         descriptor.isDepthWriteEnabled = true
         return Renderer.device.makeDepthStencilState(
             descriptor: descriptor)
+    }
+
+    private static func buildSamplerState() -> MTLSamplerState? {
+        let descriptor = MTLSamplerDescriptor()
+        // repeat
+        descriptor.sAddressMode = .repeat
+        descriptor.tAddressMode = .repeat
+        //        descriptor.rAddressMode = .repeat
+
+        // filter
+        descriptor.minFilter = .linear
+        descriptor.magFilter = .linear
+        // mip filter
+        descriptor.mipFilter = .linear
+        // anisotropy
+        descriptor.maxAnisotropy = 8
+        let samplerState =
+            Renderer.device.makeSamplerState(descriptor: descriptor)
+        return samplerState
     }
 }
 
@@ -132,13 +154,22 @@ extension Renderer: MTKViewDelegate {
             return
         }
 
+        renderEncoder.setDepthStencilState(depthStencilState)
+        renderEncoder.setRenderPipelineState(pipelineState)
+        renderEncoder.setFragmentSamplerState(samplerState, index: 0)
+
+        // plane
+
+        //        uniforms.viewMatrix = float4x4(translation: [0, -0, -1]).inverse
+        //
+        //        plane.rotation.x = sin(1.71)
+        //        plane.render(encoder: renderEncoder, uniforms: uniforms, params: params)
+
+        // house
+
         timer += 0.005
         uniforms.viewMatrix = float4x4(translation: [0, 1.5, -5]).inverse
 
-        renderEncoder.setDepthStencilState(depthStencilState)
-        renderEncoder.setRenderPipelineState(pipelineState)
-
-        //        house.scale = 0.5
         house.rotation.y = sin(timer)
         house.render(encoder: renderEncoder, uniforms: uniforms, params: params)
 
