@@ -33,23 +33,23 @@
 import SwiftUI
 
 struct ContentView: View {
-  @State var options = Options()
+    @State var options = Options()
 
-  var body: some View {
-    VStack(alignment: .leading) {
-      ZStack {
-        MetalView(options: options)
-          .border(Color.black, width: 2)
-      }
+    var body: some View {
+        VStack(alignment: .leading) {
+            ZStack {
+                MetalView(options: options)
+                    .border(Color.black, width: 2)
+            }
+        }
+        .padding()
     }
-    .padding()
-  }
 }
 
 struct ContentView_Previews: PreviewProvider {
-  static var previews: some View {
-    Group {
-      ContentView()
+    static var previews: some View {
+        Group {
+            ContentView()
+        }
     }
-  }
 }
