@@ -48,6 +48,7 @@
 		CE61435D298A93E100BEFF24 /* Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE614343298A93E100BEFF24 /* Transform.swift */; };
 		CE61435E298A93E100BEFF24 /* Submesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE614344298A93E100BEFF24 /* Submesh.swift */; };
 		CE61435F298A93E100BEFF24 /* VertexDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE614345298A93E100BEFF24 /* VertexDescriptor.swift */; };
+		CE614362298AA00B00BEFF24 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE12C909298633A600E5B908 /* Log.swift */; };
 		CE626FE829893CF500392EE4 /* bw.mtl in Resources */ = {isa = PBXBuildFile; fileRef = CE626FE529893CF500392EE4 /* bw.mtl */; };
 		CE626FE929893CF500392EE4 /* bw.obj in Resources */ = {isa = PBXBuildFile; fileRef = CE626FE629893CF500392EE4 /* bw.obj */; };
 		CE626FEA29893CF500392EE4 /* bw.png in Resources */ = {isa = PBXBuildFile; fileRef = CE626FE729893CF500392EE4 /* bw.png */; };
@@ -776,6 +777,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE614362298AA00B00BEFF24 /* Log.swift in Sources */,
 				CE614352298A93E100BEFF24 /* Camera.swift in Sources */,
 				CE614351298A93E100BEFF24 /* GameScene.swift in Sources */,
 				CE614355298A93E100BEFF24 /* Renderer.swift in Sources */,
