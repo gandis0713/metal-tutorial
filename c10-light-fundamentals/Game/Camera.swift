@@ -31,6 +31,7 @@
 /// THE SOFTWARE.
 
 import CoreGraphics
+import OSLog
 
 protocol Camera: Transformable {
     var projectionMatrix: float4x4 { get }
@@ -109,10 +110,13 @@ struct ArcballCamera: Camera {
     mutating func update(deltaTime: Float) {
         let input = InputController.shared
         let scrollSensitivity = Settings.mouseScrollSensitivity
+        os_log(.error, log: OSLog.error, "scroll: %f", scrollSensitivity)
         distance -= (input.mouseScroll.x + input.mouseScroll.y)
             * scrollSensitivity
+        os_log(.error, log: OSLog.error, "distance: %f", distance)
         distance = min(maxDistance, distance)
         distance = max(minDistance, distance)
+        os_log(.error, log: OSLog.error, "distance2: %f", distance)
         input.mouseScroll = .zero
         if input.leftMouseDown {
             let sensitivity = Settings.mousePanSensitivity
