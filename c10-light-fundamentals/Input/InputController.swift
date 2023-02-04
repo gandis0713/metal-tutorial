@@ -31,6 +31,7 @@
 /// THE SOFTWARE.
 
 import GameController
+import OSLog
 
 class InputController {
     struct Point {
@@ -80,6 +81,7 @@ class InputController {
             let mouse = notification.object as? GCMouse
             mouse?.mouseInput?.leftButton.pressedChangedHandler = { _, _, pressed in
                 self.leftMouseDown = pressed
+                os_log(.info, log: OSLog.mouse, "left Mouse Down: %{bool}d", self.leftMouseDown)
             }
             mouse?.mouseInput?.scroll.valueChangedHandler = { _, xValue, yValue in
                 self.mouseScroll.x = xValue
