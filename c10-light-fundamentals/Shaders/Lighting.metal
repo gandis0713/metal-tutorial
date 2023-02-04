@@ -83,8 +83,7 @@ float3 phongLighting(float3 normal,
                 float attenuation = 1.0 / (light.attenuation.x +
                 light.attenuation.y * d + light.attenuation.z * d * d);
 
-                float diffuseIntensity =
-                saturate(dot(lightDirection, normal));
+                float diffuseIntensity = saturate(dot(lightDirection, normal));
                 float3 color = light.color * baseColor * diffuseIntensity;
                 // 4
                 color *= attenuation;

@@ -38,43 +38,39 @@ using namespace metal;
 constant float pi = 3.1415926535897932384626433832795;
 
 struct VertexOut {
-  float4 position [[position]];
-  float2 uv;
-  float3 color;
-  float3 worldPosition;
-  float3 worldNormal;
-  float3 worldTangent;
-  float3 worldBitangent;
+    float4 position [[position]];
+    float2 uv;
+    float3 color;
+    float3 worldPosition;
+    float3 worldNormal;
+    float3 worldTangent;
+    float3 worldBitangent;
 };
 
 // functions
-float3 computeSpecular(
-  float3 normal,
-  float3 viewDirection,
-  float3 lightDirection,
-  float roughness,
-  float3 F0);
+float3 computeSpecular(float3 normal,
+                        float3 viewDirection,
+                        float3 lightDirection,
+                        float roughness,
+                        float3 F0);
 
-float3 computeDiffuse(
-  Material material,
-  float3 normal,
-  float3 lightDirection);
+float3 computeDiffuse(Material material,
+                        float3 normal,
+                        float3 lightDirection);
 
-fragment float4 fragment_PBR(
-  VertexOut in [[stage_in]],
-  constant Params &params [[buffer(ParamsBuffer)]],
-  constant Light *lights [[buffer(LightBuffer)]],
-  constant Material &_material [[buffer(MaterialBuffer)]],
-  texture2d<float> baseColorTexture [[texture(BaseColor)]],
-  texture2d<float> normalTexture [[texture(NormalTexture)]],
-  texture2d<float> roughnessTexture [[texture(2)]],
-  texture2d<float> metallicTexture [[texture(3)]],
-  texture2d<float> aoTexture [[texture(4)]])
+fragment float4 fragment_PBR(VertexOut in [[stage_in]],
+                            constant Params &params [[buffer(ParamsBuffer)]],
+                            constant Light *lights [[buffer(LightBuffer)]],
+                            constant Material &_material [[buffer(MaterialBuffer)]],
+                            texture2d<float> baseColorTexture [[texture(BaseColor)]],
+                            texture2d<float> normalTexture [[texture(NormalTexture)]],
+                            texture2d<float> roughnessTexture [[texture(2)]],
+                            texture2d<float> metallicTexture [[texture(3)]],
+                            texture2d<float> aoTexture [[texture(4)]])
 {
-  constexpr sampler textureSampler(
-    filter::linear,
-    address::repeat,
-    mip_filter::linear);
+  constexpr sampler textureSampler(filter::linear,
+                                    address::repeat,
+                                    mip_filter::linear);
   
   Material material = _material;
 
@@ -101,6 +97,7 @@ fragment float4 fragment_PBR(
   float3 normal;
   if (is_null_texture(normalTexture)) {
     normal = in.worldNormal;
+//      normal = float3(1, 0, 0);
   } else {
     float3 normalValue = normalTexture.sample(
       textureSampler,

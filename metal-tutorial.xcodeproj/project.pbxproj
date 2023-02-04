@@ -52,6 +52,16 @@
 		CE52E41F298E2AE5000BB16B /* Lighting.metal in Sources */ = {isa = PBXBuildFile; fileRef = CE52E400298E2AE5000BB16B /* Lighting.metal */; };
 		CE52E420298E2AE5000BB16B /* TextureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52E402298E2AE5000BB16B /* TextureController.swift */; };
 		CE52E421298E2AE5000BB16B /* Textures.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE52E403298E2AE5000BB16B /* Textures.xcassets */; };
+		CE52E422298E4C49000BB16B /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE12C909298633A600E5B908 /* Log.swift */; };
+		CE52E446298E7066000BB16B /* Spaceship.obj in Resources */ = {isa = PBXBuildFile; fileRef = CE52E43D298E7066000BB16B /* Spaceship.obj */; };
+		CE52E447298E7066000BB16B /* Spaceship Ao_Blender.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE52E43E298E7066000BB16B /* Spaceship Ao_Blender.jpg */; };
+		CE52E448298E7066000BB16B /* Spaceship_emi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE52E43F298E7066000BB16B /* Spaceship_emi.jpg */; };
+		CE52E449298E7066000BB16B /* Spaceship_curvature.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE52E440298E7066000BB16B /* Spaceship_curvature.jpg */; };
+		CE52E44A298E7066000BB16B /* Spaceship_metalness.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE52E441298E7066000BB16B /* Spaceship_metalness.jpg */; };
+		CE52E44B298E7066000BB16B /* Spaceship.mtl in Resources */ = {isa = PBXBuildFile; fileRef = CE52E442298E7066000BB16B /* Spaceship.mtl */; };
+		CE52E44C298E7066000BB16B /* Spaceship_rough.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE52E443298E7066000BB16B /* Spaceship_rough.jpg */; };
+		CE52E44D298E7066000BB16B /* Spaceship_nmap_2_Tris.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE52E444298E7066000BB16B /* Spaceship_nmap_2_Tris.jpg */; };
+		CE52E44E298E7066000BB16B /* Spaceship_color_4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE52E445298E7066000BB16B /* Spaceship_color_4.jpg */; };
 		CE614314298A931100BEFF24 /* C10LightFundamentals.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE614313298A931100BEFF24 /* C10LightFundamentals.swift */; };
 		CE614318298A931200BEFF24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE614317298A931200BEFF24 /* Assets.xcassets */; };
 		CE61431C298A931200BEFF24 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE61431B298A931200BEFF24 /* Preview Assets.xcassets */; };
@@ -171,6 +181,15 @@
 		CE52E400298E2AE5000BB16B /* Lighting.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Lighting.metal; sourceTree = "<group>"; };
 		CE52E402298E2AE5000BB16B /* TextureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextureController.swift; sourceTree = "<group>"; };
 		CE52E403298E2AE5000BB16B /* Textures.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Textures.xcassets; sourceTree = "<group>"; };
+		CE52E43D298E7066000BB16B /* Spaceship.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Spaceship.obj; sourceTree = "<group>"; };
+		CE52E43E298E7066000BB16B /* Spaceship Ao_Blender.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Spaceship Ao_Blender.jpg"; sourceTree = "<group>"; };
+		CE52E43F298E7066000BB16B /* Spaceship_emi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Spaceship_emi.jpg; sourceTree = "<group>"; };
+		CE52E440298E7066000BB16B /* Spaceship_curvature.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Spaceship_curvature.jpg; sourceTree = "<group>"; };
+		CE52E441298E7066000BB16B /* Spaceship_metalness.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Spaceship_metalness.jpg; sourceTree = "<group>"; };
+		CE52E442298E7066000BB16B /* Spaceship.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Spaceship.mtl; sourceTree = "<group>"; };
+		CE52E443298E7066000BB16B /* Spaceship_rough.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Spaceship_rough.jpg; sourceTree = "<group>"; };
+		CE52E444298E7066000BB16B /* Spaceship_nmap_2_Tris.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Spaceship_nmap_2_Tris.jpg; sourceTree = "<group>"; };
+		CE52E445298E7066000BB16B /* Spaceship_color_4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Spaceship_color_4.jpg; sourceTree = "<group>"; };
 		CE614311298A931100BEFF24 /* c10-light-fundamentals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "c10-light-fundamentals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE614313298A931100BEFF24 /* C10LightFundamentals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C10LightFundamentals.swift; sourceTree = "<group>"; };
 		CE614317298A931200BEFF24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -397,6 +416,7 @@
 		CE52E3E8298E2AE5000BB16B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CE52E43C298E7066000BB16B /* SpaceShip */,
 				CE52E3E9298E2AE5000BB16B /* Cottage */,
 				CE52E3EE298E2AE5000BB16B /* Cube */,
 			);
@@ -464,6 +484,22 @@
 				CE52E403298E2AE5000BB16B /* Textures.xcassets */,
 			);
 			path = Textures;
+			sourceTree = "<group>";
+		};
+		CE52E43C298E7066000BB16B /* SpaceShip */ = {
+			isa = PBXGroup;
+			children = (
+				CE52E43D298E7066000BB16B /* Spaceship.obj */,
+				CE52E43E298E7066000BB16B /* Spaceship Ao_Blender.jpg */,
+				CE52E43F298E7066000BB16B /* Spaceship_emi.jpg */,
+				CE52E440298E7066000BB16B /* Spaceship_curvature.jpg */,
+				CE52E441298E7066000BB16B /* Spaceship_metalness.jpg */,
+				CE52E442298E7066000BB16B /* Spaceship.mtl */,
+				CE52E443298E7066000BB16B /* Spaceship_rough.jpg */,
+				CE52E444298E7066000BB16B /* Spaceship_nmap_2_Tris.jpg */,
+				CE52E445298E7066000BB16B /* Spaceship_color_4.jpg */,
+			);
+			path = SpaceShip;
 			sourceTree = "<group>";
 		};
 		CE614312298A931100BEFF24 /* c10-light-fundamentals */ = {
@@ -773,6 +809,7 @@
 				CE52E3C7298E214F000BB16B /* Sources */,
 				CE52E3C8298E214F000BB16B /* Frameworks */,
 				CE52E3C9298E214F000BB16B /* Resources */,
+				CE52E423298E4E2B000BB16B /* SwiftLint Script */,
 			);
 			buildRules = (
 			);
@@ -913,13 +950,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE52E447298E7066000BB16B /* Spaceship Ao_Blender.jpg in Resources */,
+				CE52E446298E7066000BB16B /* Spaceship.obj in Resources */,
+				CE52E448298E7066000BB16B /* Spaceship_emi.jpg in Resources */,
+				CE52E449298E7066000BB16B /* Spaceship_curvature.jpg in Resources */,
 				CE52E3D6298E2150000BB16B /* Preview Assets.xcassets in Resources */,
 				CE52E40F298E2AE5000BB16B /* cottage2.mtl in Resources */,
+				CE52E44C298E7066000BB16B /* Spaceship_rough.jpg in Resources */,
 				CE52E414298E2AE5000BB16B /* cube.mtl in Resources */,
 				CE52E421298E2AE5000BB16B /* Textures.xcassets in Resources */,
+				CE52E44D298E7066000BB16B /* Spaceship_nmap_2_Tris.jpg in Resources */,
 				CE52E3D2298E2150000BB16B /* Assets.xcassets in Resources */,
 				CE52E410298E2AE5000BB16B /* cottage1.mtl in Resources */,
+				CE52E44B298E7066000BB16B /* Spaceship.mtl in Resources */,
+				CE52E44E298E7066000BB16B /* Spaceship_color_4.jpg in Resources */,
 				CE52E412298E2AE5000BB16B /* cottage2.obj in Resources */,
+				CE52E44A298E7066000BB16B /* Spaceship_metalness.jpg in Resources */,
 				CE52E411298E2AE5000BB16B /* cottage1.obj in Resources */,
 				CE52E413298E2AE5000BB16B /* cube.obj in Resources */,
 			);
@@ -959,6 +1005,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		CE52E423298E4E2B000BB16B /* SwiftLint Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/zsh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nPATH=/opt/homebrew/bin:$PATH\nif which swiftlint >/dev/null; then\n  swiftlint --fix --format\nelse\n  echo \"warning: SwiftLint not installed, please install brew install swiftlint or download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+		};
 		CE614361298A9AA800BEFF24 /* SwiftLint Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -974,7 +1038,7 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
+			shellPath = /bin/zsh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nPATH=/opt/homebrew/bin:$PATH\nif which swiftlint >/dev/null; then\n  swiftlint --fix --format\nelse\n  echo \"warning: SwiftLint not installed, please install brew install swiftlint or download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		CEE82FBE29863BA600845657 /* SwiftLint Script */ = {
@@ -1024,6 +1088,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE52E422298E4C49000BB16B /* Log.swift in Sources */,
 				CE52E408298E2AE5000BB16B /* InputController.swift in Sources */,
 				CE52E415298E2AE5000BB16B /* Mesh.swift in Sources */,
 				CE52E40C298E2AE5000BB16B /* PlayerCamera.swift in Sources */,
