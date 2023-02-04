@@ -87,6 +87,9 @@ extension Model {
             length: MemoryLayout<Params>.stride,
             index: ParamsBuffer.index)
 
+            // encoder.setCullMode(.back)
+            // encoder.setFrontFacing(.counterClockwise)
+
         for mesh in meshes {
             for (index, vertexBuffer) in mesh.vertexBuffers.enumerated() {
                 encoder.setVertexBuffer(

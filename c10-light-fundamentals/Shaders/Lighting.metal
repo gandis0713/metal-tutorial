@@ -58,12 +58,11 @@ float3 phongLighting(float3 normal,
                 // 1
                 float3 lightDirection = normalize(-light.position);
                 // 2
-                float diffuseIntensity =
-                saturate(-dot(lightDirection, normal));
+                float diffuseIntensity = saturate(-dot(lightDirection, normal));
                 // 3
-                diffuseColor += light.color * baseColor * diffuseIntensity;
                 if (diffuseIntensity > 0)
                 {
+                    diffuseColor += light.color * baseColor * diffuseIntensity;
                     // 1 (R)
                     float3 reflection = reflect(lightDirection, normal);
                     // 2 (V)
@@ -103,12 +102,10 @@ float3 phongLighting(float3 normal,
                 // 3
                 if (spotResult > cos(light.coneAngle))
                 {
-                    float attenuation = 1.0 / (light.attenuation.x +
-                    light.attenuation.y * d + light.attenuation.z * d * d);
+                    float attenuation = 1.0 / (light.attenuation.x + light.attenuation.y * d + light.attenuation.z * d * d);
                     // 4
                     attenuation *= pow(spotResult, light.coneAttenuation);
-                    float diffuseIntensity =
-                    saturate(dot(lightDirection, normal));
+                    float diffuseIntensity = saturate(dot(lightDirection, normal));
                     float3 color = light.color * baseColor * diffuseIntensity;
                     color *= attenuation;
                     diffuseColor += color;
@@ -126,5 +123,6 @@ float3 phongLighting(float3 normal,
             }
         }
     }
+
     return diffuseColor + specularColor + ambientColor;
 }
