@@ -13,4 +13,8 @@ extension OSLog {
     static let info = OSLog(subsystem: subsystem, category: "Info")
     static let error = OSLog(subsystem: subsystem, category: "Error")
     static let fault = OSLog(subsystem: subsystem, category: "Fault")
+
+    static let mouse = OSLog(subsystem: subsystem, category: "Mouse")
+    static let key = OSLog(subsystem: subsystem, category: "Key")
+    static let camera = OSLog(subsystem: subsystem, category: "Camera")
 }
