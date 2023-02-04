@@ -93,7 +93,7 @@ enum DebugLights {
                     position: light.position,
                     direction: light.coneDirection,
                     color: light.color)
-            case Sun:
+            case Directional:
                 debugDrawDirection(
                     renderEncoder: encoder,
                     uniforms: uniforms,

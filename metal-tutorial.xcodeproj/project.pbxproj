@@ -36,7 +36,7 @@
 		CE614351298A93E100BEFF24 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE614334298A93E100BEFF24 /* GameScene.swift */; };
 		CE614352298A93E100BEFF24 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE614335298A93E100BEFF24 /* Camera.swift */; };
 		CE614353298A93E100BEFF24 /* PlayerCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE614336298A93E100BEFF24 /* PlayerCamera.swift */; };
-		CE614354298A93E100BEFF24 /* SceneLighting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE614337298A93E100BEFF24 /* SceneLighting.swift */; };
+		CE614354298A93E100BEFF24 /* Lighting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE614337298A93E100BEFF24 /* Lighting.swift */; };
 		CE614355298A93E100BEFF24 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE614338298A93E100BEFF24 /* Renderer.swift */; };
 		CE614356298A93E100BEFF24 /* TextureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61433A298A93E100BEFF24 /* TextureController.swift */; };
 		CE614357298A93E100BEFF24 /* Textures.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE61433B298A93E100BEFF24 /* Textures.xcassets */; };
@@ -122,7 +122,7 @@
 		CE614334298A93E100BEFF24 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		CE614335298A93E100BEFF24 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		CE614336298A93E100BEFF24 /* PlayerCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerCamera.swift; sourceTree = "<group>"; };
-		CE614337298A93E100BEFF24 /* SceneLighting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneLighting.swift; sourceTree = "<group>"; };
+		CE614337298A93E100BEFF24 /* Lighting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lighting.swift; sourceTree = "<group>"; };
 		CE614338298A93E100BEFF24 /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		CE61433A298A93E100BEFF24 /* TextureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextureController.swift; sourceTree = "<group>"; };
 		CE61433B298A93E100BEFF24 /* Textures.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Textures.xcassets; sourceTree = "<group>"; };
@@ -348,7 +348,7 @@
 				CE614334298A93E100BEFF24 /* GameScene.swift */,
 				CE614335298A93E100BEFF24 /* Camera.swift */,
 				CE614336298A93E100BEFF24 /* PlayerCamera.swift */,
-				CE614337298A93E100BEFF24 /* SceneLighting.swift */,
+				CE614337298A93E100BEFF24 /* Lighting.swift */,
 				CE614338298A93E100BEFF24 /* Renderer.swift */,
 			);
 			path = Game;
@@ -792,7 +792,7 @@
 				CE61435E298A93E100BEFF24 /* Submesh.swift in Sources */,
 				CE61434F298A93E100BEFF24 /* InputController.swift in Sources */,
 				CE61435B298A93E100BEFF24 /* Mesh.swift in Sources */,
-				CE614354298A93E100BEFF24 /* SceneLighting.swift in Sources */,
+				CE614354298A93E100BEFF24 /* Lighting.swift in Sources */,
 				CE61434D298A93E100BEFF24 /* Lighting.metal in Sources */,
 				CE614348298A93E100BEFF24 /* MathLibrary.swift in Sources */,
 				CE61435C298A93E100BEFF24 /* Model.swift in Sources */,

@@ -36,17 +36,18 @@ import OSLog
 protocol Camera: Transformable {
     var projectionMatrix: float4x4 { get }
     var viewMatrix: float4x4 { get }
+    var near: Float { get set }
+    var far: Float { get set }
     mutating func update(size: CGSize)
     mutating func update(deltaTime: Float)
 }
 
-struct FPCamera: Camera {
-    var transform = Transform()
+protocol PerspectiveCamera: Camera {
+    var fov: Float { get set }
+    var aspect: Float { get set }
+}
 
-    var aspect: Float = 1.0
-    var fov = Float(70).degreesToRadians
-    var near: Float = 0.1
-    var far: Float = 100
+extension PerspectiveCamera {
     var projectionMatrix: float4x4 {
         float4x4(
             projectionFov: fov,
@@ -55,14 +56,58 @@ struct FPCamera: Camera {
             aspect: aspect)
     }
 
+    var viewMatrix: float4x4 {
+        (float4x4(translation: position) *
+            float4x4(rotation: rotation)).inverse
+    }
+
     mutating func update(size: CGSize) {
         aspect = Float(size.width / size.height)
     }
+}
+
+protocol OrthographicCamera: Camera {
+    var viewSize: CGFloat { get set }
+    var aspect: CGFloat { get set }
+}
+
+extension OrthographicCamera {
 
     var viewMatrix: float4x4 {
         (float4x4(translation: position) *
             float4x4(rotation: rotation)).inverse
     }
+
+    var projectionMatrix: float4x4 {
+        let rect = CGRect(
+            x: -1 * viewSize * aspect * 0.5,
+            y: viewSize * 0.5,
+            width: viewSize * aspect,
+            height: viewSize)
+        return float4x4(orthographic: rect, near: near, far: far)
+    }
+
+    mutating func update(size: CGSize) {
+        aspect = size.width / size.height
+    }
+
+    //    mutating func update(deltaTime: Float) {
+    //        let transform = updateInput(deltaTime: deltaTime)
+    //        position += transform.position
+    //        let input = InputController.shared
+    //        let zoom = input.mouseScroll.x + input.mouseScroll.y
+    //        viewSize -= CGFloat(zoom)
+    //        input.mouseScroll = .zero
+    //    }
+}
+
+struct FPCamera: PerspectiveCamera {
+    var transform = Transform()
+
+    var aspect: Float = 1.0
+    var fov = Float(70).degreesToRadians
+    var near: Float = 0.1
+    var far: Float = 100
 
     mutating func update(deltaTime: Float) {
         let transform = updateInput(deltaTime: deltaTime)
@@ -73,29 +118,18 @@ struct FPCamera: Camera {
 
 extension FPCamera: Movement { }
 
-struct ArcballCamera: Camera {
+struct ArcballCamera: PerspectiveCamera {
     var transform = Transform()
 
     var aspect: Float = 1.0
     var fov = Float(70).degreesToRadians
     var near: Float = 0.1
     var far: Float = 100
-    var projectionMatrix: float4x4 {
-        float4x4(
-            projectionFov: fov,
-            near: near,
-            far: far,
-            aspect: aspect)
-    }
 
     let minDistance: Float = 0.0
     let maxDistance: Float = 20
     var target: float3 = [0, 0, 0]
     var distance: Float = 2.5
-
-    mutating func update(size: CGSize) {
-        aspect = Float(size.width / size.height)
-    }
 
     var viewMatrix: float4x4 {
         let matrix: float4x4
@@ -126,40 +160,5 @@ struct ArcballCamera: Camera {
         let distanceVector = float4(0, 0, -distance, 0)
         let rotatedVector = rotateMatrix * distanceVector
         position = target + rotatedVector.xyz
-    }
-}
-
-struct OrthographicCamera: Camera, Movement {
-    var transform = Transform()
-    var aspect: CGFloat = 1
-    var viewSize: CGFloat = 10
-    var near: Float = 0.1
-    var far: Float = 100
-
-    var viewMatrix: float4x4 {
-        (float4x4(translation: position) *
-            float4x4(rotation: rotation)).inverse
-    }
-
-    var projectionMatrix: float4x4 {
-        let rect = CGRect(
-            x: -viewSize * aspect * 0.5,
-            y: viewSize * 0.5,
-            width: viewSize * aspect,
-            height: viewSize)
-        return float4x4(orthographic: rect, near: near, far: far)
-    }
-
-    mutating func update(size: CGSize) {
-        aspect = size.width / size.height
-    }
-
-    mutating func update(deltaTime: Float) {
-        let transform = updateInput(deltaTime: deltaTime)
-        position += transform.position
-        let input = InputController.shared
-        let zoom = input.mouseScroll.x + input.mouseScroll.y
-        viewSize -= CGFloat(zoom)
-        input.mouseScroll = .zero
     }
 }
