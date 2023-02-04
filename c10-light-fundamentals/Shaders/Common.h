@@ -72,7 +72,7 @@ typedef enum {
 
 typedef enum {
   unused = 0,
-  Sun = 1,
+  Directional = 1,
   Spot = 2,
   Point = 3,
   Ambient = 4

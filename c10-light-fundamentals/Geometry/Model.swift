@@ -71,7 +71,7 @@ extension Model {
         params fragment: Params
     ) {
         var uniforms = vertex
-        uniforms.modelMatrix = transform.modelMatrix
+        uniforms.modelMatrix = transform.matrix
         uniforms.normalMatrix = uniforms.modelMatrix.upperLeft
 
         var params = fragment
