@@ -43,15 +43,16 @@ struct Lighting {
         return light
     }
 
-    let sunlight: Light = {
+    let directionalLight: Light = {
         var light = Self.buildDefaultLight()
-        light.position = [1, 2, -2]
+        //        light.position = [1, 2, -2]
+        light.position = [0, 0, -2]
         return light
     }()
 
     let ambientLight: Light = {
         var light = Self.buildDefaultLight()
-        light.color = [0.05, 0.1, 0]
+        light.color = [0.1, 0.1, 0.1]
         light.type = Ambient
         return light
     }()
@@ -68,21 +69,23 @@ struct Lighting {
     lazy var spotlight: Light = {
         var light = Self.buildDefaultLight()
         light.type = Spot
-        light.position = [-0.64, 0.64, -1.07]
-        light.color = [1, 0, 1]
-        light.attenuation = [1, 0.5, 0]
-        light.coneAngle = Float(40).degreesToRadians
-        light.coneDirection = [0.5, -0.7, 1]
-        light.coneAttenuation = 8
+        //        light.position = [-0.64, 0.64, -1.07]
+        light.position = [1.1, 1.1, 1.1]
+        light.color = [1, 1, 1]
+        light.attenuation = [0.5, 0.5, 1]
+        light.coneAngle = Float(15).degreesToRadians
+        //        light.coneDirection = [0.5, -0.7, 1]
+        light.coneDirection = [-1, -1, -1]
+        light.coneAttenuation = 50
         return light
     }()
 
     var lights: [Light] = []
 
     init() {
-        lights.append(sunlight)
-        lights.append(ambientLight)
-        lights.append(redLight)
+        //        lights.append(directionalLight)
+        //        lights.append(ambientLight)
+        //        lights.append(redLight)
         lights.append(spotlight)
     }
 }
