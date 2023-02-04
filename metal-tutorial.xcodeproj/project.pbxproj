@@ -19,6 +19,10 @@
 		CE490F5D297E3D2100E334D6 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE490F5A297E3D2100E334D6 /* Renderer.swift */; };
 		CE490F60297E3E7900E334D6 /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE490F5F297E3E7900E334D6 /* Quad.swift */; };
 		CE490F62297E583B00E334D6 /* VertexDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE490F61297E583B00E334D6 /* VertexDescriptor.swift */; };
+		CE52E3CE298E214F000BB16B /* c11_maps_materialsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52E3CD298E214F000BB16B /* c11_maps_materialsApp.swift */; };
+		CE52E3D0298E214F000BB16B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52E3CF298E214F000BB16B /* ContentView.swift */; };
+		CE52E3D2298E2150000BB16B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE52E3D1298E2150000BB16B /* Assets.xcassets */; };
+		CE52E3D6298E2150000BB16B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE52E3D5298E2150000BB16B /* Preview Assets.xcassets */; };
 		CE614314298A931100BEFF24 /* C10LightFundamentals.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE614313298A931100BEFF24 /* C10LightFundamentals.swift */; };
 		CE614318298A931200BEFF24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE614317298A931200BEFF24 /* Assets.xcassets */; };
 		CE61431C298A931200BEFF24 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE61431B298A931200BEFF24 /* Preview Assets.xcassets */; };
@@ -101,6 +105,12 @@
 		CE490F5A297E3D2100E334D6 /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		CE490F5F297E3E7900E334D6 /* Quad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quad.swift; sourceTree = "<group>"; };
 		CE490F61297E583B00E334D6 /* VertexDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VertexDescriptor.swift; sourceTree = "<group>"; };
+		CE52E3CB298E214F000BB16B /* c11-maps-materials.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "c11-maps-materials.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE52E3CD298E214F000BB16B /* c11_maps_materialsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = c11_maps_materialsApp.swift; sourceTree = "<group>"; };
+		CE52E3CF298E214F000BB16B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CE52E3D1298E2150000BB16B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE52E3D3298E2150000BB16B /* c11_maps_materials.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = c11_maps_materials.entitlements; sourceTree = "<group>"; };
+		CE52E3D5298E2150000BB16B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE614311298A931100BEFF24 /* c10-light-fundamentals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "c10-light-fundamentals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE614313298A931100BEFF24 /* C10LightFundamentals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C10LightFundamentals.swift; sourceTree = "<group>"; };
 		CE614317298A931200BEFF24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -186,6 +196,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CE52E3C8298E214F000BB16B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CE61430E298A931100BEFF24 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -256,6 +273,26 @@
 				CE12C909298633A600E5B908 /* Log.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		CE52E3CC298E214F000BB16B /* c11-maps-materials */ = {
+			isa = PBXGroup;
+			children = (
+				CE52E3CD298E214F000BB16B /* c11_maps_materialsApp.swift */,
+				CE52E3CF298E214F000BB16B /* ContentView.swift */,
+				CE52E3D1298E2150000BB16B /* Assets.xcassets */,
+				CE52E3D3298E2150000BB16B /* c11_maps_materials.entitlements */,
+				CE52E3D4298E2150000BB16B /* Preview Content */,
+			);
+			path = "c11-maps-materials";
+			sourceTree = "<group>";
+		};
+		CE52E3D4298E2150000BB16B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CE52E3D5298E2150000BB16B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		CE614312298A931100BEFF24 /* c10-light-fundamentals */ = {
@@ -498,6 +535,7 @@
 				CEA8EC23297E3AF2005B5CA1 /* c04-vertex-function */,
 				CE12C8F6298632C200E5B908 /* c08-texture */,
 				CE614312298A931100BEFF24 /* c10-light-fundamentals */,
+				CE52E3CC298E214F000BB16B /* c11-maps-materials */,
 				CEEFD13C297C332A008CFE45 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -509,6 +547,7 @@
 				CEA8EC22297E3AF2005B5CA1 /* c04-vertex-function.app */,
 				CE12C8F5298632C200E5B908 /* c08-texture.app */,
 				CE614311298A931100BEFF24 /* c10-light-fundamentals.app */,
+				CE52E3CB298E214F000BB16B /* c11-maps-materials.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -554,6 +593,23 @@
 			name = "c08-texture";
 			productName = "c08-texture";
 			productReference = CE12C8F5298632C200E5B908 /* c08-texture.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CE52E3CA298E214F000BB16B /* c11-maps-materials */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE52E3D9298E2150000BB16B /* Build configuration list for PBXNativeTarget "c11-maps-materials" */;
+			buildPhases = (
+				CE52E3C7298E214F000BB16B /* Sources */,
+				CE52E3C8298E214F000BB16B /* Frameworks */,
+				CE52E3C9298E214F000BB16B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "c11-maps-materials";
+			productName = "c11-maps-materials";
+			productReference = CE52E3CB298E214F000BB16B /* c11-maps-materials.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CE614310298A931100BEFF24 /* c10-light-fundamentals */ = {
@@ -621,6 +677,9 @@
 					CE12C8F4298632C200E5B908 = {
 						CreatedOnToolsVersion = 14.0.1;
 					};
+					CE52E3CA298E214F000BB16B = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
 					CE614310298A931100BEFF24 = {
 						CreatedOnToolsVersion = 14.0.1;
 					};
@@ -649,6 +708,7 @@
 				CEA8EC21297E3AF2005B5CA1 /* c04-vertex-function */,
 				CE12C8F4298632C200E5B908 /* c08-texture */,
 				CE614310298A931100BEFF24 /* c10-light-fundamentals */,
+				CE52E3CA298E214F000BB16B /* c11-maps-materials */,
 			);
 		};
 /* End PBXProject section */
@@ -675,6 +735,15 @@
 				CECE642029868622003364B1 /* color.obj in Resources */,
 				CE12C8FC298632C300E5B908 /* Assets.xcassets in Resources */,
 				CECE641F29868622003364B1 /* color.mtl in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE52E3C9298E214F000BB16B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE52E3D6298E2150000BB16B /* Preview Assets.xcassets in Resources */,
+				CE52E3D2298E2150000BB16B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -770,6 +839,15 @@
 				CE12C90C298633AB00E5B908 /* MathLibrary.swift in Sources */,
 				CEE82F942986377300845657 /* Model.swift in Sources */,
 				CEE82F992986377300845657 /* Submesh.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE52E3C7298E214F000BB16B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE52E3D0298E214F000BB16B /* ContentView.swift in Sources */,
+				CE52E3CE298E214F000BB16B /* c11_maps_materialsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -910,6 +988,84 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "c08-texture/Common.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CE52E3D7298E2150000BB16B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "c11-maps-materials/c11_maps_materials.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"c11-maps-materials/Preview Content\"";
+				DEVELOPMENT_TEAM = Z27J28NH32;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "charles.c11-maps-materials";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CE52E3D8298E2150000BB16B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "c11-maps-materials/c11_maps_materials.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"c11-maps-materials/Preview Content\"";
+				DEVELOPMENT_TEAM = Z27J28NH32;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "charles.c11-maps-materials";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1268,6 +1424,15 @@
 			buildConfigurations = (
 				CE12C901298632C300E5B908 /* Debug */,
 				CE12C902298632C300E5B908 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE52E3D9298E2150000BB16B /* Build configuration list for PBXNativeTarget "c11-maps-materials" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE52E3D7298E2150000BB16B /* Debug */,
+				CE52E3D8298E2150000BB16B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
