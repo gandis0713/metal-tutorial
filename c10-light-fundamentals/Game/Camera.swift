@@ -36,26 +36,16 @@ import OSLog
 protocol Camera: Transformable {
     var projectionMatrix: float4x4 { get }
     var viewMatrix: float4x4 { get }
+
     var near: Float { get set }
     var far: Float { get set }
+    var aspect: Float { get set }
+
     mutating func update(size: CGSize)
     mutating func update(deltaTime: Float)
 }
 
-protocol PerspectiveCamera: Camera {
-    var fov: Float { get set }
-    var aspect: Float { get set }
-}
-
-extension PerspectiveCamera {
-    var projectionMatrix: float4x4 {
-        float4x4(
-            projectionFov: fov,
-            near: near,
-            far: far,
-            aspect: aspect)
-    }
-
+extension Camera {
     var viewMatrix: float4x4 {
         (float4x4(translation: position) *
             float4x4(rotation: rotation)).inverse
@@ -66,29 +56,33 @@ extension PerspectiveCamera {
     }
 }
 
+protocol PerspectiveCamera: Camera {
+    var fov: Float { get set }
+}
+
+extension PerspectiveCamera {
+    var projectionMatrix: float4x4 {
+        float4x4(
+            projectionFov: fov,
+            near: near,
+            far: far,
+            aspect: aspect)
+    }
+}
+
 protocol OrthographicCamera: Camera {
     var viewSize: CGFloat { get set }
-    var aspect: CGFloat { get set }
 }
 
 extension OrthographicCamera {
 
-    var viewMatrix: float4x4 {
-        (float4x4(translation: position) *
-            float4x4(rotation: rotation)).inverse
-    }
-
     var projectionMatrix: float4x4 {
         let rect = CGRect(
-            x: -1 * viewSize * aspect * 0.5,
+            x: -1 * viewSize * CGFloat(aspect) * 0.5,
             y: viewSize * 0.5,
-            width: viewSize * aspect,
+            width: viewSize * CGFloat(aspect),
             height: viewSize)
         return float4x4(orthographic: rect, near: near, far: far)
-    }
-
-    mutating func update(size: CGSize) {
-        aspect = size.width / size.height
     }
 
     //    mutating func update(deltaTime: Float) {
