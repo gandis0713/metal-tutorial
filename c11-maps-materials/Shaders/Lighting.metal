@@ -35,8 +35,7 @@ using namespace metal;
 
 #import "Lighting.h"
 
-float3 phongLighting(float3 normal, float3 position, constant Params& params,
-                     constant Light* lights, Material material)
+float3 phongLighting(float3 normal, float3 position, constant Params& params, constant Light* lights, Material material)
 {
     float3 baseColor = material.baseColor;
     float3 diffuseColor = 0;
@@ -60,11 +59,8 @@ float3 phongLighting(float3 normal, float3 position, constant Params& params,
             {
                 float3 reflection = reflect(lightDirection, normal);
                 float3 viewDirection = normalize(params.cameraPosition);
-                float specularIntensity =
-                    pow(saturate(dot(reflection, viewDirection)),
-                        materialShininess);
-                specularColor += light.specularColor * materialSpecularColor *
-                                 specularIntensity;
+                float specularIntensity = pow(saturate(dot(reflection, viewDirection)), materialShininess);
+                specularColor += light.specularColor * materialSpecularColor * specularIntensity;
             }
             break;
         }
@@ -72,9 +68,7 @@ float3 phongLighting(float3 normal, float3 position, constant Params& params,
         {
             float d = distance(light.position, position);
             float3 lightDirection = normalize(light.position - position);
-            float attenuation =
-                1.0 / (light.attenuation.x + light.attenuation.y * d +
-                       light.attenuation.z * d * d);
+            float attenuation = 1.0 / (light.attenuation.x + light.attenuation.y * d + light.attenuation.z * d * d);
 
             float diffuseIntensity = saturate(dot(lightDirection, normal));
             float3 color = light.color * baseColor * diffuseIntensity;
@@ -90,9 +84,7 @@ float3 phongLighting(float3 normal, float3 position, constant Params& params,
             float spotResult = dot(lightDirection, -coneDirection);
             if (spotResult > cos(light.coneAngle))
             {
-                float attenuation =
-                    1.0 / (light.attenuation.x + light.attenuation.y * d +
-                           light.attenuation.z * d * d);
+                float attenuation = 1.0 / (light.attenuation.x + light.attenuation.y * d + light.attenuation.z * d * d);
                 attenuation *= pow(spotResult, light.coneAttenuation);
                 float diffuseIntensity = saturate(dot(lightDirection, normal));
                 float3 color = light.color * baseColor * diffuseIntensity;

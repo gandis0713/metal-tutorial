@@ -98,6 +98,10 @@ private extension Material {
            specular.type == .float3 {
             self.specularColor = specular.float3Value
         }
+        if let emission = material?.property(with: .emission),
+           emission.type == .float3 {
+            self.emissionColor = emission.float3Value
+        }
         if let shininess = material?.property(with: .specularExponent),
            shininess.type == .float {
             self.shininess = shininess.floatValue

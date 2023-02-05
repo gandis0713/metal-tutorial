@@ -78,7 +78,11 @@ typedef enum
 typedef enum
 {
     BaseColor = 0,
-    NormalTexture = 1
+    NormalTexture = 1,
+    RoughnessTexture = 2,
+    MetallicTexture = 3,
+    AmbientOcclusionTexture = 4,
+    EmissionTexture = 5
 } TextureIndices;
 
 typedef enum
@@ -106,6 +110,7 @@ typedef struct
 {
     vector_float3 baseColor;
     vector_float3 specularColor;
+    vector_float3 emissionColor;
     float roughness;
     float metallic;
     float ambientOcclusion;

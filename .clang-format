@@ -2,6 +2,7 @@
 # ref : https://clang.llvm.org/docs/ClangFormatStyleOptions.html
 BasedOnStyle: LLVM
 IndentWidth: 4
+ColumnLimit: 160
 ---
 Language: Cpp
 PointerAlignment: Left

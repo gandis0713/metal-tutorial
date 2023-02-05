@@ -10,6 +10,21 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Bump Spaceship_nmap_2_Tris.jpg
+
+# tangent space normal
+map_tangentSpaceNormal Spaceship_nmap_2_Tris.jpg
+
+# albedo
 map_Kd Spaceship_color_4.jpg
-map_Ks Spaceship_rough.jpg
+
+# roughness
+map_roughness Spaceship_rough.jpg
+
+# metallic
+map_metallic Spaceship_metalness.jpg
+
+# specular
+map_Ks Spaceship_curvature.jpg // just use curvature texture for specular. no meaning.
+
+# emission
+map_Ka Spaceship_emi.jpg

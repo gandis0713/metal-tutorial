@@ -49,36 +49,33 @@ struct VertexOut
 };
 
 // functions
-float3 computeSpecular(float3 normal, float3 viewDirection,
-                       float3 lightDirection, float roughness, float3 F0);
+float3 computeSpecular(float3 normal, float3 viewDirection, float3 lightDirection, float roughness, float3 F0);
 
 float3 computeDiffuse(Material material, float3 normal, float3 lightDirection);
 
-fragment float4 fragment_PBR(
-    VertexOut in [[stage_in]], constant Params& params [[buffer(ParamsBuffer)]],
-    constant Light* lights [[buffer(LightBuffer)]],
-    constant Material& _material [[buffer(MaterialBuffer)]],
-    texture2d<float> baseColorTexture [[texture(BaseColor)]],
-    texture2d<float> normalTexture [[texture(NormalTexture)]],
-    texture2d<float> roughnessTexture [[texture(2)]],
-    texture2d<float> metallicTexture [[texture(3)]],
-    texture2d<float> aoTexture [[texture(4)]])
+float3 computeEmission(Material material);
+
+fragment float4 fragment_PBR(VertexOut in [[stage_in]], constant Params& params [[buffer(ParamsBuffer)]], constant Light* lights [[buffer(LightBuffer)]],
+                             constant Material& _material [[buffer(MaterialBuffer)]], texture2d<float> baseColorTexture [[texture(BaseColor)]],
+                             texture2d<float> normalTexture [[texture(NormalTexture)]], texture2d<float> roughnessTexture [[texture(2)]],
+                             texture2d<float> metallicTexture [[texture(3)]], texture2d<float> aoTexture [[texture(4)]],
+                             texture2d<float> emissionTexture [[texture(5)]])
 {
-    constexpr sampler textureSampler(filter::linear, address::repeat,
-                                     mip_filter::linear);
+    constexpr sampler textureSampler(filter::linear, address::repeat, mip_filter::linear);
 
     Material material = _material;
 
     // extract color
     if (!is_null_texture(baseColorTexture))
     {
-        material.baseColor =
-            baseColorTexture.sample(textureSampler, in.uv * params.tiling).rgb;
+        material.baseColor = baseColorTexture.sample(textureSampler, in.uv * params.tiling).rgb;
     }
     // extract metallic
     if (!is_null_texture(metallicTexture))
     {
-        material.metallic = metallicTexture.sample(textureSampler, in.uv).r;
+        //        material.metallic = metallicTexture.sample(textureSampler,
+        //        in.uv).r;
+        material.metallic = float(1.0 - metallicTexture.sample(textureSampler, in.uv).r);
     }
     // extract roughness
     if (!is_null_texture(roughnessTexture))
@@ -91,6 +88,12 @@ fragment float4 fragment_PBR(
         material.ambientOcclusion = aoTexture.sample(textureSampler, in.uv).r;
     }
 
+    // extract emission
+    if (!is_null_texture(emissionTexture))
+    {
+        material.emissionColor = emissionTexture.sample(textureSampler, in.uv).rgb;
+    }
+
     // normal map
     float3 normal;
     if (is_null_texture(normalTexture))
@@ -100,12 +103,8 @@ fragment float4 fragment_PBR(
     }
     else
     {
-        float3 normalValue =
-            normalTexture.sample(textureSampler, in.uv * params.tiling).xyz *
-                2.0 -
-            1.0;
-        normal = float3x3(in.worldTangent, in.worldBitangent, in.worldNormal) *
-                 normalValue;
+        float3 normalValue = normalTexture.sample(textureSampler, in.uv * params.tiling).xyz * 2.0 - 1.0;
+        normal = float3x3(in.worldTangent, in.worldBitangent, in.worldNormal) * normalValue;
     }
     normal = normalize(normal);
 
@@ -114,19 +113,18 @@ fragment float4 fragment_PBR(
     float3 lightDirection = normalize(light.position);
     float3 F0 = mix(0.04, material.baseColor, material.metallic);
 
-    float3 specularColor = computeSpecular(
-        normal, viewDirection, lightDirection, material.roughness, F0);
+    float3 specularColor = computeSpecular(normal, viewDirection, lightDirection, material.roughness, F0);
 
     float3 diffuseColor = computeDiffuse(material, normal, lightDirection);
-    return float4(diffuseColor + specularColor, 1);
+    float3 emissionColor = computeEmission(material);
+    return float4(diffuseColor + specularColor + emissionColor, 1);
 }
 
 float G1V(float nDotV, float k) { return 1.0f / (nDotV * (1.0f - k) + k); }
 
 // specular optimized-ggx
 // AUTHOR John Hable. Released into the public domain
-float3 computeSpecular(float3 normal, float3 viewDirection,
-                       float3 lightDirection, float roughness, float3 F0)
+float3 computeSpecular(float3 normal, float3 viewDirection, float3 lightDirection, float roughness, float3 F0)
 {
     float alpha = roughness * roughness;
     float3 halfVector = normalize(viewDirection + lightDirection);
@@ -160,8 +158,10 @@ float3 computeSpecular(float3 normal, float3 viewDirection,
 float3 computeDiffuse(Material material, float3 normal, float3 lightDirection)
 {
     float nDotL = saturate(dot(normal, lightDirection));
-    float3 diffuse =
-        float3(((1.0 / pi) * material.baseColor) * (1.0 - material.metallic));
+    float3 diffuse = float3(((1.0 / pi) * material.baseColor) * (1.0 - material.metallic));
     diffuse = float3(material.baseColor) * (1.0 - material.metallic);
     return diffuse * nDotL * material.ambientOcclusion;
 }
+
+// emission
+float3 computeEmission(Material material) { return material.emissionColor; }
