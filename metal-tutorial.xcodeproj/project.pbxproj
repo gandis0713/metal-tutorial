@@ -19,6 +19,57 @@
 		CE490F5D297E3D2100E334D6 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE490F5A297E3D2100E334D6 /* Renderer.swift */; };
 		CE490F60297E3E7900E334D6 /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE490F5F297E3E7900E334D6 /* Quad.swift */; };
 		CE490F62297E583B00E334D6 /* VertexDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE490F61297E583B00E334D6 /* VertexDescriptor.swift */; };
+		CE52E3CE298E214F000BB16B /* C11MapsMaterials.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52E3CD298E214F000BB16B /* C11MapsMaterials.swift */; };
+		CE52E3D2298E2150000BB16B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE52E3D1298E2150000BB16B /* Assets.xcassets */; };
+		CE52E3D6298E2150000BB16B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE52E3D5298E2150000BB16B /* Preview Assets.xcassets */; };
+		CE52E404298E2AE5000BB16B /* DebugLights.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52E3DB298E2AE5000BB16B /* DebugLights.swift */; };
+		CE52E405298E2AE5000BB16B /* DebugLights.metal in Sources */ = {isa = PBXBuildFile; fileRef = CE52E3DC298E2AE5000BB16B /* DebugLights.metal */; };
+		CE52E406298E2AE5000BB16B /* MathLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52E3DD298E2AE5000BB16B /* MathLibrary.swift */; };
+		CE52E407298E2AE5000BB16B /* Movement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52E3DF298E2AE5000BB16B /* Movement.swift */; };
+		CE52E408298E2AE5000BB16B /* InputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52E3E0298E2AE5000BB16B /* InputController.swift */; };
+		CE52E409298E2AE5000BB16B /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52E3E2298E2AE5000BB16B /* GameController.swift */; };
+		CE52E40A298E2AE5000BB16B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52E3E3298E2AE5000BB16B /* GameScene.swift */; };
+		CE52E40B298E2AE5000BB16B /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52E3E4298E2AE5000BB16B /* Camera.swift */; };
+		CE52E40C298E2AE5000BB16B /* PlayerCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52E3E5298E2AE5000BB16B /* PlayerCamera.swift */; };
+		CE52E40D298E2AE5000BB16B /* SceneLighting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52E3E6298E2AE5000BB16B /* SceneLighting.swift */; };
+		CE52E40E298E2AE5000BB16B /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52E3E7298E2AE5000BB16B /* Renderer.swift */; };
+		CE52E40F298E2AE5000BB16B /* cottage2.mtl in Resources */ = {isa = PBXBuildFile; fileRef = CE52E3EA298E2AE5000BB16B /* cottage2.mtl */; };
+		CE52E410298E2AE5000BB16B /* cottage1.mtl in Resources */ = {isa = PBXBuildFile; fileRef = CE52E3EB298E2AE5000BB16B /* cottage1.mtl */; };
+		CE52E411298E2AE5000BB16B /* cottage1.obj in Resources */ = {isa = PBXBuildFile; fileRef = CE52E3EC298E2AE5000BB16B /* cottage1.obj */; };
+		CE52E412298E2AE5000BB16B /* cottage2.obj in Resources */ = {isa = PBXBuildFile; fileRef = CE52E3ED298E2AE5000BB16B /* cottage2.obj */; };
+		CE52E413298E2AE5000BB16B /* cube.obj in Resources */ = {isa = PBXBuildFile; fileRef = CE52E3EF298E2AE5000BB16B /* cube.obj */; };
+		CE52E414298E2AE5000BB16B /* cube.mtl in Resources */ = {isa = PBXBuildFile; fileRef = CE52E3F0298E2AE5000BB16B /* cube.mtl */; };
+		CE52E415298E2AE5000BB16B /* Mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52E3F2298E2AE5000BB16B /* Mesh.swift */; };
+		CE52E416298E2AE5000BB16B /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52E3F3298E2AE5000BB16B /* Model.swift */; };
+		CE52E417298E2AE5000BB16B /* Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52E3F4298E2AE5000BB16B /* Transform.swift */; };
+		CE52E418298E2AE5000BB16B /* Submesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52E3F5298E2AE5000BB16B /* Submesh.swift */; };
+		CE52E419298E2AE5000BB16B /* VertexDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52E3F6298E2AE5000BB16B /* VertexDescriptor.swift */; };
+		CE52E41A298E2AE5000BB16B /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52E3F8298E2AE5000BB16B /* Options.swift */; };
+		CE52E41B298E2AE5000BB16B /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52E3F9298E2AE5000BB16B /* MetalView.swift */; };
+		CE52E41C298E2AE5000BB16B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52E3FA298E2AE5000BB16B /* ContentView.swift */; };
+		CE52E41D298E2AE5000BB16B /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = CE52E3FC298E2AE5000BB16B /* Shaders.metal */; };
+		CE52E41E298E2AE5000BB16B /* PBR.metal in Sources */ = {isa = PBXBuildFile; fileRef = CE52E3FE298E2AE5000BB16B /* PBR.metal */; };
+		CE52E41F298E2AE5000BB16B /* Lighting.metal in Sources */ = {isa = PBXBuildFile; fileRef = CE52E400298E2AE5000BB16B /* Lighting.metal */; };
+		CE52E420298E2AE5000BB16B /* TextureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52E402298E2AE5000BB16B /* TextureController.swift */; };
+		CE52E421298E2AE5000BB16B /* Textures.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE52E403298E2AE5000BB16B /* Textures.xcassets */; };
+		CE52E422298E4C49000BB16B /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE12C909298633A600E5B908 /* Log.swift */; };
+		CE52E446298E7066000BB16B /* Spaceship.obj in Resources */ = {isa = PBXBuildFile; fileRef = CE52E43D298E7066000BB16B /* Spaceship.obj */; };
+		CE52E447298E7066000BB16B /* Spaceship Ao_Blender.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE52E43E298E7066000BB16B /* Spaceship Ao_Blender.jpg */; };
+		CE52E448298E7066000BB16B /* Spaceship_emi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE52E43F298E7066000BB16B /* Spaceship_emi.jpg */; };
+		CE52E449298E7066000BB16B /* Spaceship_curvature.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE52E440298E7066000BB16B /* Spaceship_curvature.jpg */; };
+		CE52E44A298E7066000BB16B /* Spaceship_metalness.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE52E441298E7066000BB16B /* Spaceship_metalness.jpg */; };
+		CE52E44B298E7066000BB16B /* Spaceship.mtl in Resources */ = {isa = PBXBuildFile; fileRef = CE52E442298E7066000BB16B /* Spaceship.mtl */; };
+		CE52E44C298E7066000BB16B /* Spaceship_rough.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE52E443298E7066000BB16B /* Spaceship_rough.jpg */; };
+		CE52E44D298E7066000BB16B /* Spaceship_nmap_2_Tris.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE52E444298E7066000BB16B /* Spaceship_nmap_2_Tris.jpg */; };
+		CE52E44E298E7066000BB16B /* Spaceship_color_4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE52E445298E7066000BB16B /* Spaceship_color_4.jpg */; };
+		CE52E458298F9B60000BB16B /* helmet.mtl in Resources */ = {isa = PBXBuildFile; fileRef = CE52E450298F9B60000BB16B /* helmet.mtl */; };
+		CE52E459298F9B60000BB16B /* helmet-metallic.png in Resources */ = {isa = PBXBuildFile; fileRef = CE52E451298F9B60000BB16B /* helmet-metallic.png */; };
+		CE52E45A298F9B60000BB16B /* helmet-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = CE52E452298F9B60000BB16B /* helmet-normal.png */; };
+		CE52E45B298F9B60000BB16B /* helmet-roughness.png in Resources */ = {isa = PBXBuildFile; fileRef = CE52E453298F9B60000BB16B /* helmet-roughness.png */; };
+		CE52E45C298F9B60000BB16B /* helmet_color.png in Resources */ = {isa = PBXBuildFile; fileRef = CE52E454298F9B60000BB16B /* helmet_color.png */; };
+		CE52E45D298F9B60000BB16B /* helmet_ao.png in Resources */ = {isa = PBXBuildFile; fileRef = CE52E455298F9B60000BB16B /* helmet_ao.png */; };
+		CE52E45E298F9B60000BB16B /* helmet.obj in Resources */ = {isa = PBXBuildFile; fileRef = CE52E456298F9B60000BB16B /* helmet.obj */; };
+		CE52E45F298F9B60000BB16B /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE52E457298F9B60000BB16B /* license.txt */; };
 		CE614314298A931100BEFF24 /* C10LightFundamentals.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE614313298A931100BEFF24 /* C10LightFundamentals.swift */; };
 		CE614318298A931200BEFF24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE614317298A931200BEFF24 /* Assets.xcassets */; };
 		CE61431C298A931200BEFF24 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE61431B298A931200BEFF24 /* Preview Assets.xcassets */; };
@@ -101,6 +152,60 @@
 		CE490F5A297E3D2100E334D6 /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		CE490F5F297E3E7900E334D6 /* Quad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quad.swift; sourceTree = "<group>"; };
 		CE490F61297E583B00E334D6 /* VertexDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VertexDescriptor.swift; sourceTree = "<group>"; };
+		CE52E3CB298E214F000BB16B /* c11-maps-materials.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "c11-maps-materials.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE52E3CD298E214F000BB16B /* C11MapsMaterials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C11MapsMaterials.swift; sourceTree = "<group>"; };
+		CE52E3D1298E2150000BB16B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE52E3D3298E2150000BB16B /* c11_maps_materials.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = c11_maps_materials.entitlements; sourceTree = "<group>"; };
+		CE52E3D5298E2150000BB16B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CE52E3DB298E2AE5000BB16B /* DebugLights.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugLights.swift; sourceTree = "<group>"; };
+		CE52E3DC298E2AE5000BB16B /* DebugLights.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = DebugLights.metal; sourceTree = "<group>"; };
+		CE52E3DD298E2AE5000BB16B /* MathLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathLibrary.swift; sourceTree = "<group>"; };
+		CE52E3DF298E2AE5000BB16B /* Movement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movement.swift; sourceTree = "<group>"; };
+		CE52E3E0298E2AE5000BB16B /* InputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputController.swift; sourceTree = "<group>"; };
+		CE52E3E2298E2AE5000BB16B /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		CE52E3E3298E2AE5000BB16B /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		CE52E3E4298E2AE5000BB16B /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		CE52E3E5298E2AE5000BB16B /* PlayerCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerCamera.swift; sourceTree = "<group>"; };
+		CE52E3E6298E2AE5000BB16B /* SceneLighting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneLighting.swift; sourceTree = "<group>"; };
+		CE52E3E7298E2AE5000BB16B /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		CE52E3EA298E2AE5000BB16B /* cottage2.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cottage2.mtl; sourceTree = "<group>"; };
+		CE52E3EB298E2AE5000BB16B /* cottage1.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cottage1.mtl; sourceTree = "<group>"; };
+		CE52E3EC298E2AE5000BB16B /* cottage1.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cottage1.obj; sourceTree = "<group>"; };
+		CE52E3ED298E2AE5000BB16B /* cottage2.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cottage2.obj; sourceTree = "<group>"; };
+		CE52E3EF298E2AE5000BB16B /* cube.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cube.obj; sourceTree = "<group>"; };
+		CE52E3F0298E2AE5000BB16B /* cube.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cube.mtl; sourceTree = "<group>"; };
+		CE52E3F2298E2AE5000BB16B /* Mesh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mesh.swift; sourceTree = "<group>"; };
+		CE52E3F3298E2AE5000BB16B /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		CE52E3F4298E2AE5000BB16B /* Transform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transform.swift; sourceTree = "<group>"; };
+		CE52E3F5298E2AE5000BB16B /* Submesh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Submesh.swift; sourceTree = "<group>"; };
+		CE52E3F6298E2AE5000BB16B /* VertexDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VertexDescriptor.swift; sourceTree = "<group>"; };
+		CE52E3F8298E2AE5000BB16B /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
+		CE52E3F9298E2AE5000BB16B /* MetalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
+		CE52E3FA298E2AE5000BB16B /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CE52E3FC298E2AE5000BB16B /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		CE52E3FD298E2AE5000BB16B /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		CE52E3FE298E2AE5000BB16B /* PBR.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = PBR.metal; sourceTree = "<group>"; };
+		CE52E3FF298E2AE5000BB16B /* Lighting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lighting.h; sourceTree = "<group>"; };
+		CE52E400298E2AE5000BB16B /* Lighting.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Lighting.metal; sourceTree = "<group>"; };
+		CE52E402298E2AE5000BB16B /* TextureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextureController.swift; sourceTree = "<group>"; };
+		CE52E403298E2AE5000BB16B /* Textures.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Textures.xcassets; sourceTree = "<group>"; };
+		CE52E43D298E7066000BB16B /* Spaceship.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Spaceship.obj; sourceTree = "<group>"; };
+		CE52E43E298E7066000BB16B /* Spaceship Ao_Blender.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Spaceship Ao_Blender.jpg"; sourceTree = "<group>"; };
+		CE52E43F298E7066000BB16B /* Spaceship_emi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Spaceship_emi.jpg; sourceTree = "<group>"; };
+		CE52E440298E7066000BB16B /* Spaceship_curvature.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Spaceship_curvature.jpg; sourceTree = "<group>"; };
+		CE52E441298E7066000BB16B /* Spaceship_metalness.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Spaceship_metalness.jpg; sourceTree = "<group>"; };
+		CE52E442298E7066000BB16B /* Spaceship.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Spaceship.mtl; sourceTree = "<group>"; };
+		CE52E443298E7066000BB16B /* Spaceship_rough.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Spaceship_rough.jpg; sourceTree = "<group>"; };
+		CE52E444298E7066000BB16B /* Spaceship_nmap_2_Tris.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Spaceship_nmap_2_Tris.jpg; sourceTree = "<group>"; };
+		CE52E445298E7066000BB16B /* Spaceship_color_4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Spaceship_color_4.jpg; sourceTree = "<group>"; };
+		CE52E450298F9B60000BB16B /* helmet.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = helmet.mtl; sourceTree = "<group>"; };
+		CE52E451298F9B60000BB16B /* helmet-metallic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "helmet-metallic.png"; sourceTree = "<group>"; };
+		CE52E452298F9B60000BB16B /* helmet-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "helmet-normal.png"; sourceTree = "<group>"; };
+		CE52E453298F9B60000BB16B /* helmet-roughness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "helmet-roughness.png"; sourceTree = "<group>"; };
+		CE52E454298F9B60000BB16B /* helmet_color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = helmet_color.png; sourceTree = "<group>"; };
+		CE52E455298F9B60000BB16B /* helmet_ao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = helmet_ao.png; sourceTree = "<group>"; };
+		CE52E456298F9B60000BB16B /* helmet.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = helmet.obj; sourceTree = "<group>"; };
+		CE52E457298F9B60000BB16B /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 		CE614311298A931100BEFF24 /* c10-light-fundamentals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "c10-light-fundamentals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE614313298A931100BEFF24 /* C10LightFundamentals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C10LightFundamentals.swift; sourceTree = "<group>"; };
 		CE614317298A931200BEFF24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -186,6 +291,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CE52E3C8298E214F000BB16B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CE61430E298A931100BEFF24 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -256,6 +368,170 @@
 				CE12C909298633A600E5B908 /* Log.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		CE52E3CC298E214F000BB16B /* c11-maps-materials */ = {
+			isa = PBXGroup;
+			children = (
+				CE52E3E1298E2AE5000BB16B /* Game */,
+				CE52E3F1298E2AE5000BB16B /* Geometry */,
+				CE52E3DE298E2AE5000BB16B /* Input */,
+				CE52E3E8298E2AE5000BB16B /* Models */,
+				CE52E3FB298E2AE5000BB16B /* Shaders */,
+				CE52E3F7298E2AE5000BB16B /* SwiftUI Views */,
+				CE52E401298E2AE5000BB16B /* Textures */,
+				CE52E3DA298E2AE5000BB16B /* Utility */,
+				CE52E3CD298E214F000BB16B /* C11MapsMaterials.swift */,
+				CE52E3D1298E2150000BB16B /* Assets.xcassets */,
+				CE52E3D3298E2150000BB16B /* c11_maps_materials.entitlements */,
+				CE52E3D4298E2150000BB16B /* Preview Content */,
+			);
+			path = "c11-maps-materials";
+			sourceTree = "<group>";
+		};
+		CE52E3D4298E2150000BB16B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CE52E3D5298E2150000BB16B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CE52E3DA298E2AE5000BB16B /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				CE52E3DB298E2AE5000BB16B /* DebugLights.swift */,
+				CE52E3DC298E2AE5000BB16B /* DebugLights.metal */,
+				CE52E3DD298E2AE5000BB16B /* MathLibrary.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		CE52E3DE298E2AE5000BB16B /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				CE52E3DF298E2AE5000BB16B /* Movement.swift */,
+				CE52E3E0298E2AE5000BB16B /* InputController.swift */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
+		CE52E3E1298E2AE5000BB16B /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				CE52E3E2298E2AE5000BB16B /* GameController.swift */,
+				CE52E3E3298E2AE5000BB16B /* GameScene.swift */,
+				CE52E3E4298E2AE5000BB16B /* Camera.swift */,
+				CE52E3E5298E2AE5000BB16B /* PlayerCamera.swift */,
+				CE52E3E6298E2AE5000BB16B /* SceneLighting.swift */,
+				CE52E3E7298E2AE5000BB16B /* Renderer.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		CE52E3E8298E2AE5000BB16B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CE52E44F298F9B60000BB16B /* helmet */,
+				CE52E43C298E7066000BB16B /* SpaceShip */,
+				CE52E3E9298E2AE5000BB16B /* Cottage */,
+				CE52E3EE298E2AE5000BB16B /* Cube */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CE52E3E9298E2AE5000BB16B /* Cottage */ = {
+			isa = PBXGroup;
+			children = (
+				CE52E3EA298E2AE5000BB16B /* cottage2.mtl */,
+				CE52E3EB298E2AE5000BB16B /* cottage1.mtl */,
+				CE52E3EC298E2AE5000BB16B /* cottage1.obj */,
+				CE52E3ED298E2AE5000BB16B /* cottage2.obj */,
+			);
+			path = Cottage;
+			sourceTree = "<group>";
+		};
+		CE52E3EE298E2AE5000BB16B /* Cube */ = {
+			isa = PBXGroup;
+			children = (
+				CE52E3EF298E2AE5000BB16B /* cube.obj */,
+				CE52E3F0298E2AE5000BB16B /* cube.mtl */,
+			);
+			path = Cube;
+			sourceTree = "<group>";
+		};
+		CE52E3F1298E2AE5000BB16B /* Geometry */ = {
+			isa = PBXGroup;
+			children = (
+				CE52E3F2298E2AE5000BB16B /* Mesh.swift */,
+				CE52E3F3298E2AE5000BB16B /* Model.swift */,
+				CE52E3F4298E2AE5000BB16B /* Transform.swift */,
+				CE52E3F5298E2AE5000BB16B /* Submesh.swift */,
+				CE52E3F6298E2AE5000BB16B /* VertexDescriptor.swift */,
+			);
+			path = Geometry;
+			sourceTree = "<group>";
+		};
+		CE52E3F7298E2AE5000BB16B /* SwiftUI Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE52E3F8298E2AE5000BB16B /* Options.swift */,
+				CE52E3F9298E2AE5000BB16B /* MetalView.swift */,
+				CE52E3FA298E2AE5000BB16B /* ContentView.swift */,
+			);
+			path = "SwiftUI Views";
+			sourceTree = "<group>";
+		};
+		CE52E3FB298E2AE5000BB16B /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				CE52E3FC298E2AE5000BB16B /* Shaders.metal */,
+				CE52E3FD298E2AE5000BB16B /* Common.h */,
+				CE52E3FE298E2AE5000BB16B /* PBR.metal */,
+				CE52E3FF298E2AE5000BB16B /* Lighting.h */,
+				CE52E400298E2AE5000BB16B /* Lighting.metal */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		CE52E401298E2AE5000BB16B /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+				CE52E402298E2AE5000BB16B /* TextureController.swift */,
+				CE52E403298E2AE5000BB16B /* Textures.xcassets */,
+			);
+			path = Textures;
+			sourceTree = "<group>";
+		};
+		CE52E43C298E7066000BB16B /* SpaceShip */ = {
+			isa = PBXGroup;
+			children = (
+				CE52E43D298E7066000BB16B /* Spaceship.obj */,
+				CE52E43E298E7066000BB16B /* Spaceship Ao_Blender.jpg */,
+				CE52E43F298E7066000BB16B /* Spaceship_emi.jpg */,
+				CE52E440298E7066000BB16B /* Spaceship_curvature.jpg */,
+				CE52E441298E7066000BB16B /* Spaceship_metalness.jpg */,
+				CE52E442298E7066000BB16B /* Spaceship.mtl */,
+				CE52E443298E7066000BB16B /* Spaceship_rough.jpg */,
+				CE52E444298E7066000BB16B /* Spaceship_nmap_2_Tris.jpg */,
+				CE52E445298E7066000BB16B /* Spaceship_color_4.jpg */,
+			);
+			path = SpaceShip;
+			sourceTree = "<group>";
+		};
+		CE52E44F298F9B60000BB16B /* helmet */ = {
+			isa = PBXGroup;
+			children = (
+				CE52E450298F9B60000BB16B /* helmet.mtl */,
+				CE52E451298F9B60000BB16B /* helmet-metallic.png */,
+				CE52E452298F9B60000BB16B /* helmet-normal.png */,
+				CE52E453298F9B60000BB16B /* helmet-roughness.png */,
+				CE52E454298F9B60000BB16B /* helmet_color.png */,
+				CE52E455298F9B60000BB16B /* helmet_ao.png */,
+				CE52E456298F9B60000BB16B /* helmet.obj */,
+				CE52E457298F9B60000BB16B /* license.txt */,
+			);
+			path = helmet;
 			sourceTree = "<group>";
 		};
 		CE614312298A931100BEFF24 /* c10-light-fundamentals */ = {
@@ -498,6 +774,7 @@
 				CEA8EC23297E3AF2005B5CA1 /* c04-vertex-function */,
 				CE12C8F6298632C200E5B908 /* c08-texture */,
 				CE614312298A931100BEFF24 /* c10-light-fundamentals */,
+				CE52E3CC298E214F000BB16B /* c11-maps-materials */,
 				CEEFD13C297C332A008CFE45 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -509,6 +786,7 @@
 				CEA8EC22297E3AF2005B5CA1 /* c04-vertex-function.app */,
 				CE12C8F5298632C200E5B908 /* c08-texture.app */,
 				CE614311298A931100BEFF24 /* c10-light-fundamentals.app */,
+				CE52E3CB298E214F000BB16B /* c11-maps-materials.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -554,6 +832,24 @@
 			name = "c08-texture";
 			productName = "c08-texture";
 			productReference = CE12C8F5298632C200E5B908 /* c08-texture.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CE52E3CA298E214F000BB16B /* c11-maps-materials */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE52E3D9298E2150000BB16B /* Build configuration list for PBXNativeTarget "c11-maps-materials" */;
+			buildPhases = (
+				CE52E3C7298E214F000BB16B /* Sources */,
+				CE52E3C8298E214F000BB16B /* Frameworks */,
+				CE52E3C9298E214F000BB16B /* Resources */,
+				CE52E423298E4E2B000BB16B /* SwiftLint Script */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "c11-maps-materials";
+			productName = "c11-maps-materials";
+			productReference = CE52E3CB298E214F000BB16B /* c11-maps-materials.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CE614310298A931100BEFF24 /* c10-light-fundamentals */ = {
@@ -621,6 +917,9 @@
 					CE12C8F4298632C200E5B908 = {
 						CreatedOnToolsVersion = 14.0.1;
 					};
+					CE52E3CA298E214F000BB16B = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
 					CE614310298A931100BEFF24 = {
 						CreatedOnToolsVersion = 14.0.1;
 					};
@@ -649,6 +948,7 @@
 				CEA8EC21297E3AF2005B5CA1 /* c04-vertex-function */,
 				CE12C8F4298632C200E5B908 /* c08-texture */,
 				CE614310298A931100BEFF24 /* c10-light-fundamentals */,
+				CE52E3CA298E214F000BB16B /* c11-maps-materials */,
 			);
 		};
 /* End PBXProject section */
@@ -675,6 +975,39 @@
 				CECE642029868622003364B1 /* color.obj in Resources */,
 				CE12C8FC298632C300E5B908 /* Assets.xcassets in Resources */,
 				CECE641F29868622003364B1 /* color.mtl in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE52E3C9298E214F000BB16B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE52E45F298F9B60000BB16B /* license.txt in Resources */,
+				CE52E45C298F9B60000BB16B /* helmet_color.png in Resources */,
+				CE52E447298E7066000BB16B /* Spaceship Ao_Blender.jpg in Resources */,
+				CE52E446298E7066000BB16B /* Spaceship.obj in Resources */,
+				CE52E448298E7066000BB16B /* Spaceship_emi.jpg in Resources */,
+				CE52E449298E7066000BB16B /* Spaceship_curvature.jpg in Resources */,
+				CE52E3D6298E2150000BB16B /* Preview Assets.xcassets in Resources */,
+				CE52E40F298E2AE5000BB16B /* cottage2.mtl in Resources */,
+				CE52E44C298E7066000BB16B /* Spaceship_rough.jpg in Resources */,
+				CE52E414298E2AE5000BB16B /* cube.mtl in Resources */,
+				CE52E421298E2AE5000BB16B /* Textures.xcassets in Resources */,
+				CE52E459298F9B60000BB16B /* helmet-metallic.png in Resources */,
+				CE52E458298F9B60000BB16B /* helmet.mtl in Resources */,
+				CE52E44D298E7066000BB16B /* Spaceship_nmap_2_Tris.jpg in Resources */,
+				CE52E3D2298E2150000BB16B /* Assets.xcassets in Resources */,
+				CE52E45D298F9B60000BB16B /* helmet_ao.png in Resources */,
+				CE52E45B298F9B60000BB16B /* helmet-roughness.png in Resources */,
+				CE52E410298E2AE5000BB16B /* cottage1.mtl in Resources */,
+				CE52E45E298F9B60000BB16B /* helmet.obj in Resources */,
+				CE52E44B298E7066000BB16B /* Spaceship.mtl in Resources */,
+				CE52E44E298E7066000BB16B /* Spaceship_color_4.jpg in Resources */,
+				CE52E412298E2AE5000BB16B /* cottage2.obj in Resources */,
+				CE52E44A298E7066000BB16B /* Spaceship_metalness.jpg in Resources */,
+				CE52E411298E2AE5000BB16B /* cottage1.obj in Resources */,
+				CE52E413298E2AE5000BB16B /* cube.obj in Resources */,
+				CE52E45A298F9B60000BB16B /* helmet-normal.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -712,6 +1045,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		CE52E423298E4E2B000BB16B /* SwiftLint Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/zsh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nPATH=/opt/homebrew/bin:$PATH\nif which swiftlint >/dev/null; then\n  swiftlint --fix --format\nelse\n  echo \"warning: SwiftLint not installed, please install brew install swiftlint or download from https://github.com/realm/SwiftLint\"\nfi\n\nfind ./c11*/ -name \"*.metal\" -print | xargs clang-format -i\n";
+		};
 		CE614361298A9AA800BEFF24 /* SwiftLint Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -727,8 +1079,8 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nPATH=/opt/homebrew/bin:$PATH\nif which swiftlint >/dev/null; then\n  swiftlint --fix --format\nelse\n  echo \"warning: SwiftLint not installed, please install brew install swiftlint or download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellPath = /bin/zsh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nPATH=/opt/homebrew/bin:$PATH\nif which swiftlint >/dev/null; then\n  swiftlint --fix --format\nelse\n  echo \"warning: SwiftLint not installed, please install brew install swiftlint or download from https://github.com/realm/SwiftLint\"\nfi\n\nfind ./c10*/ -name \"*.metal\" -print | xargs clang-format -i\n";
 		};
 		CEE82FBE29863BA600845657 /* SwiftLint Script */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -770,6 +1122,38 @@
 				CE12C90C298633AB00E5B908 /* MathLibrary.swift in Sources */,
 				CEE82F942986377300845657 /* Model.swift in Sources */,
 				CEE82F992986377300845657 /* Submesh.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE52E3C7298E214F000BB16B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE52E422298E4C49000BB16B /* Log.swift in Sources */,
+				CE52E408298E2AE5000BB16B /* InputController.swift in Sources */,
+				CE52E415298E2AE5000BB16B /* Mesh.swift in Sources */,
+				CE52E40C298E2AE5000BB16B /* PlayerCamera.swift in Sources */,
+				CE52E41B298E2AE5000BB16B /* MetalView.swift in Sources */,
+				CE52E404298E2AE5000BB16B /* DebugLights.swift in Sources */,
+				CE52E41A298E2AE5000BB16B /* Options.swift in Sources */,
+				CE52E41C298E2AE5000BB16B /* ContentView.swift in Sources */,
+				CE52E40D298E2AE5000BB16B /* SceneLighting.swift in Sources */,
+				CE52E40E298E2AE5000BB16B /* Renderer.swift in Sources */,
+				CE52E40A298E2AE5000BB16B /* GameScene.swift in Sources */,
+				CE52E417298E2AE5000BB16B /* Transform.swift in Sources */,
+				CE52E419298E2AE5000BB16B /* VertexDescriptor.swift in Sources */,
+				CE52E416298E2AE5000BB16B /* Model.swift in Sources */,
+				CE52E405298E2AE5000BB16B /* DebugLights.metal in Sources */,
+				CE52E3CE298E214F000BB16B /* C11MapsMaterials.swift in Sources */,
+				CE52E420298E2AE5000BB16B /* TextureController.swift in Sources */,
+				CE52E41F298E2AE5000BB16B /* Lighting.metal in Sources */,
+				CE52E41D298E2AE5000BB16B /* Shaders.metal in Sources */,
+				CE52E407298E2AE5000BB16B /* Movement.swift in Sources */,
+				CE52E406298E2AE5000BB16B /* MathLibrary.swift in Sources */,
+				CE52E41E298E2AE5000BB16B /* PBR.metal in Sources */,
+				CE52E409298E2AE5000BB16B /* GameController.swift in Sources */,
+				CE52E40B298E2AE5000BB16B /* Camera.swift in Sources */,
+				CE52E418298E2AE5000BB16B /* Submesh.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -910,6 +1294,86 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "c08-texture/Common.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CE52E3D7298E2150000BB16B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "c11-maps-materials/c11_maps_materials.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"c11-maps-materials/Preview Content\"";
+				DEVELOPMENT_TEAM = Z27J28NH32;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "charles.c11-maps-materials";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "c11-maps-materials/Shaders/Common.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CE52E3D8298E2150000BB16B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "c11-maps-materials/c11_maps_materials.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"c11-maps-materials/Preview Content\"";
+				DEVELOPMENT_TEAM = Z27J28NH32;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "charles.c11-maps-materials";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "c11-maps-materials/Shaders/Common.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1268,6 +1732,15 @@
 			buildConfigurations = (
 				CE12C901298632C300E5B908 /* Debug */,
 				CE12C902298632C300E5B908 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE52E3D9298E2150000BB16B /* Build configuration list for PBXNativeTarget "c11-maps-materials" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE52E3D7298E2150000BB16B /* Debug */,
+				CE52E3D8298E2150000BB16B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

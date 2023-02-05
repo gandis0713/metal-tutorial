@@ -1,0 +1,30 @@
+# Blender MTL File: 'Intergalactic Spaceship_Blender_2.79b_BI.blend'
+# Material Count: 1
+
+newmtl Material
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+# tangent space normal
+map_tangentSpaceNormal Spaceship_nmap_2_Tris.jpg
+
+# albedo
+map_Kd Spaceship_color_4.jpg
+
+# roughness
+map_roughness Spaceship_rough.jpg
+
+# metallic
+map_metallic Spaceship_metalness.jpg
+
+# specular
+map_Ks Spaceship_curvature.jpg // just use curvature texture for specular. no meaning.
+
+# emission
+map_Ka Spaceship_emi.jpg
