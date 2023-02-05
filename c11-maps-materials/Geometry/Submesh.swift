@@ -67,33 +67,6 @@ private extension Submesh.Textures {
     init(material: MDLMaterial?) {
         func property(with semantic: MDLMaterialSemantic)
         -> MTLTexture? {
-            //        case baseColor = 0
-            //        case subsurface = 1
-            //        case metallic = 2
-            //        case specular = 3
-            //        case specularExponent = 4
-            //        case specularTint = 5
-            //        case roughness = 6
-            //        case anisotropic = 7
-            //        case anisotropicRotation = 8
-            //        case sheen = 9
-            //        case sheenTint = 10
-            //        case clearcoat = 11
-            //        case clearcoatGloss = 12
-            //        case emission = 13
-            //        case bump = 14
-            //        case opacity = 15
-            //        case interfaceIndexOfRefraction = 16
-            //        case materialIndexOfRefraction = 17
-            //        case objectSpaceNormal = 18
-            //        case tangentSpaceNormal = 19
-            //        case displacement = 20
-            //        case displacementScale = 21
-            //        case ambientOcclusion = 22
-            //        case ambientOcclusionScale = 23
-            //
-            //        case none = 32768
-            //        case userDefined = 32769
             guard let property: MDLMaterialProperty = material?.property(with: semantic),
                   property.type == .string,
                   let filename = property.stringValue,
