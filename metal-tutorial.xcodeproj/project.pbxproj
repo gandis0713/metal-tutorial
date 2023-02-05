@@ -62,6 +62,14 @@
 		CE52E44C298E7066000BB16B /* Spaceship_rough.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE52E443298E7066000BB16B /* Spaceship_rough.jpg */; };
 		CE52E44D298E7066000BB16B /* Spaceship_nmap_2_Tris.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE52E444298E7066000BB16B /* Spaceship_nmap_2_Tris.jpg */; };
 		CE52E44E298E7066000BB16B /* Spaceship_color_4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE52E445298E7066000BB16B /* Spaceship_color_4.jpg */; };
+		CE52E458298F9B60000BB16B /* helmet.mtl in Resources */ = {isa = PBXBuildFile; fileRef = CE52E450298F9B60000BB16B /* helmet.mtl */; };
+		CE52E459298F9B60000BB16B /* helmet-metallic.png in Resources */ = {isa = PBXBuildFile; fileRef = CE52E451298F9B60000BB16B /* helmet-metallic.png */; };
+		CE52E45A298F9B60000BB16B /* helmet-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = CE52E452298F9B60000BB16B /* helmet-normal.png */; };
+		CE52E45B298F9B60000BB16B /* helmet-roughness.png in Resources */ = {isa = PBXBuildFile; fileRef = CE52E453298F9B60000BB16B /* helmet-roughness.png */; };
+		CE52E45C298F9B60000BB16B /* helmet_color.png in Resources */ = {isa = PBXBuildFile; fileRef = CE52E454298F9B60000BB16B /* helmet_color.png */; };
+		CE52E45D298F9B60000BB16B /* helmet_ao.png in Resources */ = {isa = PBXBuildFile; fileRef = CE52E455298F9B60000BB16B /* helmet_ao.png */; };
+		CE52E45E298F9B60000BB16B /* helmet.obj in Resources */ = {isa = PBXBuildFile; fileRef = CE52E456298F9B60000BB16B /* helmet.obj */; };
+		CE52E45F298F9B60000BB16B /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE52E457298F9B60000BB16B /* license.txt */; };
 		CE614314298A931100BEFF24 /* C10LightFundamentals.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE614313298A931100BEFF24 /* C10LightFundamentals.swift */; };
 		CE614318298A931200BEFF24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE614317298A931200BEFF24 /* Assets.xcassets */; };
 		CE61431C298A931200BEFF24 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE61431B298A931200BEFF24 /* Preview Assets.xcassets */; };
@@ -190,6 +198,14 @@
 		CE52E443298E7066000BB16B /* Spaceship_rough.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Spaceship_rough.jpg; sourceTree = "<group>"; };
 		CE52E444298E7066000BB16B /* Spaceship_nmap_2_Tris.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Spaceship_nmap_2_Tris.jpg; sourceTree = "<group>"; };
 		CE52E445298E7066000BB16B /* Spaceship_color_4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Spaceship_color_4.jpg; sourceTree = "<group>"; };
+		CE52E450298F9B60000BB16B /* helmet.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = helmet.mtl; sourceTree = "<group>"; };
+		CE52E451298F9B60000BB16B /* helmet-metallic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "helmet-metallic.png"; sourceTree = "<group>"; };
+		CE52E452298F9B60000BB16B /* helmet-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "helmet-normal.png"; sourceTree = "<group>"; };
+		CE52E453298F9B60000BB16B /* helmet-roughness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "helmet-roughness.png"; sourceTree = "<group>"; };
+		CE52E454298F9B60000BB16B /* helmet_color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = helmet_color.png; sourceTree = "<group>"; };
+		CE52E455298F9B60000BB16B /* helmet_ao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = helmet_ao.png; sourceTree = "<group>"; };
+		CE52E456298F9B60000BB16B /* helmet.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = helmet.obj; sourceTree = "<group>"; };
+		CE52E457298F9B60000BB16B /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 		CE614311298A931100BEFF24 /* c10-light-fundamentals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "c10-light-fundamentals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE614313298A931100BEFF24 /* C10LightFundamentals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C10LightFundamentals.swift; sourceTree = "<group>"; };
 		CE614317298A931200BEFF24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -416,6 +432,7 @@
 		CE52E3E8298E2AE5000BB16B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CE52E44F298F9B60000BB16B /* helmet */,
 				CE52E43C298E7066000BB16B /* SpaceShip */,
 				CE52E3E9298E2AE5000BB16B /* Cottage */,
 				CE52E3EE298E2AE5000BB16B /* Cube */,
@@ -500,6 +517,21 @@
 				CE52E445298E7066000BB16B /* Spaceship_color_4.jpg */,
 			);
 			path = SpaceShip;
+			sourceTree = "<group>";
+		};
+		CE52E44F298F9B60000BB16B /* helmet */ = {
+			isa = PBXGroup;
+			children = (
+				CE52E450298F9B60000BB16B /* helmet.mtl */,
+				CE52E451298F9B60000BB16B /* helmet-metallic.png */,
+				CE52E452298F9B60000BB16B /* helmet-normal.png */,
+				CE52E453298F9B60000BB16B /* helmet-roughness.png */,
+				CE52E454298F9B60000BB16B /* helmet_color.png */,
+				CE52E455298F9B60000BB16B /* helmet_ao.png */,
+				CE52E456298F9B60000BB16B /* helmet.obj */,
+				CE52E457298F9B60000BB16B /* license.txt */,
+			);
+			path = helmet;
 			sourceTree = "<group>";
 		};
 		CE614312298A931100BEFF24 /* c10-light-fundamentals */ = {
@@ -950,6 +982,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE52E45F298F9B60000BB16B /* license.txt in Resources */,
+				CE52E45C298F9B60000BB16B /* helmet_color.png in Resources */,
 				CE52E447298E7066000BB16B /* Spaceship Ao_Blender.jpg in Resources */,
 				CE52E446298E7066000BB16B /* Spaceship.obj in Resources */,
 				CE52E448298E7066000BB16B /* Spaceship_emi.jpg in Resources */,
@@ -959,15 +993,21 @@
 				CE52E44C298E7066000BB16B /* Spaceship_rough.jpg in Resources */,
 				CE52E414298E2AE5000BB16B /* cube.mtl in Resources */,
 				CE52E421298E2AE5000BB16B /* Textures.xcassets in Resources */,
+				CE52E459298F9B60000BB16B /* helmet-metallic.png in Resources */,
+				CE52E458298F9B60000BB16B /* helmet.mtl in Resources */,
 				CE52E44D298E7066000BB16B /* Spaceship_nmap_2_Tris.jpg in Resources */,
 				CE52E3D2298E2150000BB16B /* Assets.xcassets in Resources */,
+				CE52E45D298F9B60000BB16B /* helmet_ao.png in Resources */,
+				CE52E45B298F9B60000BB16B /* helmet-roughness.png in Resources */,
 				CE52E410298E2AE5000BB16B /* cottage1.mtl in Resources */,
+				CE52E45E298F9B60000BB16B /* helmet.obj in Resources */,
 				CE52E44B298E7066000BB16B /* Spaceship.mtl in Resources */,
 				CE52E44E298E7066000BB16B /* Spaceship_color_4.jpg in Resources */,
 				CE52E412298E2AE5000BB16B /* cottage2.obj in Resources */,
 				CE52E44A298E7066000BB16B /* Spaceship_metalness.jpg in Resources */,
 				CE52E411298E2AE5000BB16B /* cottage1.obj in Resources */,
 				CE52E413298E2AE5000BB16B /* cube.obj in Resources */,
+				CE52E45A298F9B60000BB16B /* helmet-normal.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

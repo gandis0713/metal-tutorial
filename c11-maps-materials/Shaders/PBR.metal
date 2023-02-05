@@ -73,9 +73,8 @@ fragment float4 fragment_PBR(VertexOut in [[stage_in]], constant Params& params 
     // extract metallic
     if (!is_null_texture(metallicTexture))
     {
-        //        material.metallic = metallicTexture.sample(textureSampler,
-        //        in.uv).r;
-        material.metallic = float(1.0 - metallicTexture.sample(textureSampler, in.uv).r);
+        material.metallic = metallicTexture.sample(textureSampler, in.uv).r;
+        //        material.metallic = float(1.0 - metallicTexture.sample(textureSampler, in.uv).r);
     }
     // extract roughness
     if (!is_null_texture(roughnessTexture))
@@ -99,7 +98,6 @@ fragment float4 fragment_PBR(VertexOut in [[stage_in]], constant Params& params 
     if (is_null_texture(normalTexture))
     {
         normal = in.worldNormal;
-        //      normal = float3(1, 0, 0);
     }
     else
     {
@@ -116,8 +114,10 @@ fragment float4 fragment_PBR(VertexOut in [[stage_in]], constant Params& params 
     float3 specularColor = computeSpecular(normal, viewDirection, lightDirection, material.roughness, F0);
 
     float3 diffuseColor = computeDiffuse(material, normal, lightDirection);
+
     float3 emissionColor = computeEmission(material);
     return float4(diffuseColor + specularColor + emissionColor, 1);
+    //    return float4(diffuseColor + specularColor + emissionColor, 1);
 }
 
 float G1V(float nDotV, float k) { return 1.0f / (nDotV * (1.0f - k) + k); }

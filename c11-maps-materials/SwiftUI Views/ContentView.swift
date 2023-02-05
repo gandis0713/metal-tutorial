@@ -31,6 +31,7 @@
 /// THE SOFTWARE.
 
 import SwiftUI
+import OSLog
 
 struct ContentView: View {
     @State var options = Options()
@@ -40,6 +41,11 @@ struct ContentView: View {
             ZStack {
                 MetalView(options: options)
                     .border(Color.black, width: 2)
+            }
+            Button(action: {
+                os_log(.info, log: OSLog.info, "Metallic Button was pushed.")
+            }) {
+                Text("Metallic")
             }
         }
         .padding()

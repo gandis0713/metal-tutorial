@@ -46,6 +46,7 @@ struct Submesh {
         let emission: MTLTexture?
         let metallic: MTLTexture?
         let specular: MTLTexture?
+        let ambientOcclusion: MTLTexture?
     }
 
     let textures: Textures
@@ -84,6 +85,7 @@ private extension Submesh.Textures {
         roughness = property(with: .roughness)
         tangentSpaceNormal = property(with: .tangentSpaceNormal)
         emission = property(with: .emission)
+        ambientOcclusion = property(with: .ambientOcclusion)
     }
 }
 
@@ -98,15 +100,19 @@ private extension Material {
            specular.type == .float3 {
             self.specularColor = specular.float3Value
         }
-        if let emission = material?.property(with: .emission),
-           emission.type == .float3 {
-            self.emissionColor = emission.float3Value
-        }
+        self.emissionColor = float3(0, 0, 0)
+        //        if let emission = material?.property(with: .emission),
+        //           emission.type == .float3 {
+        //            self.emissionColor = emission.float3Value
+        //        }
         if let shininess = material?.property(with: .specularExponent),
            shininess.type == .float {
             self.shininess = shininess.floatValue
         }
-        self.ambientOcclusion = 1
+        if let ambientOcclusion = material?.property(with: .ambientOcclusion),
+           ambientOcclusion.type == .float {
+            self.ambientOcclusion = ambientOcclusion.floatValue
+        }
         if let roughness = material?.property(with: .roughness),
            roughness.type == .float3 {
             self.roughness = roughness.floatValue
