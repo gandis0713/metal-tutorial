@@ -66,21 +66,13 @@ fragment float4 fragment_PBR(VertexOut in [[stage_in]], constant Params& params 
     Material material = _material;
 
     // extract color
-    if (!is_null_texture(baseColorTexture))
-    {
-        material.baseColor = baseColorTexture.sample(textureSampler, in.uv * params.tiling).rgb;
-    }
+    material.baseColor =
+        !is_null_texture(baseColorTexture) ? material.baseColor = baseColorTexture.sample(textureSampler, in.uv * params.tiling).rgb : params.baseColor;
     // extract metallic
-    if (!is_null_texture(metallicTexture))
-    {
-        material.metallic = metallicTexture.sample(textureSampler, in.uv).r;
-        //        material.metallic = float(1.0 - metallicTexture.sample(textureSampler, in.uv).r);
-    }
+    material.metallic = !is_null_texture(metallicTexture) ? metallicTexture.sample(textureSampler, in.uv).r : params.metallic;
     // extract roughness
-    if (!is_null_texture(roughnessTexture))
-    {
-        material.roughness = roughnessTexture.sample(textureSampler, in.uv).r;
-    }
+    material.roughness = !is_null_texture(roughnessTexture) ? roughnessTexture.sample(textureSampler, in.uv).r : params.roughness;
+
     // extract ambient occlusion
     if (!is_null_texture(aoTexture))
     {
@@ -124,6 +116,8 @@ float G1V(float nDotV, float k) { return 1.0f / (nDotV * (1.0f - k) + k); }
 
 // specular optimized-ggx
 // AUTHOR John Hable. Released into the public domain
+// https://graphicscompendium.com/gamedev/15-pbr
+// https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=edgerider&logNo=220517509315
 float3 computeSpecular(float3 normal, float3 viewDirection, float3 lightDirection, float roughness, float3 F0)
 {
     float alpha = roughness * roughness;

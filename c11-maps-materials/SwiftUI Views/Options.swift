@@ -39,3 +39,14 @@ enum RenderChoice {
 class Options: ObservableObject {
     @Published var renderChoice = RenderChoice.quad
 }
+
+class RenderingOptions: ObservableObject {
+    @Published var customRenderingOption: Bool = false
+    @Published var baseColor = float3(1.0, 1.0, 0.0)
+    @Published var metallic: Float = 1.0
+    @Published var roughness: Float = 0.5
+
+    static var shared: RenderingOptions = RenderingOptions()
+
+    private init() {}
+}

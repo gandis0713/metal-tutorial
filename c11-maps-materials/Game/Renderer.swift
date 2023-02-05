@@ -114,6 +114,16 @@ extension Renderer {
         params.cameraPosition = scene.camera.position
     }
 
+    func updateCustomRenderingOption() {
+        if !RenderingOptions.shared.customRenderingOption {
+            return
+        }
+
+        params.baseColor = RenderingOptions.shared.baseColor
+        params.metallic = RenderingOptions.shared.metallic
+        params.roughness = RenderingOptions.shared.roughness
+    }
+
     func draw(scene: GameScene, in view: MTKView) {
         guard
             let commandBuffer = Renderer.commandQueue.makeCommandBuffer(),
@@ -125,6 +135,7 @@ extension Renderer {
         }
 
         updateUniforms(scene: scene)
+        updateCustomRenderingOption()
 
         renderEncoder.setDepthStencilState(depthStencilState)
         renderEncoder.setRenderPipelineState(pipelineState)

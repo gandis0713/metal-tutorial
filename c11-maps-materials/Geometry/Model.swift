@@ -107,25 +107,29 @@ extension Model {
             for submesh in mesh.submeshes {
 
                 // set the fragment texture here
-                // base color
-                encoder.setFragmentTexture(
-                    submesh.textures.baseColor,
-                    index: BaseColor.index)
-
                 // tangent space normal
                 encoder.setFragmentTexture(
                     submesh.textures.tangentSpaceNormal,
                     index: NormalTexture.index)
 
-                // roughness
-                encoder.setFragmentTexture(
-                    submesh.textures.roughness,
-                    index: RoughnessTexture.index)
+                if !RenderingOptions.shared.customRenderingOption {
 
-                // metallic
-                encoder.setFragmentTexture(
-                    submesh.textures.metallic,
-                    index: MetallicTexture.index)
+                    // base color
+                    encoder.setFragmentTexture(
+                        submesh.textures.baseColor,
+                        index: BaseColor.index)
+
+                    // metallic
+                    encoder.setFragmentTexture(
+                        submesh.textures.metallic,
+                        index: MetallicTexture.index)
+
+                    // roughness
+                    encoder.setFragmentTexture(
+                        submesh.textures.roughness,
+                        index: RoughnessTexture.index)
+
+                }
 
                 // emission
                 encoder.setFragmentTexture(

@@ -33,8 +33,39 @@
 import SwiftUI
 import OSLog
 
+#if canImport(UIKit)
+import UIKit
+#elseif canImport(AppKit)
+import AppKit
+#endif
+
+extension Color {
+    var components: (red: CGFloat, green: CGFloat, blue: CGFloat, opacity: CGFloat) {
+
+        #if canImport(UIKit)
+        typealias NativeColor = UIColor
+        #elseif canImport(AppKit)
+        typealias NativeColor = NSColor
+        #endif
+
+        var r: CGFloat = 0
+        var g: CGFloat = 0
+        var b: CGFloat = 0
+        var o: CGFloat = 0
+
+        NativeColor(self).getRed(&r, green: &g, blue: &b, alpha: &o)
+
+        return (r, g, b, o)
+    }
+}
+
 struct ContentView: View {
     @State var options = Options()
+    @State private var baseColor = Color(.sRGBLinear,
+                                         red: CGFloat(RenderingOptions.shared.baseColor.x),
+                                         green: CGFloat(RenderingOptions.shared.baseColor.y),
+                                         blue: CGFloat(RenderingOptions.shared.baseColor.z))
+    @StateObject var renderingOptions: RenderingOptions = RenderingOptions.shared
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -42,10 +73,27 @@ struct ContentView: View {
                 MetalView(options: options)
                     .border(Color.black, width: 2)
             }
-            Button(action: {
-                os_log(.info, log: OSLog.info, "Metallic Button was pushed.")
-            }) {
+            Toggle("Custom Rendering Options", isOn: $renderingOptions.customRenderingOption)
+
+            HStack {
+                ColorPicker("Albedo", selection: $baseColor).onChange(of: baseColor) { _ in
+
+                    RenderingOptions.shared.baseColor.x = Float(baseColor.components.red)
+                    RenderingOptions.shared.baseColor.y = Float(baseColor.components.green)
+                    RenderingOptions.shared.baseColor.z = Float(baseColor.components.blue)
+
+                    os_log(.info, log: OSLog.info, "color: \(RenderingOptions.shared.baseColor)")
+                }
+            }
+            HStack {
                 Text("Metallic")
+                Slider(value: $renderingOptions.metallic, in: 0.0...1.0, step: 0.01)
+                Text(" \(renderingOptions.metallic)")
+            }
+            HStack {
+                Text("Roughness")
+                Slider(value: $renderingOptions.roughness, in: 0.0...1.0, step: 0.01)
+                Text(" \(renderingOptions.roughness)")
             }
         }
         .padding()

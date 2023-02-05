@@ -50,6 +50,11 @@ typedef struct
     uint tiling;
     uint lightCount;
     vector_float3 cameraPosition;
+
+    // custom rendering options
+    float metallic;
+    float roughness;
+    vector_float3 baseColor;
 } Params;
 
 typedef enum
