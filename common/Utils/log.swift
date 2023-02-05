@@ -17,4 +17,5 @@ extension OSLog {
     static let mouse = OSLog(subsystem: subsystem, category: "Mouse")
     static let key = OSLog(subsystem: subsystem, category: "Key")
     static let camera = OSLog(subsystem: subsystem, category: "Camera")
+    static let submesh = OSLog(subsystem: subsystem, category: "Submesh")
 }

@@ -111,7 +111,7 @@ extension Model {
                     submesh.textures.baseColor,
                     index: BaseColor.index)
                 encoder.setFragmentTexture(
-                    submesh.textures.normal,
+                    submesh.textures.tangentSpaceNormal,
                     index: NormalTexture.index)
                 encoder.setFragmentTexture(
                     submesh.textures.roughness,

@@ -31,6 +31,7 @@
 /// THE SOFTWARE.
 
 import MetalKit
+import OSLog
 
 struct Submesh {
     let indexCount: Int
@@ -40,8 +41,11 @@ struct Submesh {
 
     struct Textures {
         let baseColor: MTLTexture?
-        let normal: MTLTexture?
+        let tangentSpaceNormal: MTLTexture?
         let roughness: MTLTexture?
+        let emission: MTLTexture?
+        let metallic: MTLTexture?
+        let specular: MTLTexture?
     }
 
     let textures: Textures
@@ -54,8 +58,8 @@ extension Submesh {
         indexType = mtkSubmesh.indexType
         indexBuffer = mtkSubmesh.indexBuffer.buffer
         indexBufferOffset = mtkSubmesh.indexBuffer.offset
-        textures = Textures(material: mdlSubmesh.material)
         material = Material(material: mdlSubmesh.material)
+        textures = Textures(material: mdlSubmesh.material)
     }
 }
 
@@ -63,17 +67,50 @@ private extension Submesh.Textures {
     init(material: MDLMaterial?) {
         func property(with semantic: MDLMaterialSemantic)
         -> MTLTexture? {
+            //        case baseColor = 0
+            //        case subsurface = 1
+            //        case metallic = 2
+            //        case specular = 3
+            //        case specularExponent = 4
+            //        case specularTint = 5
+            //        case roughness = 6
+            //        case anisotropic = 7
+            //        case anisotropicRotation = 8
+            //        case sheen = 9
+            //        case sheenTint = 10
+            //        case clearcoat = 11
+            //        case clearcoatGloss = 12
+            //        case emission = 13
+            //        case bump = 14
+            //        case opacity = 15
+            //        case interfaceIndexOfRefraction = 16
+            //        case materialIndexOfRefraction = 17
+            //        case objectSpaceNormal = 18
+            //        case tangentSpaceNormal = 19
+            //        case displacement = 20
+            //        case displacementScale = 21
+            //        case ambientOcclusion = 22
+            //        case ambientOcclusionScale = 23
+            //
+            //        case none = 32768
+            //        case userDefined = 32769
             guard let property: MDLMaterialProperty = material?.property(with: semantic),
                   property.type == .string,
                   let filename = property.stringValue,
-                  let texture =
-                    TextureController.texture(filename: filename)
-            else { return nil }
+                  let texture = TextureController.texture(filename: filename)
+            else {
+                os_log(.error, log: OSLog.submesh, "Failed to create property %d", semantic.rawValue)
+                return nil
+            }
+
             return texture
         }
         baseColor = property(with: .baseColor)
-        normal = property(with: .tangentSpaceNormal)
+        metallic = property(with: .metallic)
+        specular = property(with: .specular)
         roughness = property(with: .roughness)
+        tangentSpaceNormal = property(with: .tangentSpaceNormal)
+        emission = property(with: .emission)
     }
 }
 

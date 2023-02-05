@@ -1021,7 +1021,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/zsh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nPATH=/opt/homebrew/bin:$PATH\nif which swiftlint >/dev/null; then\n  swiftlint --fix --format\nelse\n  echo \"warning: SwiftLint not installed, please install brew install swiftlint or download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nPATH=/opt/homebrew/bin:$PATH\nif which swiftlint >/dev/null; then\n  swiftlint --fix --format\nelse\n  echo \"warning: SwiftLint not installed, please install brew install swiftlint or download from https://github.com/realm/SwiftLint\"\nfi\n\nfind ./c11*/ -name \"*.metal\" -print | xargs clang-format -i\n";
 		};
 		CE614361298A9AA800BEFF24 /* SwiftLint Script */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1039,7 +1039,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/zsh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nPATH=/opt/homebrew/bin:$PATH\nif which swiftlint >/dev/null; then\n  swiftlint --fix --format\nelse\n  echo \"warning: SwiftLint not installed, please install brew install swiftlint or download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nPATH=/opt/homebrew/bin:$PATH\nif which swiftlint >/dev/null; then\n  swiftlint --fix --format\nelse\n  echo \"warning: SwiftLint not installed, please install brew install swiftlint or download from https://github.com/realm/SwiftLint\"\nfi\n\nfind ./c10*/ -name \"*.metal\" -print | xargs clang-format -i\n";
 		};
 		CEE82FBE29863BA600845657 /* SwiftLint Script */ = {
 			isa = PBXShellScriptBuildPhase;

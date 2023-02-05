@@ -60,8 +60,8 @@ class Renderer: NSObject {
         let library = device.makeDefaultLibrary()
         Self.library = library
         let vertexFunction = library?.makeFunction(name: "vertex_main")
-        //        let fragmentFunction = library?.makeFunction(name: "fragment_PBR")
-        let fragmentFunction = library?.makeFunction(name: "fragment_main")
+        let fragmentFunction = library?.makeFunction(name: "fragment_PBR")
+        //        let fragmentFunction = library?.makeFunction(name: "fragment_main")
 
         // create the pipeline state
         let pipelineDescriptor = MTLRenderPipelineDescriptor()
